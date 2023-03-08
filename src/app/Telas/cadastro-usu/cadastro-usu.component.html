@@ -27,28 +27,52 @@
 <div class="split right">
   <div class="InfoCadastro">
     <div class="TextButtonSide">Já possui uma conta ?</div>
-    <button class="button-30" [routerLink]="['']" role="button">Fazer Login</button>
+    <button class="button-30" [routerLink]="['']" role="button">
+      Fazer Login
+    </button>
   </div>
   <div class="centered">
     <div class="titulolog">Olá ! Bem-vindo de Volta</div>
     <div class="subtitulolog">
-      CUIDAR DO SEU PET COM O MAIOR CARINHO <br/>
+      CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-        <form class ="form" >
-           <label class="Nometxt" for="Nome">Nome:</label><br>
-            <input class="Nome" type="text" name="Nome" placeholder="Insira seu nome de Usuário"><br>
-            <label class="Emailtxt" for="Email">Email:</label><br>
-            <input class="Email" type="text" name="Email" placeholder="Example@Email.com"><br>
-            <label class="Senhatxt" for="Senha">Senha:</label><br>
-            <input class="Senha" type="text" name="Senha" placeholder="Insira sua Senha">
-            <input class="Senha" type="text" name="Senha" placeholder="Repita sua Senha"><br><br>
-            <input class="fazerlogin" type="submit" value="Realizar Login">
-          </form>   
-          <div class="EsqSenha">
-            Esqueci minha senha
-          </div>
+      <form class="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          name="Nome"
+          placeholder="Insira seu nome de Usuário"
+        /><br />
+        <label class="Emailtxt" for="Email">Email:</label><br />
+        <input
+          class="Email"
+          type="text"
+          name="Email"
+          placeholder="Example@Email.com"
+        /><br />
+        <label class="Senhatxt" for="Senha">Senha:</label><br />
+        <input
+          class="Senha"
+          type="text"
+          name="Senha"
+          placeholder="Insira sua Senha"
+        />
+        <input
+          class="Senha"
+          type="text"
+          name="Senha"
+          placeholder="Repita sua Senha"
+        /><br /><br />
+        <input
+          class="fazerlogin"
+          [routerLink]="['/Cruds']"
+          type="submit"
+          value="Realizar Cadastro"
+        />
+      </form>
     </div>
   </div>
 </div>

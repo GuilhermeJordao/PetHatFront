@@ -27,26 +27,42 @@
 <div class="split right">
   <div class="InfoCadastro">
     <div class="TextButtonSide">Ainda não possui uma conta ?</div>
-    <button class="button-30" [routerLink]="['/cadastro']" role="button">Cadastrar-se</button>
+    <button class="button-30" [routerLink]="['/cadastro']" role="button">
+      Cadastrar-se
+    </button>
   </div>
   <div class="centered">
     <div class="titulolog">Olá ! Bem-vindo de Volta</div>
     <div class="subtitulolog">
-      CUIDAR DO SEU PET COM O MAIOR CARINHO <br/>
+      CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-        <form class ="form" >
-            <label class="Emailtxt" for="Email">Email:</label><br>
-            <input class="Email" type="text" id="fname" name="Email" placeholder="Example@Email.com"><br>
-            <label class="Senhatxt" for="Senha">Senha:</label><br>
-            <input class="Senha" type="text" id="lname" name="Senha" placeholder="Insira sua Senha"><br><br>
-            <input class="fazerlogin" type="submit" value="Realizar Login">
-          </form>   
-          <div class="EsqSenha">
-            Esqueci minha senha
-          </div>
+      <form class="form">
+        <label class="Emailtxt" for="Email">Email:</label><br />
+        <input
+          class="Email"
+          type="text"
+          id="fname"
+          name="Email"
+          placeholder="Example@Email.com"
+        /><br />
+        <label class="Senhatxt" for="Senha">Senha:</label><br />
+        <input
+          class="Senha"
+          type="text"
+          id="lname"
+          name="Senha"
+          placeholder="Insira sua Senha"
+        /><br /><br />
+        <input
+          class="fazerlogin"
+          [routerLink]="['/Cruds']"
+          type="submit"
+          value="Realizar Login"
+        />
+      </form>
+      <div class="EsqSenha">Esqueci minha senha</div>
     </div>
   </div>
 </div>
-

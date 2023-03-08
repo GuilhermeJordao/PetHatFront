@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
 import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.component';
+import { CrudUsuComponent } from './Telas/crud-usu/crud-usu.component';
+import { NavbarCrudsComponent } from './Componentes/navbar-cruds/navbar-cruds.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 
 @NgModule({
@@ -12,10 +17,14 @@ import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.componen
     AppComponent,
     LoginComponent,
     CadastroUsuComponent,
+    CrudUsuComponent,
+    NavbarCrudsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    MdbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
