@@ -19,16 +19,6 @@
   background-color: white;
 }
 
-/* If you want the content centered horizontally and vertically */
-/* .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    
-    /* Style the image inside the centered container, if needed */
 .vetlogin {
   transform: translate(-50%, -50%);
   margin-left: 45%;
@@ -50,7 +40,7 @@
 .titulolog {
   font-family: "Inter", sans-serif;
   color: #383838;
-  margin-left: 11%;
+  margin-left: 13%;
   font-size: 200%;
   margin-top: 8%;
 }
