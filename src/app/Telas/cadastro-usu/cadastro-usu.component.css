@@ -1,3 +1,8 @@
+.alert {
+  width: 90%;
+  margin-top: 5%;
+  text-align: center;
+}
 .split {
   height: 100%;
   width: 45%;
@@ -171,7 +176,7 @@
   font-size: 80%;
 }
 
-.ConfirmarSenhatxt{
+.ConfirmarSenhatxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
   margin-right: 71%;

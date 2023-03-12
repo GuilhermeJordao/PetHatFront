@@ -37,6 +37,7 @@
       CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
+
     <div class="formLogin">
       <form [formGroup]="form" class="form">
         <label class="Nometxt" for="Nome">Nome:</label><br />
@@ -71,7 +72,8 @@
           placeholder="Insira sua Senha"
           formControlName="senha"
         />
-        <label class="ConfirmarSenhatxt" for="Senha">Confirmar senha:</label><br />
+        <label class="ConfirmarSenhatxt" for="Senha">Confirmar senha:</label
+        ><br />
         <input
           class="Senha"
           type="text"
@@ -80,13 +82,19 @@
         />
         <button
           class="fazerlogin"
-          (click)="onSubmit();"
+          (click)="onSubmit()"
           type="submit"
           value="Realizar Cadastro"
         >
           Fazer Cadastro
         </button>
       </form>
+    </div>
+    <div class="alert alert-danger" *ngIf="erroMensagem">
+      Erro ao fazer cadastro
+    </div>
+    <div class="alert alert-success" *ngIf="sucessoMensagem">
+      Cadastro feito com sucesso
     </div>
   </div>
 </div>
