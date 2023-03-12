@@ -8,9 +8,10 @@ import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.componen
 import { CrudUsuComponent } from './Telas/crud-usu/crud-usu.component';
 import { NavbarCrudsComponent } from './Componentes/navbar-cruds/navbar-cruds.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,15 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
     NavbarCrudsComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MdbCollapseModule
+    MdbCollapseModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

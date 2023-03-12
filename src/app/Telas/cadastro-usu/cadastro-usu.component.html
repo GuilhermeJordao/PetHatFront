@@ -32,19 +32,20 @@
     </button>
   </div>
   <div class="centered">
-    <div class="titulolog">Olá ! Seja Bem-vindo </div>
+    <div class="titulolog">Olá ! Seja Bem-vindo</div>
     <div class="subtitulolog">
       CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-      <form class="form">
+      <form [formGroup]="form" class="form">
         <label class="Nometxt" for="Nome">Nome:</label><br />
         <input
           class="Nome"
           type="text"
           name="Nome"
           placeholder="Insira seu nome de Usuário"
+          formControlName="nome"
         /><br />
         <label class="CPFtxt" for="CPF">CPF:</label><br />
         <input
@@ -52,6 +53,7 @@
           type="text"
           name="CPF"
           placeholder="000.000.000-00."
+          formControlName="cpf"
         /><br />
         <label class="Emailtxt" for="Email">Email:</label><br />
         <input
@@ -59,6 +61,7 @@
           type="text"
           name="Email"
           placeholder="Example@Email.com"
+          formControlName="email"
         /><br />
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input
@@ -66,19 +69,23 @@
           type="text"
           name="Senha"
           placeholder="Insira sua Senha"
+          formControlName="senha"
         />
+        <label class="Senhatxt" for="Senha">Confirmar senha:</label><br />
         <input
           class="Senha"
           type="text"
           name="Senha"
-          placeholder="Repita sua Senha"
-        /><br /><br />
-        <input
+          placeholder="Insira Novamente Sua Senha"
+        />
+        <button
           class="fazerlogin"
-          [routerLink]="['/Cruds']"
+          (click)="onSubmit()"
           type="submit"
           value="Realizar Cadastro"
-        />
+        >
+          Salvar
+        </button>
       </form>
     </div>
   </div>
