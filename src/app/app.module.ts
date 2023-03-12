@@ -5,21 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
 import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.component';
-import { CrudUsuComponent } from './Telas/crud-usu/crud-usu.component';
-import { NavbarCrudsComponent } from './Componentes/navbar-cruds/navbar-cruds.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { HttpClientModule } from '@angular/common/http';
+import { PerfilUsuComponent } from './Telas/perfil-usu/perfil-usu.component';
+import { NavbarComponent } from './Componentes/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CadastroUsuComponent,
-    CrudUsuComponent,
-    NavbarCrudsComponent,
+    PerfilUsuComponent,
+    NavbarComponent,
   ],
   imports: [
     FormsModule,
