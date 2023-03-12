@@ -12,6 +12,9 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilUsuComponent } from './Telas/perfil-usu/perfil-usu.component';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
+import {ToastrModule} from "ngx-toastr"
+
+//node_modules/ngx-toastr/toastr.css
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { NavbarComponent } from './Componentes/navbar/navbar.component';
     NgbModule,
     MdbCollapseModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
