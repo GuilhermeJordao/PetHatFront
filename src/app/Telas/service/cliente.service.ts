@@ -7,10 +7,15 @@ import { Cliente } from '../model/cliente';
 })
 export class ClienteService {
   private readonly API = 'api/cliente';
-
   constructor(private httpCliente: HttpClient) {}
 
   save(cliente: Cliente) {
     return this.httpCliente.post<Cliente>(this.API, cliente);
+  }
+
+  login(cliente: Cliente) {
+    return this.httpCliente.get(
+      `${this.API}/login/${cliente.email}/${cliente.senha}`
+    );
   }
 }

@@ -3,6 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 
+<<<<<<< Updated upstream
+=======
+//Importando Icones
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
+>>>>>>> Stashed changes
 @Component({
   selector: 'app-cadastro-usu',
   templateUrl: './cadastro-usu.component.html',
@@ -46,6 +53,7 @@ export class CadastroUsuComponent implements OnInit {
     });
   }
 
+<<<<<<< Updated upstream
   visivel1:boolean = true;
   visivel2:boolean = true;
   changetype1:boolean = true;
@@ -59,8 +67,21 @@ export class CadastroUsuComponent implements OnInit {
   viewpass2(){
     this.visivel2 = !this.visivel2;
     this.changetype2 = !this.changetype2
+=======
+  visivel: boolean = true;
+  changetype1: boolean = true;
+  changetype2: boolean = true;
+
+  viewpass1() {
+    this.visivel = !this.visivel;
+    this.changetype1 = !this.changetype1;
+  }
+
+  viewpass2() {
+    this.visivel = !this.visivel;
+    this.changetype2 = !this.changetype2;
+>>>>>>> Stashed changes
   }
 
   ngOnInit() {}
-
 }

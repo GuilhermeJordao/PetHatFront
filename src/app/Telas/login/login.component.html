@@ -38,14 +38,15 @@
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-      <form class="form">
+      <form [formGroup]="form" class="form">
         <label class="Emailtxt" for="Email">Email:</label><br />
         <input
           class="Email"
-          type="text"
+          type="email"
           id="fname"
           name="Email"
           placeholder="Example@Email.com"
+          formControlName="email"
         /><br />
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input
@@ -54,15 +55,24 @@
           id="lname"
           name="Senha"
           placeholder="Insira sua Senha"
+          formControlName="senha"
         /><br /><br />
-        <input
+        <button
           class="fazerlogin"
-          [routerLink]="['/Perfil']"
+          (click)="onSubmit()"
           type="submit"
           value="Realizar Login"
-        />
+        >
+          Realizar Login
+        </button>
       </form>
       <div class="EsqSenha">Esqueci minha senha</div>
+      <div class="alert alert-danger" *ngIf="erroMensagem">
+        Login ou/e senha inválidos
+      </div>
+      <div class="alert alert-success" *ngIf="sucessoMensagem">
+        Cadastro feito com sucesso
+      </div>
     </div>
   </div>
 </div>
