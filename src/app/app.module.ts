@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
@@ -12,7 +13,10 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilUsuComponent } from './Telas/perfil-usu/perfil-usu.component';
 import { NavbarComponent } from './Componentes/navbar/navbar.component';
-import {ToastrModule} from "ngx-toastr"
+import {NgxMaskModule} from "ngx-mask"
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatIconModule} from '@angular/material/icon'
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -32,7 +36,10 @@ import {ToastrModule} from "ngx-toastr"
     NgbModule,
     MdbCollapseModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+    NgxMaskModule.forRoot(),
+    FontAwesomeModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],
