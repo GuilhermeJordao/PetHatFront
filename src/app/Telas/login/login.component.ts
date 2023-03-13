@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent {
 
   constructor(
     private clienteService: ClienteService,
+    private router: Router,
     private formBuild: FormBuilder // private localPagina: Location
   ) {
     this.form = this.formBuild.group({
@@ -37,7 +39,8 @@ export class LoginComponent {
           this.sucessoMensagem = true;
           setTimeout(() => {
             this.sucessoMensagem = false;
-          }, 5000);
+            this.router.navigate([`/Perfil`]);
+          }, 2000);
         } else if (dados == false) {
           this.erroMensagem = true;
           setTimeout(() => {
@@ -46,28 +49,5 @@ export class LoginComponent {
         }
       });
     }
-
-    //     {
-    //     next: (dados) => {
-    //       console.log(dados);
-    //       if (dados) {
-    //         this.erroMensagem = true;
-
-    //
-    //       } else {
-    //         this.sucessoMensagem = true;
-    //       }
-
-    //       // setTimeout(() => {
-    //       //   this.sucessoMensagem = false;
-    //       //   this.localPagina.back();
-    //       // }, 3000);
-    //     },
-    //     error: (e) => {
-    //       // setTimeout(() => {
-    //       //   this.erroMensagem = false;
-    //       // }, 5000);
-    //     },
-    //     complete: () => console.log(this.model),
   }
 }
