@@ -1,4 +1,4 @@
-//Importando Fonte Inter 
+//Importando Fonte Inter
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -8,73 +8,83 @@
 //Chamando Componente Navbar
 <app-navbar></app-navbar>
 <div class="BodyPerfil">
-    <div class="PerfilPhotoDiv">
-        <img  class="PerfilImg" src="https://i.imgur.com/PL8qNu6.png" alt="PhotoPerfil">
-        <div class="NomePerfil">Amanda Vetorrazzo</div>
-        <div class="EmailPerfil">Amanda@email.com</div>
-        <div class="PetsCampo">Meus Pets:</div>
-        <div class="ImagePets">
-            <img  class="Pet1" src="https://i.imgur.com/ngsMxT3.jpg" alt="PhotoPerfil">
-            <img  class="Pet2" src="https://i.imgur.com/wQ5BBpX.jpg" alt="PhotoPerfil">
-        </div>
-        <div class= "AlignButton">
-          <button class="BtnSair" role="button">
-            Sair da Sessão
-          </button>
-        </div>
+  <div class="PerfilPhotoDiv">
+    <img
+      class="PerfilImg"
+      src="https://i.imgur.com/PL8qNu6.png"
+      alt="PhotoPerfil"
+    />
+    <div class="NomePerfil">Amanda Vetorrazzo</div>
+    <div class="EmailPerfil">Amanda@email.com</div>
+    <div class="PetsCampo">Meus Pets:</div>
+    <div class="ImagePets">
+      <img
+        class="Pet1"
+        src="https://i.imgur.com/ngsMxT3.jpg"
+        alt="PhotoPerfil"
+      />
+      <img
+        class="Pet2"
+        src="https://i.imgur.com/wQ5BBpX.jpg"
+        alt="PhotoPerfil"
+      />
     </div>
-    <div class="PerfilForm">
-      <div class="FormSide">
-        <form class="form">
-            <label class="Nometxt" for="Nome">Nome:</label><br />
-            <input
-              class="Nome"
-              type="text"
-              name="Nome"
-              placeholder="Insira seu nome de Usuário"
-              value="Amanda Vetorrazzo"
-            /><br />
-            <label class="CPFtxt" for="CPF">CPF:</label><br />
-            <input
-              class="CPF"
-              type="text"
-              name="CPF"
-              placeholder="000.000.000-00."
-              value="000.000.000-00."
-            /><br />
-            <label class="Emailtxt" for="Email">Email:</label><br />
-            <input
-              class="Email"
-              type="text"
-              name="Email"
-              placeholder="Example@Email.com"
-              value="Amanda@email.com"
-            /><br />
-            <label class="Senhatxt" for="Senha">Senha:</label><br />
-            <input
-              class="Senha"
-              type="text"
-              name="Senha"
-              placeholder="Insira sua Senha"
-              value="**********"
-            />
-            <input
-              class="Senha"
-              type="text"
-              name="Senha"
-              placeholder="Repita sua Senha"
-              value="**********"
-            /><br /><br />
-            <input
-              class="BtnForm"
-              [routerLink]="['/Perfil']"
-              type="submit"
-              value="Atualizar Informações"
-            />
-          </form>
-        </div>
+    <div class="AlignButton">
+      <button class="BtnSair" [routerLink]="['']" role="button">
+        Sair da Sessão
+      </button>
     </div>
+  </div>
+  <div class="PerfilForm">
+    <div class="FormSide">
+      <form class="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          name="Nome"
+          placeholder="Insira seu nome de Usuário"
+          value="Amanda Vetorrazzo"
+        /><br />
+        <label class="CPFtxt" for="CPF">CPF:</label><br />
+        <input
+          class="CPF"
+          type="text"
+          name="CPF"
+          placeholder="000.000.000-00."
+          value="000.000.000-00."
+        /><br />
+        <label class="Emailtxt" for="Email">Email:</label><br />
+        <input
+          class="Email"
+          type="text"
+          name="Email"
+          placeholder="Example@Email.com"
+          value="Amanda@email.com"
+        /><br />
+        <label class="Senhatxt" for="Senha">Senha:</label><br />
+        <input
+          class="Senha"
+          type="text"
+          name="Senha"
+          placeholder="Insira sua Senha"
+          value="**********"
+        />
+        <input
+          class="Senha"
+          type="text"
+          name="Senha"
+          placeholder="Repita sua Senha"
+          value="**********"
+        /><br /><br />
+        <input
+          class="BtnForm"
+          [routerLink]="['/Perfil']"
+          type="submit"
+          value="Atualizar Informações"
+        />
+      </form>
+    </div>
+  </div>
 </div>
-<button class="BtnExcluir" role="button">
-  Excluir Conta
-</button>
+<button class="BtnExcluir" role="button">Excluir Conta</button>
