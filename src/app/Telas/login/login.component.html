@@ -5,6 +5,9 @@
   rel="stylesheet"
 />
 
+<link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"/>
+
 <meta charset="utf-8" />
 
 <div class="split left">
@@ -51,12 +54,21 @@
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input
           class="Senha"
+<<<<<<< Updated upstream
           type="text"
+=======
+          [type]="changetype1?'password':'text'"
+>>>>>>> Stashed changes
           id="lname"
           name="Senha"
           placeholder="Insira sua Senha"
           formControlName="senha"
-        /><br /><br />
+        />
+        <span class="eyeicon1" (click)="viewpass1()" >
+          <i [ngClass]="visivel1?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i>
+        </span>
+        <br/>
+        <br />
         <button
           class="fazerlogin"
           (click)="onSubmit()"

@@ -25,6 +25,16 @@ export class LoginComponent {
     });
   }
 
+  visivel1: boolean = true;
+  changetype1: boolean = true;
+
+  viewpass1() {
+    this.visivel1 = !this.visivel1;
+    this.changetype1 = !this.changetype1;
+  }
+
+
+
   onSubmit() {
     console.log(this.form.value);
     if (this.form.value.email === null && this.form.value.senha === null) {
