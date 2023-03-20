@@ -22,9 +22,9 @@
   }
   
   .NomePerfil {
+    text-align: center;
     font-family: "Inter", sans-serif;
     color: #383838;
-    margin-left: 17%;
     font-size: 180%;
     margin-top: 2%;
   }
@@ -44,9 +44,6 @@
     color: #383838;
     font-size: 100%;
     margin-bottom: 3%;
-  }
-  
-  .ImagePets {
   }
   
   .Pet1 {

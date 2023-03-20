@@ -41,7 +41,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

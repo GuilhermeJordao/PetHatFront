@@ -10,29 +10,30 @@
 <div class="BodyPerfil">
     <div class="PerfilPhotoDiv">
         <img  class="PerfilImg" src="https://i.imgur.com/PL8qNu6.png" alt="PhotoPerfil">
-        <div class="NomePerfil">Amanda Vetorrazzo</div>
-        <div class="EmailPerfil">Amanda@email.com</div>
+        <div class="NomePerfil"><p>{{nome}}</p></div>
+        <div class="EmailPerfil"><p>{{email}}</p></div>
         <div class="PetsCampo">Meus Pets:</div>
         <div class="ImagePets">
             <img  class="Pet1" src="https://i.imgur.com/ngsMxT3.jpg" alt="PhotoPerfil">
             <img  class="Pet2" src="https://i.imgur.com/wQ5BBpX.jpg" alt="PhotoPerfil">
         </div>
         <div class= "AlignButton">
-          <button class="BtnSair" role="button">
+          <button class="BtnSair" [routerLink]="['/']" role="button">
             Sair da Sessão
           </button>
         </div>
     </div>
     <div class="PerfilForm">
       <div class="FormSide">
-        <form class="form">
+        <form class="form" [formGroup]="form">
             <label class="Nometxt" for="Nome">Nome:</label><br />
             <input
               class="Nome"
               type="text"
               name="Nome"
+              formControlName="nome"
               placeholder="Insira seu nome de Usuário"
-              value="Amanda Vetorrazzo"
+              value={{nome}}
             /><br />
             <label class="CPFtxt" for="CPF">CPF:</label><br />
             <input
@@ -40,41 +41,43 @@
               type="text"
               name="CPF"
               placeholder="000.000.000-00."
-              value="000.000.000-00."
+              value={{cpf}}
             /><br />
             <label class="Emailtxt" for="Email">Email:</label><br />
             <input
               class="Email"
               type="text"
               name="Email"
+              formControlName="email"
               placeholder="Example@Email.com"
-              value="Amanda@email.com"
+              value={{email}}
             /><br />
             <label class="Senhatxt" for="Senha">Senha:</label><br />
             <input
               class="Senha"
-              type="text"
+              type="password"
               name="Senha"
+              formControlName="senha"
               placeholder="Insira sua Senha"
-              value="**********"
+              value={{senha}}
             />
             <input
               class="Senha"
-              type="text"
+              type="password"
               name="Senha"
               placeholder="Repita sua Senha"
-              value="**********"
+              value={{senha}}
             /><br /><br />
-            <input
-              class="BtnForm"
-              [routerLink]="['/Perfil']"
-              type="submit"
-              value="Atualizar Informações"
-            />
+            <button
+             class="BtnForm"
+             type="submit"
+             >
+             Alterar Informações
+             </button>
           </form>
         </div>
     </div>
 </div>
-<button class="BtnExcluir" role="button">
+<button class="BtnExcluir" (click)="ButtonDelete()" role="button">
   Excluir Conta
 </button>

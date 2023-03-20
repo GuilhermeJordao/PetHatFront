@@ -37,7 +37,7 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.form.value);
-    if (this.form.value.email === null && this.form.value.senha === null) {
+    if (this.form.value.email === null || this.form.value.senha === null) {
       this.erroMensagem = true;
       setTimeout(() => {
         this.erroMensagem = false;
