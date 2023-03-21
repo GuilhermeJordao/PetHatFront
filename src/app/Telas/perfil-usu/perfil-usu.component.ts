@@ -4,6 +4,7 @@ import { Cliente } from '../model/cliente';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StorageService } from '../service/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usu',
@@ -25,7 +26,8 @@ export class PerfilUsuComponent implements OnInit {
     private clienteService: ClienteService,
     private localStorage: StorageService,
     private formBuilder: FormBuilder,
-    private localPagina: Location
+    private localPagina: Location,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       nome: [null],
@@ -76,10 +78,21 @@ export class PerfilUsuComponent implements OnInit {
         .alterarPerfil(this.id, this.form.value)
         .subscribe((data) => {
           console.log(data);
-          this.localStorage.setData('email', data.email);
+          localStorage.setItem('email', data.email);
           console.log('Usuário atualizado com sucesso!');
           window.location.reload();
         });
     });
+  }
+
+  deletarConta() {
+    console.log(this.id);
+    this.router.navigate([`/`]);
+    this.clienteService.deletarPerifl(this.id).subscribe();
+  }
+
+  sairConta() {
+    this.localPagina.back();
+    localStorage.clear();
   }
 }

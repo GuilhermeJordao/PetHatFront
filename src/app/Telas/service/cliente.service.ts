@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -21,19 +22,19 @@ export class ClienteService {
 
   login(cliente: Cliente) {
     return this.httpCliente.get(
-      `${this.API}/login/${this.storageService.setData(
-        'email',
-        cliente.email
-      )}/${this.storageService.setData('senha', cliente.senha)}`
+      `${this.API}/login/${cliente.email}/${cliente.senha}`
     );
   }
 
   buscarIdPorEmail() {
     return this.httpCliente.get<Cliente>(
-      `${this.API}/perfil/id/${localStorage
-        .getItem('email')
-        ?.slice(1, length - 1)
-        .toString()}`
+      `${this.API}/perfil/id/${localStorage.getItem('email')}`
+    );
+  }
+
+  buscarIdPorLogin(email: string) {
+    return this.httpCliente.get<Cliente>(
+      `${this.API}/perfil/id/${localStorage.getItem('email')}`
     );
   }
 
@@ -46,5 +47,10 @@ export class ClienteService {
       `${this.API}/perfil/alterar/${id}`,
       cliente
     );
+  }
+
+  /** DELETE: delete the hero from the server */
+  deletarPerifl(id: number): Observable<unknown> {
+    return this.httpCliente.delete(`${this.API}/perfil/excluir/${id}`);
   }
 }

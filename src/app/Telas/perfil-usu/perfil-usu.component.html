@@ -34,7 +34,7 @@
       />
     </div>
     <div class="AlignButton">
-      <button class="BtnSair" [routerLink]="['']" role="button">
+      <button class="BtnSair" (click)="sairConta()" role="button">
         Sair da Sessão
       </button>
     </div>
@@ -96,4 +96,6 @@
     </div>
   </div>
 </div>
-<button class="BtnExcluir" role="button">Excluir Conta</button>
+<button class="BtnExcluir" (click)="deletarConta()" role="button">
+  Excluir Conta
+</button>
