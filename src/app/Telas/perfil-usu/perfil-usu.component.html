@@ -14,8 +14,12 @@
       src="https://i.imgur.com/PL8qNu6.png"
       alt="PhotoPerfil"
     />
-    <div class="NomePerfil">Amanda Vetorrazzo</div>
-    <div class="EmailPerfil">Amanda@email.com</div>
+    <div class="NomePerfil">
+      <p>{{ perfil.nome }}</p>
+    </div>
+    <div class="EmailPerfil">
+      <p>{{ perfil.email }}</p>
+    </div>
     <div class="PetsCampo">Meus Pets:</div>
     <div class="ImagePets">
       <img
@@ -37,14 +41,15 @@
   </div>
   <div class="PerfilForm">
     <div class="FormSide">
-      <form class="form">
+      <form class="form" [formGroup]="form">
         <label class="Nometxt" for="Nome">Nome:</label><br />
         <input
           class="Nome"
           type="text"
           name="Nome"
           placeholder="Insira seu nome de Usuário"
-          value="Amanda Vetorrazzo"
+          value="{{ perfil.nome }}"
+          formControlName="nome"
         /><br />
         <label class="CPFtxt" for="CPF">CPF:</label><br />
         <input
@@ -52,7 +57,8 @@
           type="text"
           name="CPF"
           placeholder="000.000.000-00."
-          value="000.000.000-00."
+          value="{{ perfil.cpf }}"
+          formControlName="cpf"
         /><br />
         <label class="Emailtxt" for="Email">Email:</label><br />
         <input
@@ -60,28 +66,31 @@
           type="text"
           name="Email"
           placeholder="Example@Email.com"
-          value="Amanda@email.com"
+          value="{{ perfil.email }}"
+          formControlName="email"
         /><br />
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input
           class="Senha"
-          type="text"
+          type="password"
           name="Senha"
           placeholder="Insira sua Senha"
-          value="**********"
+          value="{{ perfil.senha }}"
+          formControlName="senha"
         />
         <input
           class="Senha"
-          type="text"
+          type="password"
           name="Senha"
           placeholder="Repita sua Senha"
-          value="**********"
+          value="{{ perfil.senha }}"
         /><br /><br />
         <input
           class="BtnForm"
           [routerLink]="['/Perfil']"
           type="submit"
           value="Atualizar Informações"
+          (click)="onSubmit()"
         />
       </form>
     </div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent {
   erroMensagem = false;
   form: FormGroup;
   dados: any;
+  cliente: Cliente | undefined;
 
   constructor(
     private clienteService: ClienteService,
@@ -27,7 +29,15 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.form.value);
-    if (this.form.value.email === null && this.form.value.senha === null) {
+    this.cliente = this.form.value;
+    console.log(this.cliente);
+
+    if (
+      this.form.value.email === null ||
+      this.form.value.email === '' ||
+      this.form.value.senha === null ||
+      this.form.value.senha === ''
+    ) {
       this.erroMensagem = true;
       setTimeout(() => {
         this.erroMensagem = false;
@@ -37,6 +47,7 @@ export class LoginComponent {
         console.log(dados);
         if (dados) {
           this.sucessoMensagem = true;
+          this.clienteService.termo = this.form.value.email;
           setTimeout(() => {
             this.sucessoMensagem = false;
             this.router.navigate([`/Perfil`]);
