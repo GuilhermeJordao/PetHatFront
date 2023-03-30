@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
+import { Cliente } from '../model/cliente';
+import { StorageService } from '../service/storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   sucessoMensagem = false;
   erroMensagem = false;
   form: FormGroup;
   dados: any;
+  cliente: Cliente | undefined;
+  storage: StorageService | undefined;
 
   constructor(
     private clienteService: ClienteService,
@@ -25,19 +29,17 @@ export class LoginComponent {
     });
   }
 
-  visivel1: boolean = true;
-  changetype1: boolean = true;
-
-  viewpass1() {
-    this.visivel1 = !this.visivel1;
-    this.changetype1 = !this.changetype1;
-  }
-
-
+  ngOnInit() {}
 
   onSubmit() {
     console.log(this.form.value);
-    if (this.form.value.email === null || this.form.value.senha === null) {
+
+    if (
+      this.form.value.email === null ||
+      this.form.value.email === '' ||
+      this.form.value.senha === null ||
+      this.form.value.senha === ''
+    ) {
       this.erroMensagem = true;
       setTimeout(() => {
         this.erroMensagem = false;
@@ -45,13 +47,17 @@ export class LoginComponent {
     } else {
       this.clienteService.login(this.form.value).subscribe((dados) => {
         console.log(dados);
-        if (dados) {
+        console.log(this.form.valid);
+
+        if (dados === true) {
           this.sucessoMensagem = true;
+          localStorage.setItem('email', this.form.value.email);
           setTimeout(() => {
             this.sucessoMensagem = false;
             this.router.navigate([`/Perfil`]);
           }, 2000);
-        } else if (dados == false) {
+        }
+        if (dados === false) {
           this.erroMensagem = true;
           setTimeout(() => {
             this.erroMensagem = false;

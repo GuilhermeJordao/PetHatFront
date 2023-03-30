@@ -1,4 +1,4 @@
-//Importando Fonte Inter 
+//Importando Fonte Inter
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -8,76 +8,94 @@
 //Chamando Componente Navbar
 <app-navbar></app-navbar>
 <div class="BodyPerfil">
-    <div class="PerfilPhotoDiv">
-        <img  class="PerfilImg" src="https://i.imgur.com/PL8qNu6.png" alt="PhotoPerfil">
-        <div class="NomePerfil"><p>{{nome}}</p></div>
-        <div class="EmailPerfil"><p>{{email}}</p></div>
-        <div class="PetsCampo">Meus Pets:</div>
-        <div class="ImagePets">
-            <img  class="Pet1" src="https://i.imgur.com/ngsMxT3.jpg" alt="PhotoPerfil">
-            <img  class="Pet2" src="https://i.imgur.com/wQ5BBpX.jpg" alt="PhotoPerfil">
-        </div>
-        <div class= "AlignButton">
-          <button class="BtnSair" [routerLink]="['/']" role="button">
-            Sair da Sessão
-          </button>
-        </div>
+  <div class="PerfilPhotoDiv">
+    <img
+      class="PerfilImg"
+      src="https://i.imgur.com/PL8qNu6.png"
+      alt="PhotoPerfil"
+    />
+    <div class="NomePerfil">
+      <p>{{ perfil.nome }}</p>
     </div>
-    <div class="PerfilForm">
-      <div class="FormSide">
-        <form class="form" [formGroup]="form">
-            <label class="Nometxt" for="Nome">Nome:</label><br />
-            <input
-              class="Nome"
-              type="text"
-              name="Nome"
-              formControlName="nome"
-              placeholder="Insira seu nome de Usuário"
-              value={{nome}}
-            /><br />
-            <label class="CPFtxt" for="CPF">CPF:</label><br />
-            <input
-              class="CPF"
-              type="text"
-              name="CPF"
-              placeholder="000.000.000-00."
-              value={{cpf}}
-            /><br />
-            <label class="Emailtxt" for="Email">Email:</label><br />
-            <input
-              class="Email"
-              type="text"
-              name="Email"
-              formControlName="email"
-              placeholder="Example@Email.com"
-              value={{email}}
-            /><br />
-            <label class="Senhatxt" for="Senha">Senha:</label><br />
-            <input
-              class="Senha"
-              type="password"
-              name="Senha"
-              formControlName="senha"
-              placeholder="Insira sua Senha"
-              value={{senha}}
-            />
-            <input
-              class="Senha"
-              type="password"
-              name="Senha"
-              placeholder="Repita sua Senha"
-              value={{senha}}
-            /><br /><br />
-            <button
-             class="BtnForm"
-             type="submit"
-             >
-             Alterar Informações
-             </button>
-          </form>
-        </div>
+    <div class="EmailPerfil">
+      <p>{{ perfil.email }}</p>
     </div>
+    <div class="PetsCampo">Meus Pets:</div>
+    <div class="ImagePets">
+      <img
+        class="Pet1"
+        src="https://i.imgur.com/ngsMxT3.jpg"
+        alt="PhotoPerfil"
+      />
+      <img
+        class="Pet2"
+        src="https://i.imgur.com/wQ5BBpX.jpg"
+        alt="PhotoPerfil"
+      />
+    </div>
+    <div class="AlignButton">
+      <button class="BtnSair" (click)="sairConta()" role="button">
+        Sair da Sessão
+      </button>
+    </div>
+  </div>
+  <div class="PerfilForm">
+    <div class="FormSide">
+      <form class="form" [formGroup]="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          name="Nome"
+          placeholder="Insira seu nome de Usuário"
+          value="{{ perfil.nome }}"
+          formControlName="nome"
+        /><br />
+        <label class="CPFtxt" for="CPF">CPF:</label><br />
+        <input
+          class="CPF"
+          type="text"
+          name="CPF"
+          placeholder="000.000.000-00."
+          value="{{ perfil.cpf }}"
+          formControlName="cpf"
+        /><br />
+        <label class="Emailtxt" for="Email">Email:</label><br />
+        <input
+          class="Email"
+          type="text"
+          name="Email"
+          placeholder="Example@Email.com"
+          value="{{ perfil.email }}"
+          formControlName="email"
+        /><br />
+        <label class="Senhatxt" for="Senha">Senha:</label><br />
+        <input
+          class="Senha"
+          type="password"
+          name="Senha"
+          placeholder="Insira sua Senha"
+          value="{{ perfil.senha }}"
+          formControlName="senha"
+        />
+        <input
+          class="Senha"
+          type="password"
+          name="Senha"
+          placeholder="Repita sua Senha"
+          value="{{ perfil.senha }}"
+        /><br /><br />
+        <input
+          class="BtnForm"
+          [routerLink]="['/Perfil']"
+          type="submit"
+          value="Atualizar Informações"
+          (click)="onSubmit()"
+        />
+      </form>
+    </div>
+  </div>
 </div>
-<button class="BtnExcluir" (click)="ButtonDelete()" role="button">
+<button class="BtnExcluir" (click)="deletarConta()" role="button">
   Excluir Conta
 </button>
