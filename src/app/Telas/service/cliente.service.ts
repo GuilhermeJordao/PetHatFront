@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Cliente } from '../model/cliente';
 import { StorageService } from './storage.service';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -21,9 +21,11 @@ export class ClienteService {
   }
 
   login(cliente: Cliente) {
-    return this.httpCliente.get(
-      `${this.API}/login/${cliente.email}/${cliente.senha}`
-    );
+    return this.httpCliente
+      .get(`${this.API}/login/${cliente.email}/${cliente.senha}`)
+      .pipe(
+        catchError((error) => this.handleError(error)) // then handle the error
+      );
   }
 
   buscarIdPorEmail() {
@@ -52,5 +54,23 @@ export class ClienteService {
   /** DELETE: delete the hero from the server */
   deletarPerifl(id: number): Observable<unknown> {
     return this.httpCliente.delete(`${this.API}/perfil/excluir/${id}`);
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `,
+        error.error
+      );
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(
+      () => new Error('Something bad happened; please try again later.')
+    );
   }
 }
