@@ -4,8 +4,10 @@
   href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
   rel="stylesheet"
 />
-<link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+/>
 
 <meta charset="utf-8" />
 
@@ -29,7 +31,7 @@
 <div class="split right">
   <div class="InfoCadastro">
     <div class="TextButtonSide">Já possui uma conta ?</div>
-    <button class="button-30" [routerLink]="['']" role="button">
+    <button class="button-30" [routerLink]="['/Login']" role="button">
       Fazer Login
     </button>
   </div>
@@ -49,7 +51,7 @@
           name="Nome"
           placeholder="Insira seu nome de Usuário"
           formControlName="nome"
-        /><br/>
+        /><br />
         <label class="CPFtxt" for="CPF">CPF:</label><br />
         <input
           mask="000.000.000-00"
@@ -70,21 +72,29 @@
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input
           class="Senha"
-          [type]="changetype1?'password':'text'"
+          [type]="changetype1 ? 'password' : 'text'"
           name="Senha"
           placeholder="Insira sua Senha"
           formControlName="senha"
         />
-        <span class="eyeicon1" (click)="viewpass1()"><i [ngClass]="visivel1?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
+        <span class="eyeicon1" (click)="viewpass1()"
+          ><i
+            [ngClass]="visivel1 ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
+          ></i
+        ></span>
         <label class="ConfirmarSenhatxt" for="Senha">Confirmar senha:</label
         ><br />
         <input
           class="Senha"
-          [type]="changetype2?'password':'text'"
+          [type]="changetype2 ? 'password' : 'text'"
           name="Senha"
           placeholder="Insira Novamente Sua Senha"
         />
-        <span class="eyeicon2" (click)="viewpass2()" ><i [ngClass]="visivel2?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
+        <span class="eyeicon2" (click)="viewpass2()"
+          ><i
+            [ngClass]="visivel2 ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
+          ></i
+        ></span>
         <button
           class="fazerlogin"
           (click)="onSubmit()"

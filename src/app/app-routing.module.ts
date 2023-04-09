@@ -7,19 +7,21 @@ import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.componen
 import { LoginVeterinarioComponent } from './Telas/Veterinario/login-veterinario/login-veterinario.component';
 import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veterinario/cadastro-veterinario.component';
 import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.component';
+import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterinario/tabela-crud-veterinario.component';
 
 const routes: Routes = [
-  {path: '', component:TelaInicialComponent},
-  {path: 'Login', component:LoginComponent},
-  {path: 'LoginADM', component:LoginADMComponent},
-  {path: 'LoginVeterinario', component:LoginVeterinarioComponent },
-  {path: 'cadastro', component:CadastroUsuComponent},
-  {path: 'cadastroVeterinario', component:CadastroVeterinarioComponent},
-  {path: 'Perfil', component:PerfilUsuComponent},
+  { path: '', component: TelaInicialComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'LoginADM', component: LoginADMComponent },
+  { path: 'LoginVeterinario', component: LoginVeterinarioComponent },
+  { path: 'cadastro', component: CadastroUsuComponent },
+  { path: 'cadastroVeterinario', component: CadastroVeterinarioComponent },
+  { path: 'Perfil', component: PerfilUsuComponent },
+  { path: 'TabelaCrud', component: TabelaCrudVeterinarioComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -22,6 +22,10 @@ import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.componen
 import { LoginVeterinarioComponent } from './Telas/Veterinario/login-veterinario/login-veterinario.component';
 import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veterinario/cadastro-veterinario.component';
 import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.component';
+import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterinario/tabela-crud-veterinario.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 //node_modules/ngx-toastr/toastr.css
 
 @NgModule({
@@ -35,6 +39,7 @@ import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.componen
     LoginVeterinarioComponent,
     CadastroVeterinarioComponent,
     LoginADMComponent,
+    TabelaCrudVeterinarioComponent,
   ],
   imports: [
     FormsModule,
@@ -49,6 +54,8 @@ import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.componen
     MatIconModule,
     MatFormFieldModule,
     MdbCarouselModule,
+    MatTableModule,
+    MatToolbarModule,
   ],
   providers: [StorageService],
   bootstrap: [AppComponent],
