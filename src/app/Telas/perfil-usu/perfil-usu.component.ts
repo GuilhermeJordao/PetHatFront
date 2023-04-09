@@ -89,6 +89,7 @@ export class PerfilUsuComponent implements OnInit {
     console.log(this.id);
     this.router.navigate([`/`]);
     this.clienteService.deletarPerifl(this.id).subscribe();
+    localStorage.clear();
   }
 
   sairConta() {

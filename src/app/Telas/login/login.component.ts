@@ -4,6 +4,7 @@ import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
 import { Cliente } from '../model/cliente';
 import { StorageService } from '../service/storage.service';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -40,30 +41,39 @@ export class LoginComponent implements OnInit {
       this.form.value.senha === null ||
       this.form.value.senha === ''
     ) {
-      this.erroMensagem = true;
-      setTimeout(() => {
-        this.erroMensagem = false;
-      }, 5000);
+      this.errado();
     } else {
-      this.clienteService.login(this.form.value).subscribe((dados) => {
-        console.log(dados);
-        console.log(this.form.valid);
+      this.clienteService.login(this.form.value).subscribe({
+        next: (dados) => {
+          console.log(dados);
+          console.log(this.form.valid);
 
-        if (dados === true) {
-          this.sucessoMensagem = true;
-          localStorage.setItem('email', this.form.value.email);
-          setTimeout(() => {
-            this.sucessoMensagem = false;
-            this.router.navigate([`/Perfil`]);
-          }, 2000);
-        }
-        if (dados === false) {
-          this.erroMensagem = true;
-          setTimeout(() => {
-            this.erroMensagem = false;
-          }, 5000);
-        }
+          if (dados === true) {
+            this.correto();
+          }
+          if (dados === false) {
+            this.errado();
+          }
+        },
+
+        error: (e) => this.errado(),
       });
     }
+  }
+
+  private correto() {
+    this.sucessoMensagem = true;
+    localStorage.setItem('email', this.form.value.email);
+    setTimeout(() => {
+      this.sucessoMensagem = false;
+      this.router.navigate([`/Perfil`]);
+    }, 2000);
+  }
+
+  private errado() {
+    this.erroMensagem = true;
+    setTimeout(() => {
+      this.erroMensagem = false;
+    }, 5000);
   }
 }
