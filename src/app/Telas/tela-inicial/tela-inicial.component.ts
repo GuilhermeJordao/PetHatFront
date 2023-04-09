@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./tela-inicial.component.css']
 })
 export class TelaInicialComponent {
+  
 
 }

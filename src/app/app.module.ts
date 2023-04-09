@@ -19,8 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StorageService } from './Telas/service/storage.service';
 import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
-import { CrudTableVeterinarioComponent } from './Telas/crud-table-veterinario/crud-table-veterinario.component';
-
 //node_modules/ngx-toastr/toastr.css
 
 @NgModule({
@@ -31,7 +29,6 @@ import { CrudTableVeterinarioComponent } from './Telas/crud-table-veterinario/cr
     PerfilUsuComponent,
     NavbarComponent,
     TelaInicialComponent,
-    CrudTableVeterinarioComponent,
   ],
   imports: [
     FormsModule,
