@@ -19,6 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StorageService } from './Telas/service/storage.service';
 import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
+import { LoginVeterinarioComponent } from './Telas/Veterinario/login-veterinario/login-veterinario.component';
+import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veterinario/cadastro-veterinario.component';
+import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.component';
 //node_modules/ngx-toastr/toastr.css
 
 @NgModule({
@@ -29,6 +32,9 @@ import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.componen
     PerfilUsuComponent,
     NavbarComponent,
     TelaInicialComponent,
+    LoginVeterinarioComponent,
+    CadastroVeterinarioComponent,
+    LoginADMComponent,
   ],
   imports: [
     FormsModule,

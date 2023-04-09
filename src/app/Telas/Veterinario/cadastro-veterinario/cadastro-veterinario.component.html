@@ -1,0 +1,99 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+  rel="stylesheet"
+/>
+
+<meta charset="utf-8" />
+<div>
+<header>
+  <img
+    class="Letreiro"
+    src="../../../assets/Images/PetHatLetreiro.png"
+    alt="PetHatLetreiro"
+  />
+  <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
+  <div class="TypeLogin">Veterinário</div>
+</header>
+</div>
+<div class="Screen">
+  <div class="centered">
+    <div class="titulolog">Cadastrar Veterinarios</div>
+    <div class="subtitulolog">
+      TODAS AS INFORMAÇÕES DEVEM SER <br />
+    PREENCHIDAS.
+    </div>
+    <div class="formLogin">
+      <form class="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          id="fname"
+          name="Nome"
+          placeholder="Digite Seu nome"
+          formControlName="Nome"
+        /><br />
+        <label class="Emailtxt" for="Email">Email Empresarial:</label><br />
+        <input
+          class="Email"
+          type="email"
+          id="fname"
+          name="Email"
+          placeholder="Example@Email.com"
+          formControlName="email"
+        /><br />
+        <label class="Senhatxt" for="Senha">Senha:</label><br />
+        <input
+          class="Senha"
+          type="password"
+          id="lname"
+          name="Senha"
+          placeholder="Insira sua Senha"
+          formControlName="senha"
+        /><br />
+        <label class="ConfSenhatxt" for="Senha">Confirmar Senha:</label><br />
+        <input
+          class="ConfSenha"
+          type="password"
+          id="lname"
+          name="ConfSenha"
+          placeholder="Insira sua Senha Novamente"
+          formControlName="senha"
+        /><br />
+        <label class="CRMVCEtxt" for="CRMVCE">CRMVCE:</label><br />
+        <input
+          class="CRMVCE"
+          type="text"
+          id="fname"
+          name="CRMVCE"
+          placeholder="CRMVCE"
+          formControlName="CRMVCE"
+        /><br />
+        <label class="telefonetxt" for="telefone">Telefone:</label><br />
+        <input
+          class="telefone"
+          type="tel"
+          id="fname"
+          name="telefone"
+          placeholder="11-4002-8922"
+          formControlName="telefone"
+        /><br />
+        <label class="Datatxt" for="Data">Data Portaria Habilitação:</label><br />
+        <input
+          class="Data"
+          type="date"
+          id="fname"
+          name="Data"
+          formControlName="Data"
+        /><br />
+        <button class="fazerlogin" type="submit" value="Realizar Login">
+          Cadastrar Veterinário
+        </button>
+      </form>
+      <div class="EsqSenha"></div>
+    </div>
+  </div>
+</div>
+
