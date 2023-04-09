@@ -1,0 +1,31 @@
+.logo {
+  display: inline-flex;
+  display: block;
+  margin-left: 1%;
+}
+.Letreiro {
+  width: 30%;
+  margin-top: 5%;
+}
+
+.cachorro {
+  width: 15%;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, #4faaa5, #81eee8);
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 150%;
+  margin-right: 1%;
+  margin-top: 1%;
+}
