@@ -1,0 +1,33 @@
+/*Navbar*/
+.Logo {
+    height: 60%;
+  }
+  
+  .Letreiro {
+    height: 30%;
+    margin-left: 1%;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  
+  header * {
+    display: inline;
+  }
+  
+  header li {
+    font-family: "Inter", sans-serif;
+    margin: 20px;
+  }
+  
+  .TxtNav {
+    color: #288D7B;
+    text-decoration: none;
+  }

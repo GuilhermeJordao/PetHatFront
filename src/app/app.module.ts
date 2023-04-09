@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
 import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.component';
 
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
@@ -17,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { StorageService } from './Telas/service/storage.service';
+import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
+import { CrudTableVeterinarioComponent } from './Telas/crud-table-veterinario/crud-table-veterinario.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -27,6 +30,8 @@ import { StorageService } from './Telas/service/storage.service';
     CadastroUsuComponent,
     PerfilUsuComponent,
     NavbarComponent,
+    TelaInicialComponent,
+    CrudTableVeterinarioComponent,
   ],
   imports: [
     FormsModule,
@@ -40,6 +45,7 @@ import { StorageService } from './Telas/service/storage.service';
     FontAwesomeModule,
     MatIconModule,
     MatFormFieldModule,
+    MdbCarouselModule,
   ],
   providers: [StorageService],
   bootstrap: [AppComponent],
