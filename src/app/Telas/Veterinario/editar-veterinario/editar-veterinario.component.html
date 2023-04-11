@@ -1,0 +1,101 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+  rel="stylesheet"
+/>
+
+<meta charset="utf-8" />
+<div>
+  <header>
+    <img
+      class="Letreiro"
+      src="../../../assets/Images/PetHatLetreiro.png"
+      alt="PetHatLetreiro"
+    />
+    <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
+    <div class="TypeLogin">Administrador</div>
+  </header>
+</div>
+
+<div class="Screen">
+  <div class="centered">
+    <div class="titulolog">Editar Veterinarios</div>
+    <div class="PerfilForm">
+      <div class="FormSide">
+        <form class="form" [formGroup]="form">
+          <label class="Nometxt" for="Nome">Nome:</label><br />
+          <input
+            class="Nome"
+            type="text"
+            name="Nome"
+            placeholder="Insira seu nome de Usuário"
+            value="{{ vet.nome }}"
+            formControlName="nome"
+          /><br />
+          <label class="Emailtxt" for="Email">Email:</label><br />
+          <input
+            class="Email"
+            type="text"
+            name="Email"
+            placeholder="Example@Email.com"
+            value="{{ vet.email }}"
+            formControlName="email"
+          /><br />
+          <label class="Senhatxt" for="Senha">Senha:</label><br />
+          <input
+            class="Senha"
+            type="password"
+            name="Senha"
+            placeholder="Insira sua Senha"
+            value="{{ vet.senha }}"
+            formControlName="senha"
+          />
+          <input
+            class="Senha"
+            type="password"
+            name="Senha"
+            placeholder="Repita sua Senha"
+            value="{{ vet.senha }}"
+          /><br /><br />
+          <label class="CRMVCEtxt" for="CRMVCE">CRMVCE:</label><br />
+          <input
+            class="CRMVCE"
+            type="text"
+            id="fcrmvce"
+            name="CRMVCE"
+            placeholder="CRMVCE"
+            value="{{ vet.crmvce }}"
+          /><br />
+          <label class="telefonetxt" for="telefone">Telefone:</label><br />
+          <input
+            class="telefone"
+            type="tel"
+            id="ftelefone"
+            name="telefone"
+            placeholder="11-4002-8922"
+            value="{{ vet.telefone }}"
+            formControlName="telefone"
+          /><br />
+          <label class="Datatxt" for="Data">Data Portaria Habilitação:</label
+          ><br />
+          <input
+            class="Data"
+            type="text"
+            id="fportaria"
+            name="Data"
+            value="{{ vet.dataPortariaHabilitacao }}"
+          /><br />
+          <button
+            class="fazerlogin"
+            type="submit"
+            (click)="onSubmit()"
+            value="Realizar Cadastro"
+          >
+            Fazer Cadastro
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,10 +21,12 @@ import { StorageService } from './Telas/service/storage.service';
 import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
 import { LoginVeterinarioComponent } from './Telas/Veterinario/login-veterinario/login-veterinario.component';
 import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veterinario/cadastro-veterinario.component';
-import { LoginADMComponent } from './Telas/TelasADM/login-adm/login-adm.component';
+import { LoginADMComponent } from './Telas-Adm/login-adm/login-adm.component';
 import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterinario/tabela-crud-veterinario.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinario/editar-veterinario.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -40,6 +42,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     CadastroVeterinarioComponent,
     LoginADMComponent,
     TabelaCrudVeterinarioComponent,
+    EditarVeterinarioComponent,
   ],
   imports: [
     FormsModule,
@@ -56,6 +59,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MdbCarouselModule,
     MatTableModule,
     MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [StorageService],
   bootstrap: [AppComponent],

@@ -1,6 +1,9 @@
-import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import { Veterinario } from '../model/veterinario';
+import { Location } from '@angular/common';
+import { Observable, switchMap } from 'rxjs';
+import { AdministradorService } from '../service/administrador.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabela-crud-veterinario',
@@ -8,25 +11,37 @@ import { Veterinario } from '../model/veterinario';
   styleUrls: ['./tabela-crud-veterinario.component.css'],
 })
 export class TabelaCrudVeterinarioComponent {
-  veterinario: Veterinario[] = [
-    {
-      _id: 1,
-      nome: 'Jose',
-      email: 'teste@teste',
-      senha: '123',
-      crmvce: '09801 V',
-      telefone: '089080',
-      dataPortariaHabilitacao: '02/04/2020',
-    },
-  ];
+  veterinario: Observable<Veterinario[]>;
+  id: number = 0;
 
   displayedColumns = [
     'nome',
     'email',
-    'senha',
     'crmvce',
     'telefone',
     'dataPortariaHabilitacao',
+    'actions',
   ];
-  constructor() {}
+
+  constructor(
+    private admService: AdministradorService,
+    private localPagina: Location,
+    private router: Router
+  ) {
+    this.veterinario = this.admService.listar();
+  }
+
+  editar(vet: Veterinario) {
+    this.router.navigate([`/Editar/${vet._id}`]);
+  }
+
+  deletar(vet: Veterinario) {
+    window.location.reload();
+    this.admService.deletarPerfil(vet._id).subscribe();
+  }
+
+  sairConta() {
+    this.localPagina.back();
+    localStorage.clear();
+  }
 }

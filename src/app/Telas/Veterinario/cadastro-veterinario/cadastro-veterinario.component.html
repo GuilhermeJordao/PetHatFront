@@ -7,25 +7,25 @@
 
 <meta charset="utf-8" />
 <div>
-<header>
-  <img
-    class="Letreiro"
-    src="../../../assets/Images/PetHatLetreiro.png"
-    alt="PetHatLetreiro"
-  />
-  <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
-  <div class="TypeLogin">Veterinário</div>
-</header>
+  <header>
+    <img
+      class="Letreiro"
+      src="../../../assets/Images/PetHatLetreiro.png"
+      alt="PetHatLetreiro"
+    />
+    <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
+    <div class="TypeLogin">Administrador</div>
+  </header>
 </div>
 <div class="Screen">
   <div class="centered">
     <div class="titulolog">Cadastrar Veterinarios</div>
     <div class="subtitulolog">
       TODAS AS INFORMAÇÕES DEVEM SER <br />
-    PREENCHIDAS.
+      PREENCHIDAS.
     </div>
     <div class="formLogin">
-      <form class="form">
+      <form class="form" [formGroup]="form">
         <label class="Nometxt" for="Nome">Nome:</label><br />
         <input
           class="Nome"
@@ -33,13 +33,13 @@
           id="fname"
           name="Nome"
           placeholder="Digite Seu nome"
-          formControlName="Nome"
+          formControlName="nome"
         /><br />
         <label class="Emailtxt" for="Email">Email Empresarial:</label><br />
         <input
           class="Email"
           type="email"
-          id="fname"
+          id="femail"
           name="Email"
           placeholder="Example@Email.com"
           formControlName="email"
@@ -48,7 +48,7 @@
         <input
           class="Senha"
           type="password"
-          id="lname"
+          id="lsenha"
           name="Senha"
           placeholder="Insira sua Senha"
           formControlName="senha"
@@ -57,43 +57,52 @@
         <input
           class="ConfSenha"
           type="password"
-          id="lname"
           name="ConfSenha"
           placeholder="Insira sua Senha Novamente"
-          formControlName="senha"
         /><br />
         <label class="CRMVCEtxt" for="CRMVCE">CRMVCE:</label><br />
         <input
           class="CRMVCE"
           type="text"
-          id="fname"
+          id="fcrmvce"
           name="CRMVCE"
           placeholder="CRMVCE"
-          formControlName="CRMVCE"
+          formControlName="crmvce"
         /><br />
         <label class="telefonetxt" for="telefone">Telefone:</label><br />
         <input
           class="telefone"
           type="tel"
-          id="fname"
+          id="ftelefone"
           name="telefone"
           placeholder="11-4002-8922"
           formControlName="telefone"
         /><br />
-        <label class="Datatxt" for="Data">Data Portaria Habilitação:</label><br />
+        <label class="Datatxt" for="Data">Data Portaria Habilitação:</label
+        ><br />
         <input
           class="Data"
-          type="date"
-          id="fname"
+          type="text"
+          id="fportaria"
           name="Data"
-          formControlName="Data"
+          formControlName="dataPortariaHabilitacao"
         /><br />
-        <button class="fazerlogin" type="submit" value="Realizar Login">
-          Cadastrar Veterinário
+        <button
+          class="fazerlogin"
+          (click)="onSubmit()"
+          type="submit"
+          value="Realizar Cadastro"
+        >
+          Fazer Cadastro
         </button>
       </form>
       <div class="EsqSenha"></div>
     </div>
+    <div class="alert alert-danger" *ngIf="erroMensagem">
+      Erro ao fazer cadastro
+    </div>
+    <div class="alert alert-success" *ngIf="sucessoMensagem">
+      Cadastro feito com sucesso
+    </div>
   </div>
 </div>
-
