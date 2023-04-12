@@ -14,6 +14,13 @@
     alt="PetHatLetreiro"
   />
   <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
+  <ul>
+    <div class="Navlicolor">
+      <li>
+        <a class="TxtNav" href="http://localhost:4200/">Voltar</a>
+      </li>
+    </div>
+  </ul>
   <div class="TypeLogin">Veterinário</div>
 </header>
 <div class="Screen">
@@ -24,7 +31,7 @@
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-      <form class="form">
+      <form class="form" [formGroup]="form">
         <label class="Emailtxt" for="Email">Email Empresarial:</label><br />
         <input
           class="Email"
@@ -43,8 +50,13 @@
           placeholder="Insira sua Senha"
           formControlName="senha"
         /><br /><br />
-        <button class="fazerlogin" type="submit" value="Realizar Login">
-          Realizar Login
+        <button
+          class="fazerlogin"
+          type="submit"
+          (click)="onSubmit()"
+          value="Realizar Cadastro"
+        >
+          Fazer Login
         </button>
       </form>
       <div class="EsqSenha">Esqueci minha senha</div>

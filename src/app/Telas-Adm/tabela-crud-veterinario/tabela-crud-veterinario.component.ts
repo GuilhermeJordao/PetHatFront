@@ -41,7 +41,7 @@ export class TabelaCrudVeterinarioComponent {
   }
 
   sairConta() {
-    this.localPagina.back();
+    this.router.navigate([`/LoginADM`]);
     localStorage.clear();
   }
 }

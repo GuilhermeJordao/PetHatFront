@@ -36,6 +36,20 @@ header ul {
   margin-top: 1%;
 }
 
+.Navlicolor:hover {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.Navlicolor:hover .TxtNav {
+  color: #288d7b;
+}
+
+.TxtNav {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .Screen {
   margin-left: 10%;
   margin-top: 10%;

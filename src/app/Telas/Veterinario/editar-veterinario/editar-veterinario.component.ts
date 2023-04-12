@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route } from '@angular/router';
 import { Veterinario } from 'src/app/Telas-Adm/model/veterinario';
 import { AdministradorService } from 'src/app/Telas-Adm/service/administrador.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-veterinario',
@@ -22,6 +23,7 @@ export class EditarVeterinarioComponent implements OnInit {
   veterinario: Veterinario | undefined;
   form: FormGroup;
   constructor(
+    private localPagina: Location,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private adm: AdministradorService
@@ -54,7 +56,6 @@ export class EditarVeterinarioComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form.value);
-
     this.adm.buscarPorId(this.id).subscribe((data) => {
       if (this.form.value.nome === null) {
         this.form.value.nome = (data as any).nome;
@@ -78,8 +79,8 @@ export class EditarVeterinarioComponent implements OnInit {
         console.log(data);
         localStorage.setItem('email', data.email);
         console.log('Usuário atualizado com sucesso!');
-        window.location.reload();
       });
     });
+    this.localPagina.back();
   }
 }

@@ -9,6 +9,7 @@ import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veter
 import { LoginADMComponent } from './Telas-Adm/login-adm/login-adm.component';
 import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterinario/tabela-crud-veterinario.component';
 import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinario/editar-veterinario.component';
+import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinario/perfil-veterinario.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'Perfil', component: PerfilUsuComponent },
   { path: 'TabelaCrud', component: TabelaCrudVeterinarioComponent },
   { path: 'Editar/:id', component: EditarVeterinarioComponent },
+  { path: 'PerfilVeterinario', component: PerfilVeterinarioComponent },
 ];
 
 @NgModule({

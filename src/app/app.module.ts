@@ -27,6 +27,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinario/editar-veterinario.component';
+import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinario/perfil-veterinario.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -43,6 +44,7 @@ import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinar
     LoginADMComponent,
     TabelaCrudVeterinarioComponent,
     EditarVeterinarioComponent,
+    PerfilVeterinarioComponent,
   ],
   imports: [
     FormsModule,
