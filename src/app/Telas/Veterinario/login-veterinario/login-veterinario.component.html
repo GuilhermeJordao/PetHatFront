@@ -60,6 +60,12 @@
         </button>
       </form>
       <div class="EsqSenha">Esqueci minha senha</div>
+      <div class="alert alert-danger" *ngIf="erroMensagem">
+        Login ou/e senha inválidos
+      </div>
+      <div class="alert alert-success" *ngIf="sucessoMensagem">
+        Login feito com sucesso
+      </div>
     </div>
   </div>
 </div>
