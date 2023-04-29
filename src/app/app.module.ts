@@ -32,6 +32,7 @@ import { InicialUsuComponent } from './Telas/inicial-usu/inicial-usu.component';
 import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.component';
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
 import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
+import { MeusPetsComponent } from './Telas/Pets/meus-pets/meus-pets.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -53,6 +54,7 @@ import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar
     CadastroPetComponent,
     PerfilPetComponent,
     VisualizarPetsComponent,
+    MeusPetsComponent,
   ],
   imports: [
     FormsModule,

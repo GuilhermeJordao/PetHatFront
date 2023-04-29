@@ -1,0 +1,129 @@
+.Background{
+    background-repeat: no-repeat;
+    background: fixed;
+    background-image: url("https://img.freepik.com/fotos-gratis/foto-vertical-de-um-caminho-estreito-em-uma-floresta-com-varias-arvores-altas-e-verdes_181624-20997.jpg?w=2000");
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+
+}
+.Background1{
+ border-top-right-radius: 90%
+}
+.ImagemAgendar{
+    width: 50%;
+}
+.ImagemCirculo1 { 
+    margin-top: 5%;
+    margin-left: 36%;
+    width: 50%; 
+    clip-path: circle();
+    height: auto; 
+    border-width: 5px;
+}
+.ImagemCirculo2 { 
+    margin-top: 1%;
+    margin-left: 60%;
+    width: 40%; 
+    clip-path: circle();
+    height: auto; 
+    border-width: 5px;
+}
+.ImagemCirculo3 { 
+    margin-top: 1%;
+    margin-left: 40%;
+    width: 30%; 
+    clip-path: circle();
+    height: auto; 
+    border-width: 5px;
+    margin-bottom: 3%;
+}
+  .ImagemCirculo3 { 
+    margin-top: 1%;
+    margin-left: 40%;
+    width: 30%; 
+    clip-path: circle();
+    height: auto; 
+    border-width: 5px;
+}
+
+.PerfilForm {
+    text-align: center;
+    background-color: white;
+    margin-top: 24%;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 10%;
+    box-shadow: inset 0 0 3px #7e7e7e;
+    width: 40%;
+    height: 80%;
+  }
+
+  .BtnForm {
+    margin-top: 3%;
+    margin-bottom: 8%;
+    width: 85%;
+    background-color: #4faaa5;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 80%;
+    font-weight: 500;
+    height: 10%;
+    line-height: 180%;
+    text-align: center;
+    touch-action: manipulation;
+  }
+
+  .TituloForm01{
+    font-family: "Inter", sans-serif;
+    color: #3c3c3c;
+    margin-top: 4%;
+    font-size: 150%;
+  }
+
+  .TituloForm02{
+    font-family: "Inter", sans-serif;
+    color: #3c3c3c;
+    margin-top: 4%;
+    font-size: 80%;
+  }
+
+  .TituloPage{
+    margin-left: 4%;
+    font-family: "Inter", sans-serif;
+    color: #3c3c3c;
+    margin-top: 4%;
+    font-size: 150%;
+  }
+
+  .Ferramentas {
+    display: flex;
+  }
+
+  .PerfilForm2 {
+    text-align: center;
+    background-color: white;
+    margin-top: 3%;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 7%;
+    box-shadow: inset 0 0 3px #7e7e7e;
+    width: 40%;
+    height: 80%;
+  }
+
+  .PerfilForm3 {
+    text-align: center;
+    background-color: white;
+    margin-top: 3%;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 50%;
+    box-shadow: inset 0 0 3px #7e7e7e;
+    width: 40%;
+    height: 80%;
+  }

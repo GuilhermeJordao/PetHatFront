@@ -73,6 +73,7 @@
             type="tel"
             id="ftelefone"
             name="telefone"
+            mask="00-0000-0000"
             placeholder="11-4002-8922"
             value="{{ vet.telefone }}"
             formControlName="telefone"
@@ -99,8 +100,7 @@
             class="cancelarLogin"
             type="submit"
             [routerLink]="['/TabelaCrud']"
-            value="Realizar Cadastro"
-          >
+            value="Realizar Cadastro">
             Cancelar
           </button>
         </form>

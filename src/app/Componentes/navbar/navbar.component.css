@@ -19,7 +19,6 @@ border-radius: 15px;
  }
 header {
   background-image: linear-gradient(to bottom right, #4faaa5, #81eee8);
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;

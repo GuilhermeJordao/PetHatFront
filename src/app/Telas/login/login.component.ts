@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('email', this.form.value.email);
     setTimeout(() => {
       this.sucessoMensagem = false;
-      this.router.navigate([`/Perfil`]);
+      this.router.navigate([`/InicialUsu`]);
     }, 2000);
   }
 

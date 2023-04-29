@@ -1,1 +1,107 @@
-<p>cadastro-pet works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+  rel="stylesheet"
+/>
+
+<meta charset="utf-8" />
+
+<header>
+  <img
+    class="Letreiro"
+    src="../../../assets/Images/PetHatLetreiro.png"
+    alt="PetHatLetreiro"
+  />
+  <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
+  <ul>
+    <div class="Navlicolor">
+      <li>
+        <a class="TxtNav" href="/InicialUsu">Voltar</a>
+      </li>
+    </div>
+  </ul>
+</header>
+<div class="Screen">
+  <div class="centered">
+    <div class="titulolog">Olá ! Aqui voce Pode Cadastrar o Seu Pet</div>
+    <div class="subtitulolog">
+      CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
+      É A NOSSA PRIORIDADE.
+    </div>
+    <div class="formLogin">
+      <form class="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          name="Nome"
+          placeholder="Cachorro Augusto"
+          formControlName="Nome"
+        /><br />
+        <label class="Especietxt" for="Especie:">Especie:</label><br />
+        <input
+          class="Especie"
+          type="text"
+          name="Especie"
+          placeholder="Ex: Cachorro,Gato"
+          formControlName="Especie"
+        /><br />
+        <label class="Sexotxt" for="Sexo">Sexo:</label><br />
+        <select name="sexo" id="sexo-select" class="Sexo">
+            <option value=""></option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <label class="Raçatxt" for="Raça">Raça:</label><br />
+        <input
+          class="Raça"
+          type="text"
+          name="Raça"
+          placeholder="Ex:Vira-lata"
+          formControlName="Raça"
+        /><br />
+        <label class="Idadetxt" for="Idade">Idade:</label><br />
+        <input
+          class="Idade"
+          type="text"
+          name="Idade"
+          placeholder="2 anos"
+          formControlName="Idade"
+        /><br />
+        <label class="Nometuttxt" for="Nometut">Nome do Tutor:</label><br />
+        <input
+          class="Nometut"
+          type="text"
+          name="Nometut"
+          placeholder="Claudio"
+          formControlName="Nometut"
+        /><br />
+        <label class="CPFtuttxt" for="CPFtut">CPF do Tutor:</label><br />
+        <input
+          class="CPFtut"
+          type="text"
+          name="CPFtut"
+          mask="000.000.000.00"
+          placeholder="111.111.111.00"
+          formControlName="CPFtut"
+        /><br />
+        <label class="Teltuttxt" for="Teltut">Telefone do Tutor:</label><br />
+        <input
+          class="Teltut"
+          type="text"
+          name="Teltut"
+          mask="00 0000-0000"
+          placeholder="11 4002-8922"
+          formControlName="Teltut"
+        /><br />
+        <input
+          class="BtnForm"
+          type="submit"
+          value="Cadastrar Pet"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
