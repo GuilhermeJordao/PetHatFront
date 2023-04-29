@@ -28,6 +28,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinario/editar-veterinario.component';
 import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinario/perfil-veterinario.component';
+import { InicialUsuComponent } from './Telas/inicial-usu/inicial-usu.component';
+import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.component';
+import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
+import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -45,6 +49,10 @@ import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinar
     TabelaCrudVeterinarioComponent,
     EditarVeterinarioComponent,
     PerfilVeterinarioComponent,
+    InicialUsuComponent,
+    CadastroPetComponent,
+    PerfilPetComponent,
+    VisualizarPetsComponent,
   ],
   imports: [
     FormsModule,
