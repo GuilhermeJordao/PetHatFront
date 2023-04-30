@@ -13,6 +13,7 @@ import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinar
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
 import { InicialUsuComponent } from './Telas/inicial-usu/inicial-usu.component';
 import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.component';
+import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'PerfilPet', component: PerfilPetComponent },
   { path: 'CadastroPet', component: CadastroPetComponent },
   { path: 'InicialUsu', component: InicialUsuComponent },
+  { path: 'VisualisarPets', component: VisualizarPetsComponent },
 ];
 
 @NgModule({

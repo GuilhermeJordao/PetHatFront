@@ -33,6 +33,8 @@ import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.com
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
 import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
 import { MeusPetsComponent } from './Telas/Pets/meus-pets/meus-pets.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -72,6 +74,7 @@ import { MeusPetsComponent } from './Telas/Pets/meus-pets/meus-pets.component';
     MatTableModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
   ],
   providers: [StorageService],
   bootstrap: [AppComponent],
