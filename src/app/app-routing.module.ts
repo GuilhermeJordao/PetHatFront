@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'cadastroVeterinario', component: CadastroVeterinarioComponent },
   { path: 'Perfil', component: PerfilUsuComponent },
   { path: 'TabelaCrud', component: TabelaCrudVeterinarioComponent },
-  { path: 'EditarVeterinario', component: EditarVeterinarioComponent },
+  { path: 'EditarVeterinario/:id', component: EditarVeterinarioComponent },
   { path: 'PerfilVeterinario', component: PerfilVeterinarioComponent },
   { path: 'PerfilPet', component: PerfilPetComponent },
   { path: 'CadastroPet', component: CadastroPetComponent },
