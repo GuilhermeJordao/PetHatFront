@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/cliente';
-import { Location } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StorageService } from '../service/storage.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,9 +22,7 @@ export class PerfilUsuComponent implements OnInit {
 
   constructor(
     private clienteService: ClienteService,
-    private localStorage: StorageService,
     private formBuilder: FormBuilder,
-    private localPagina: Location,
     private router: Router
   ) {
     this.form = this.formBuilder.group({
@@ -93,7 +89,7 @@ export class PerfilUsuComponent implements OnInit {
   }
 
   sairConta() {
-    this.localPagina.back();
+    this.router.navigate(['/']);
     localStorage.clear();
   }
 }

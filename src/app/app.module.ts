@@ -17,17 +17,16 @@ import { NgxMaskModule } from 'ngx-mask';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { StorageService } from './Telas/service/storage.service';
 import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
-import { LoginVeterinarioComponent } from './Telas/Veterinario/login-veterinario/login-veterinario.component';
-import { CadastroVeterinarioComponent } from './Telas/Veterinario/cadastro-veterinario/cadastro-veterinario.component';
+import { LoginVeterinarioComponent } from './Telas-Veterinario/login-veterinario/login-veterinario.component';
+import { CadastroVeterinarioComponent } from './Telas-Veterinario/cadastro-veterinario/cadastro-veterinario.component';
 import { LoginADMComponent } from './Telas-Adm/login-adm/login-adm.component';
 import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterinario/tabela-crud-veterinario.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { EditarVeterinarioComponent } from './Telas/Veterinario/editar-veterinario/editar-veterinario.component';
-import { PerfilVeterinarioComponent } from './Telas/Veterinario/perfil-veterinario/perfil-veterinario.component';
+import { EditarVeterinarioComponent } from './Telas-Veterinario/editar-veterinario/editar-veterinario.component';
+import { PerfilVeterinarioComponent } from './Telas-Veterinario/perfil-veterinario/perfil-veterinario.component';
 import { InicialUsuComponent } from './Telas/inicial-usu/inicial-usu.component';
 import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.component';
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
@@ -76,7 +75,6 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatCardModule,
   ],
-  providers: [StorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

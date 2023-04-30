@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Veterinario } from 'src/app/Telas-Adm/model/veterinario';
-import { StorageService } from '../../service/storage.service';
 import { VeterinarioService } from '../service/veterinario.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class LoginVeterinarioComponent {
   form: FormGroup;
   dados: any;
   veterinario: Veterinario | undefined;
-  storage: StorageService | undefined;
 
   constructor(
     private vet: VeterinarioService,

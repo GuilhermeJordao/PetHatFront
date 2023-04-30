@@ -2,7 +2,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { Veterinario } from 'src/app/Telas-Adm/model/veterinario';
-import { StorageService } from '../../service/storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +10,7 @@ export class VeterinarioService {
   private readonly API = 'api/veterinario';
   termo: string = '';
 
-  constructor(
-    private httpCliente: HttpClient,
-    private storageService: StorageService
-  ) {}
+  constructor(private httpCliente: HttpClient) {}
 
   login(veterinario: Veterinario) {
     return this.httpCliente

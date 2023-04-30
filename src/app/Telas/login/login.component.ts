@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ClienteService } from '../service/cliente.service';
 import { Router } from '@angular/router';
 import { Cliente } from '../model/cliente';
-import { StorageService } from '../service/storage.service';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +15,6 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   dados: any;
   cliente: Cliente | undefined;
-  storage: StorageService | undefined;
 
   constructor(
     private clienteService: ClienteService,
