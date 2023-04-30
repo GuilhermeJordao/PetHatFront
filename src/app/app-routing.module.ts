@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'TabelaCrud', component: TabelaCrudVeterinarioComponent },
   { path: 'EditarVeterinario/:id', component: EditarVeterinarioComponent },
   { path: 'PerfilVeterinario', component: PerfilVeterinarioComponent },
-  { path: 'PerfilPet', component: PerfilPetComponent },
+  { path: 'PerfilPet/:id', component: PerfilPetComponent },
   { path: 'CadastroPet', component: CadastroPetComponent },
   { path: 'InicialUsu', component: InicialUsuComponent },
   { path: 'VisualisarPets', component: VisualizarPetsComponent },
