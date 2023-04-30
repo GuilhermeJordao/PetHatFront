@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AdministradorService } from 'src/app/Telas-Adm/service/administrador.service';
 import { Location } from '@angular/common';
-import { Veterinario } from 'src/app/Telas-Adm/model/veterinario';
-import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-veterinario',
