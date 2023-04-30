@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, first, Observable, throwError } from 'rxjs';
-import { StorageService } from 'src/app/Telas/service/storage.service';
 import { Administrador } from '../model/administrador';
 import { Veterinario } from '../model/veterinario';
 
@@ -12,10 +11,7 @@ export class AdministradorService {
   private readonly API = 'api/adm';
   termo: string = '';
 
-  constructor(
-    private httpCliente: HttpClient,
-    private storageService: StorageService
-  ) {}
+  constructor(private httpCliente: HttpClient) {}
 
   login(adm: Administrador) {
     return this.httpCliente

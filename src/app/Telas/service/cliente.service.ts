@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Cliente } from '../model/cliente';
-import { StorageService } from './storage.service';
 import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -11,10 +10,7 @@ export class ClienteService {
   private readonly API = 'api/cliente';
   termo: string = '';
 
-  constructor(
-    private httpCliente: HttpClient,
-    private storageService: StorageService
-  ) {}
+  constructor(private httpCliente: HttpClient) {}
 
   save(cliente: Cliente) {
     return this.httpCliente.post<Cliente>(this.API, cliente);

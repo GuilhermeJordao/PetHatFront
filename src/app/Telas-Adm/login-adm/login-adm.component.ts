@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AdministradorService } from 'src/app/Telas-Adm/service/administrador.service';
-import { StorageService } from 'src/app/Telas/service/storage.service';
 import { Router } from '@angular/router';
 import { Administrador } from '../model/administrador';
 
@@ -16,7 +15,6 @@ export class LoginADMComponent {
   form: FormGroup;
   dados: any;
   adm: Administrador | undefined;
-  storage: StorageService | undefined;
 
   constructor(
     private admService: AdministradorService,

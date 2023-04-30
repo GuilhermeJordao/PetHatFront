@@ -17,7 +17,6 @@ import { NgxMaskModule } from 'ngx-mask';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { StorageService } from './Telas/service/storage.service';
 import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
 import { LoginVeterinarioComponent } from './Telas-Veterinario/login-veterinario/login-veterinario.component';
 import { CadastroVeterinarioComponent } from './Telas-Veterinario/cadastro-veterinario/cadastro-veterinario.component';
@@ -73,7 +72,6 @@ import { MeusPetsComponent } from './Telas/Pets/meus-pets/meus-pets.component';
     MatToolbarModule,
     MatButtonModule,
   ],
-  providers: [StorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
