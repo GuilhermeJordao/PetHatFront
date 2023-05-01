@@ -18,8 +18,8 @@ export class PetService {
     );
   }
 
-  listar() {
-    return this.httpCliente.get<Pet[]>(`${this.API}`).pipe(first());
+  listar(email: string) {
+    return this.httpCliente.get<Pet[]>(`${this.API}/${email}`).pipe(first());
   }
 
   buscarPorId(id: number) {

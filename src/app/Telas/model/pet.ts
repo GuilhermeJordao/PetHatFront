@@ -1,3 +1,5 @@
+import { Cliente } from './cliente';
+
 export interface Pet {
   _id: number;
   nome: string;
@@ -5,4 +7,5 @@ export interface Pet {
   sexo: string;
   raca: string;
   idade: number;
+  cliente: Cliente;
 }

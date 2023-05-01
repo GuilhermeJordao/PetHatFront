@@ -18,7 +18,6 @@ export class PerfilPetComponent implements OnInit {
     idade: [null],
   };
   private id: number = 0;
-  id_cliente: any = 0;
   nome: string | undefined;
   form: FormGroup;
   erroMensagem = false;
@@ -28,7 +27,6 @@ export class PerfilPetComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private petServico: PetService,
-    private clienteService: ClienteService,
     private formBuilder: FormBuilder
   ) {
     this.form = this.formBuilder.group({
@@ -45,6 +43,8 @@ export class PerfilPetComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.id = Number(params['id']);
       this.petServico.buscarPorId(this.id).subscribe((dados) => {
+        console.log(dados.cliente.nome);
+        this.nome = (dados as any).cliente.nome;
         this.pet = {
           nome: (dados as any).nome,
           especie: (dados as any).especie,
@@ -53,17 +53,6 @@ export class PerfilPetComponent implements OnInit {
           idade: (dados as any).idade,
         };
       });
-      console.log(this.id);
-    });
-
-    this.clienteService.buscarIdPorEmail().subscribe((dados) => {
-      this.id_cliente = dados;
-      this.clienteService
-        .visualizarPerfil(this.id_cliente)
-        .subscribe((data) => {
-          this.nome = (data as any).nome;
-          console.log(this.nome);
-        });
     });
   }
 

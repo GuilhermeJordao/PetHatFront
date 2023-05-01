@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Pet } from '../../model/pet';
 import { PetService } from '../../service/pet.service';
 
@@ -11,9 +10,10 @@ import { PetService } from '../../service/pet.service';
 })
 export class VisualizarPetsComponent {
   pets: Pet[] | undefined;
+  email: any = localStorage.getItem('email');
 
   constructor(private petService: PetService, private router: Router) {
-    this.petService.listar().subscribe((data) => {
+    this.petService.listar(this.email).subscribe((data) => {
       this.pets = data;
     });
   }
