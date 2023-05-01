@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./perfil-usu.component.css'],
 })
 export class PerfilUsuComponent implements OnInit {
+  SelecionarImagem = false;
+  EnviarImagem =  false;
   perfil = {
     nome: [null],
     cpf: [null],
@@ -32,7 +34,7 @@ export class PerfilUsuComponent implements OnInit {
       senha: [null],
     });
   }
-
+  
   ngOnInit() {
     this.clienteService.buscarIdPorEmail().subscribe((dados) => {
       this.id = dados;
@@ -92,4 +94,8 @@ export class PerfilUsuComponent implements OnInit {
     this.router.navigate(['/']);
     localStorage.clear();
   }
+  trocarImagem(){
+    this.SelecionarImagem = true;
+  }
+
 }

@@ -46,9 +46,6 @@
   margin-bottom: 3%;
 }
 
-.ImagePets {
-}
-
 .Pet1 {
   width: 25%;
   margin-left: 3%;
@@ -197,4 +194,29 @@
   position: relative;
   text-align: center;
   vertical-align: baseline;
+}
+
+.labelchange {
+  margin-top: 9%;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #00beab;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  height: 35px;
+  width: 35px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
 }
