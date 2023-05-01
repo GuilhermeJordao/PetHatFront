@@ -4,20 +4,27 @@
   href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
   rel="stylesheet"
 />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+/>
+
 <app-navbar></app-navbar>
 <div class="BodyPerfil">
   <div class="PerfilPhotoDiv">
-   <!--- <img
+    <!--- <img
       class="PerfilImg"
       src="https://i.imgur.com/PL8qNu6.png"
       alt="PhotoPerfil"
     />
    -->
-   <img
+    <img
       class="PerfilImg"
       src="../../../assets/Images/Dogprofile.png"
       alt="PhotoPerfil"
     />
+   <label  class ="labelchange" for="upload-photo"><div class="labeldiv"><i class="fa-solid fa-pen " style="color: #ffffff;"></i></div></label>
+     <input type="file" name="photo" id="upload-photo" />
     <div class="NomePerfil">
       <p>{{ perfil.nome }}</p>
     </div>
