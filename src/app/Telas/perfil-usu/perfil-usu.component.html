@@ -18,7 +18,7 @@
       ><div class="labeldiv">
         <i class="fa-solid fa-pen" style="color: #ffffff"></i></div
     ></label>
-    <input type="file"  id="upload-photo"  name="myFile" (change)="onFileChanged($event)" />
+    <input type="file"  id="upload-photo"  name="myFile" (change)="onFileChanged($event)" accept="image/png, image/jpeg" />
 
     <button type="submit" class="BtnEditar" (click)="submitImagem()" *ngIf="ButtonEnviar">Enviar Imagem</button>
     <div class="NomePerfil">
