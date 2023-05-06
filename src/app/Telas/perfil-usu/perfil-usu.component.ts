@@ -3,6 +3,7 @@ import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/cliente';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UploadImagemService } from '../service/upload-imagem.service';
 
 @Component({
   selector: 'app-perfil-usu',
@@ -10,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./perfil-usu.component.css'],
 })
 export class PerfilUsuComponent implements OnInit {
-  SelecionarImagem = false;
-  EnviarImagem =  false;
   perfil = {
     nome: [null],
     cpf: [null],
@@ -22,10 +21,18 @@ export class PerfilUsuComponent implements OnInit {
   cliente: Cliente | undefined;
   form: FormGroup;
 
+  selectedFile!: File;
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string | undefined;
+  imageName: any;
+
   constructor(
     private clienteService: ClienteService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private imagemService: UploadImagemService
   ) {
     this.form = this.formBuilder.group({
       nome: [null],
@@ -34,7 +41,7 @@ export class PerfilUsuComponent implements OnInit {
       senha: [null],
     });
   }
-  
+
   ngOnInit() {
     this.clienteService.buscarIdPorEmail().subscribe((dados) => {
       this.id = dados;
@@ -94,8 +101,35 @@ export class PerfilUsuComponent implements OnInit {
     this.router.navigate(['/']);
     localStorage.clear();
   }
-  trocarImagem(){
-    this.SelecionarImagem = true;
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
   }
 
+  submitImagem() {
+    console.log(this.selectedFile);
+    this.imagemService.upload(this.selectedFile).subscribe((data) => {
+      console.log(data);
+      this.imagemService.visualizar(data).subscribe((blob) => {
+        console.log(blob);
+        this.createImageFromBlob(blob);
+      });
+    });
+  }
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener(
+      'load',
+      () => {
+        this.imageName = reader.result;
+        console.log(this.imageName);
+      },
+      false
+    );
+
+    if (image) {
+      reader.readAsDataURL(image);
+    }
+  }
 }
