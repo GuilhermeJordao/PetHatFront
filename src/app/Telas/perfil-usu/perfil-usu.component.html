@@ -12,14 +12,15 @@
 <app-navbar></app-navbar>
 <div class="BodyPerfil">
   <div class="PerfilPhotoDiv">
-    <img class="PerfilImg" [src]="imageName" alt="" />
+    <img class="PerfilImg" src="https://static.vecteezy.com/system/resources/previews/007/224/792/original/robot-modern-style-vector.jpg" alt="" *ngIf="ImagemPadrao" />
+    <img class="PerfilImg"  *ngIf="ImagemEditada" [src]="imageName" alt=""/>
     <label class="labelchange" for="upload-photo"
       ><div class="labeldiv">
         <i class="fa-solid fa-pen" style="color: #ffffff"></i></div
     ></label>
-    <input type="file" name="myFile" (change)="onFileChanged($event)" />
+    <input type="file"  id="upload-photo"  name="myFile" (change)="onFileChanged($event)" />
 
-    <button type="submit" (click)="submitImagem()">Enviar Imagem</button>
+    <button type="submit" class="BtnEditar" (click)="submitImagem()" *ngIf="ButtonEnviar">Enviar Imagem</button>
     <div class="NomePerfil">
       <p>{{ perfil.nome }}</p>
     </div>

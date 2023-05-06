@@ -11,6 +11,9 @@ import { UploadImagemService } from '../service/upload-imagem.service';
   styleUrls: ['./perfil-usu.component.css'],
 })
 export class PerfilUsuComponent implements OnInit {
+  ButtonEnviar = false;
+  ImagemPadrao = true;
+  ImagemEditada = false;
   perfil = {
     nome: [null],
     cpf: [null],
@@ -104,6 +107,7 @@ export class PerfilUsuComponent implements OnInit {
 
   onFileChanged(event: any) {
     this.selectedFile = event.target.files[0];
+    this.ButtonEnviar = true;
   }
 
   submitImagem() {
@@ -113,6 +117,9 @@ export class PerfilUsuComponent implements OnInit {
       this.imagemService.visualizar(data).subscribe((blob) => {
         console.log(blob);
         this.createImageFromBlob(blob);
+        this.ImagemPadrao = false;
+        this.ImagemEditada = true;
+          this.ButtonEnviar = false;
       });
     });
   }
