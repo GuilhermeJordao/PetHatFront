@@ -23,7 +23,7 @@ export class PerfilUsuComponent implements OnInit {
   id: any = 0;
   cliente: Cliente | undefined;
   form: FormGroup;
-
+  imagem: string | undefined;
   selectedFile!: File;
   retrievedImage: any;
   base64Data: any;
@@ -49,6 +49,16 @@ export class PerfilUsuComponent implements OnInit {
     this.clienteService.buscarIdPorEmail().subscribe((dados) => {
       this.id = dados;
       console.log(dados);
+
+      this.imagemService
+        .visualizar(localStorage.getItem(this.id))
+        .subscribe((blob) => {
+          console.log(blob);
+          this.createImageFromBlob(blob);
+          this.ImagemPadrao = false;
+          this.ImagemEditada = true;
+          this.ButtonEnviar = false;
+        });
 
       this.clienteService.visualizarPerfil(this.id).subscribe((data) => {
         this.perfil = {
@@ -102,7 +112,7 @@ export class PerfilUsuComponent implements OnInit {
 
   sairConta() {
     this.router.navigate(['/']);
-    localStorage.clear();
+    localStorage.removeItem('email');
   }
 
   onFileChanged(event: any) {
@@ -112,15 +122,19 @@ export class PerfilUsuComponent implements OnInit {
 
   submitImagem() {
     console.log(this.selectedFile);
-    this.imagemService.upload(this.selectedFile).subscribe((data) => {
-      console.log(data);
-      this.imagemService.visualizar(data).subscribe((blob) => {
-        console.log(blob);
-        this.createImageFromBlob(blob);
-        this.ImagemPadrao = false;
-        this.ImagemEditada = true;
+    this.imagemService.upload(this.selectedFile, this.id).subscribe((data) => {
+      window.localStorage.setItem(this.id, data);
+      this.imagem = data;
+
+      this.imagemService
+        .visualizar(localStorage.getItem(this.id))
+        .subscribe((blob) => {
+          console.log(blob);
+          this.createImageFromBlob(blob);
+          this.ImagemPadrao = false;
+          this.ImagemEditada = true;
           this.ButtonEnviar = false;
-      });
+        });
     });
   }
 

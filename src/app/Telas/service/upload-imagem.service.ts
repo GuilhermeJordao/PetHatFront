@@ -10,16 +10,16 @@ export class UploadImagemService {
 
   constructor(private httpCliente: HttpClient) {}
 
-  upload(file: File) {
+  upload(file: File, _id: number) {
     const formData = new FormData();
     formData.append('file', file, file.name);
 
-    return this.httpCliente.post(`${this.API}/upload`, formData, {
+    return this.httpCliente.post(`${this.API}/upload/${_id}`, formData, {
       responseType: 'text',
     });
   }
 
-  visualizar(fileName: string) {
+  visualizar(fileName: any) {
     return this.httpCliente.get(`${this.API}/exibir/${fileName}`, {
       responseType: 'blob',
     });
