@@ -32,6 +32,7 @@ import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.com
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
 import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
 import { MatCardModule } from '@angular/material/card';
+import { AgendarConsultaComponent } from './Telas/agendar-consulta/agendar-consulta.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -53,6 +54,7 @@ import { MatCardModule } from '@angular/material/card';
     CadastroPetComponent,
     PerfilPetComponent,
     VisualizarPetsComponent,
+    AgendarConsultaComponent,
   ],
   imports: [
     FormsModule,
