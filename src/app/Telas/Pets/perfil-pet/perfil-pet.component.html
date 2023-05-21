@@ -41,10 +41,13 @@
           Enviar Imagem
         </button>
         <div class="NomePerfil">
-          <p>{{ pet.especie }} {{ pet.nome }}</p>
+          <p>{{ pet.nome }}</p>
         </div>
         <div class="EmailPerfil">
-          <p>{{ nome }}</p>
+          <p>{{ pet.especie }}</p>
+        </div>
+        <div class="EmailPerfil">
+          <p>Dono: {{ nome }}</p>
         </div>
         <div class="AlignButton">
           <button class="BtnSair" role="button" (click)="deletarPet()">
