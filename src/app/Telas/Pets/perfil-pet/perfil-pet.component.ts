@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from '../../service/cliente.service';
 import { PetService } from '../../service/pet.service';
+import { UploadImagemService } from '../../service/upload-imagem.service';
 
 @Component({
   selector: 'app-perfil-pet',
@@ -17,17 +18,23 @@ export class PerfilPetComponent implements OnInit {
     raca: [null],
     idade: [null],
   };
-  private id: number = 0;
+  private id: any = 0;
   nome: string | undefined;
   form: FormGroup;
   erroMensagem = false;
   sucessoMensagem = false;
+  selectedFile!: File;
+  ButtonEnviar = false;
+  ImagemPadrao = true;
+  ImagemEditada = false;
+  imageName: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private petServico: PetService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private imagemService: UploadImagemService
   ) {
     this.form = this.formBuilder.group({
       nome: [null],
@@ -89,5 +96,43 @@ export class PerfilPetComponent implements OnInit {
     console.log(this.id);
     this.petServico.deletarPet(this.id).subscribe();
     this.router.navigate(['/VisualisarPets']);
+  }
+
+  onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
+    this.ButtonEnviar = true;
+  }
+
+  submitImagem() {
+    console.log(this.selectedFile);
+    this.imagemService.upload(this.selectedFile).subscribe((data) => {
+      console.log(data);
+      let id_foto = (data as any).id;
+      localStorage.setItem(`Pet${this.id}`, id_foto);
+
+      this.imagemService.visualizar(id_foto).subscribe((blob) => {
+        console.log(blob);
+        this.createImageFromBlob(blob);
+        this.ImagemPadrao = false;
+        this.ImagemEditada = true;
+        this.ButtonEnviar = false;
+      });
+    });
+  }
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener(
+      'load',
+      () => {
+        this.imageName = reader.result;
+        console.log(this.imageName);
+      },
+      false
+    );
+
+    if (image) {
+      reader.readAsDataURL(image);
+    }
   }
 }

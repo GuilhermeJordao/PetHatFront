@@ -49,16 +49,14 @@ export class PerfilUsuComponent implements OnInit {
     this.clienteService.buscarIdPorEmail().subscribe((dados) => {
       this.id = dados;
       console.log(dados);
-
-      this.imagemService
-        .visualizar(localStorage.getItem(this.id))
-        .subscribe((blob) => {
-          console.log(blob);
-          this.createImageFromBlob(blob);
-          this.ImagemPadrao = false;
-          this.ImagemEditada = true;
-          this.ButtonEnviar = false;
-        });
+      let foto = localStorage.getItem(this.id);
+      this.imagemService.visualizar(foto).subscribe((blob) => {
+        console.log(blob);
+        this.createImageFromBlob(blob);
+        this.ImagemPadrao = false;
+        this.ImagemEditada = true;
+        this.ButtonEnviar = false;
+      });
 
       this.clienteService.visualizarPerfil(this.id).subscribe((data) => {
         this.perfil = {
@@ -122,19 +120,18 @@ export class PerfilUsuComponent implements OnInit {
 
   submitImagem() {
     console.log(this.selectedFile);
-    this.imagemService.upload(this.selectedFile, this.id).subscribe((data) => {
-      window.localStorage.setItem(this.id, data);
-      this.imagem = data;
+    this.imagemService.upload(this.selectedFile).subscribe((data) => {
+      console.log(data);
+      let id_foto = (data as any).id;
+      localStorage.setItem(this.id, id_foto);
 
-      this.imagemService
-        .visualizar(localStorage.getItem(this.id))
-        .subscribe((blob) => {
-          console.log(blob);
-          this.createImageFromBlob(blob);
-          this.ImagemPadrao = false;
-          this.ImagemEditada = true;
-          this.ButtonEnviar = false;
-        });
+      this.imagemService.visualizar(id_foto).subscribe((blob) => {
+        console.log(blob);
+        this.createImageFromBlob(blob);
+        this.ImagemPadrao = false;
+        this.ImagemEditada = true;
+        this.ButtonEnviar = false;
+      });
     });
   }
 

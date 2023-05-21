@@ -7,5 +7,6 @@ export interface Pet {
   sexo: string;
   raca: string;
   idade: number;
+  imageName: any;
   cliente: Cliente;
 }

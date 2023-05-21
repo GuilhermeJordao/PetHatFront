@@ -13,72 +13,98 @@
       alt="PhotoPerfil"
     />
    -->
-    <img
-      class="PerfilImg"
-      src="../../../assets/Images/Dogprofile.png"
-      alt="PhotoPerfil"
-    />
-    <div class="NomePerfil">
-      <p>{{ pet.especie }} {{ pet.nome }}</p>
-    </div>
-    <div class="EmailPerfil">
-      <p>{{ nome }}</p>
-    </div>
-    <div class="AlignButton">
-      <button class="BtnSair" role="button" (click)="deletarPet()">
-        Excluir Pet
-      </button>
-    </div>
-  </div>
-  <div class="PerfilForm">
-    <div class="FormSide">
-      <form class="form" [formGroup]="form">
-        <label class="Nometxt" for="Nome">Nome:</label><br />
-        <input
-          class="Nome"
-          type="text"
-          name="Nome"
-          value="{{ pet.nome }}"
-          formControlName="nome"
-        /><br />
-        <label class="Especietxt" for="Especie:">Especie:</label><br />
-        <input
-          class="Especie"
-          type="text"
-          name="Especie"
-          value="{{ pet.especie }}"
-          formControlName="especie"
-        /><br />
-        <label class="Sexotxt" for="Sexo">Sexo:</label><br />
-        <select name="sexo" id="sexo-select" class="Sexo">
-          <option value="{{ pet.sexo }}">{{ pet.sexo }}</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Feminino">Feminino</option>
-        </select>
-        <label class="Raçatxt" for="Raça">Raça:</label><br />
-        <input
-          class="Raça"
-          type="text"
-          name="Raça"
-          value="{{ pet.raca }}"
-          formControlName="raca"
-        /><br />
-        <label class="Idadetxt" for="Idade">Idade:</label><br />
-        <input
-          class="Idade"
-          type="text"
-          name="Idade"
-          value="{{ pet.idade }}"
-          formControlName="idade"
-        /><br />
-
-        <input
-          class="BtnForm"
-          type="submit"
-          (click)="onSubmit()"
-          value="Atualizar Informações"
+    <div class="BodyPerfil">
+      <div class="PerfilPhotoDiv">
+        <img
+          class="PerfilImg"
+          src="../../../assets/Images/Dogprofile.png"
+          alt=""
+          *ngIf="ImagemPadrao"
         />
-      </form>
+        <img class="PerfilImg" *ngIf="ImagemEditada" [src]="imageName" alt="" />
+        <label class="labelchange" for="upload-photo"
+          ><div class="labeldiv">
+            <i class="fa-solid fa-pen" style="color: #ffffff"></i></div
+        ></label>
+        <input
+          type="file"
+          id="upload-photo"
+          name="myFile"
+          (change)="onFileChanged($event)"
+          accept="image/png, image/jpeg"
+        />
+
+        <button
+          type="submit"
+          class="BtnEditar"
+          (click)="submitImagem()"
+          *ngIf="ButtonEnviar"
+        >
+          Enviar Imagem
+        </button>
+        <div class="NomePerfil">
+          <p>{{ pet.especie }} {{ pet.nome }}</p>
+        </div>
+        <div class="EmailPerfil">
+          <p>{{ nome }}</p>
+        </div>
+        <div class="AlignButton">
+          <button class="BtnSair" role="button" (click)="deletarPet()">
+            Excluir Pet
+          </button>
+        </div>
+      </div>
+      <div class="PerfilForm">
+        <div class="FormSide">
+          <form class="form" [formGroup]="form">
+            <label class="Nometxt" for="Nome">Nome:</label><br />
+            <input
+              class="Nome"
+              type="text"
+              name="Nome"
+              value="{{ pet.nome }}"
+              formControlName="nome"
+            /><br />
+            <label class="Especietxt" for="Especie:">Especie:</label><br />
+            <input
+              class="Especie"
+              type="text"
+              name="Especie"
+              value="{{ pet.especie }}"
+              formControlName="especie"
+            /><br />
+            <label class="Sexotxt" for="Sexo">Sexo:</label><br />
+            <select name="sexo" id="sexo-select" class="Sexo">
+              <option value="{{ pet.sexo }}">{{ pet.sexo }}</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+            </select>
+            <label class="Raçatxt" for="Raça">Raça:</label><br />
+            <input
+              class="Raça"
+              type="text"
+              name="Raça"
+              value="{{ pet.raca }}"
+              formControlName="raca"
+            /><br />
+            <label class="Idadetxt" for="Idade">Idade:</label><br />
+            <input
+              class="Idade"
+              type="text"
+              name="Idade"
+              value="{{ pet.idade }}"
+              formControlName="idade"
+            /><br />
+
+            <input
+              class="BtnForm"
+              type="submit"
+              (click)="onSubmit()"
+              value="Atualizar Informações"
+            />
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
