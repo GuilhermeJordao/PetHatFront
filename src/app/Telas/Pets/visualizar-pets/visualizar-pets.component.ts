@@ -33,6 +33,7 @@ export class VisualizarPetsComponent {
           aux.push(Number.parseInt(foto));
         }
       }
+      console.log(this.pets.forEach((value) => value.imageName));
 
       this.visualizarImagem(aux, this.pets);
     });
@@ -40,8 +41,11 @@ export class VisualizarPetsComponent {
 
   visualizarImagem(aux: any[], pets: Pet[]) {
     for (let i = 0; i < aux.length; i++) {
+      console.log(aux[i]);
+
       this.imagemService.visualizar(aux[i]).subscribe((blob) => {
-        this.createImageFromBlob(blob, pets[i]);
+        console.log(blob);
+        this.createImageFromBlob(blob, pets[i]); // Pass pets[i] instead of pets
         this.ImagemPadrao = false;
         this.ImagemEditada = true;
       });
@@ -49,7 +53,7 @@ export class VisualizarPetsComponent {
   }
 
   detalhesPet(pet: Pet) {
-    this.router.navigate([`/PerfilPet/${pet._id}`]);
+    this.router.navigate([`/PerfilPet/${pet._id}`]); // Use backticks for template literals
   }
 
   createImageFromBlob(image: Blob, pet: Pet) {
@@ -57,7 +61,7 @@ export class VisualizarPetsComponent {
     reader.addEventListener(
       'load',
       () => {
-        pet.imageName = reader.result;
+        pet.imageName = reader.result; // Assign the result to pet.imageName
       },
       false
     );

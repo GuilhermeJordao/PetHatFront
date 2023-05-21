@@ -30,7 +30,7 @@
     <img
       mat-card-image
       class="PerfilImg"
-      *ngIf="ImagemEditada"
+      *ngIf="ImagemEditada && pet.imageName"
       [src]="pet.imageName"
       alt=""
     />
