@@ -23,16 +23,16 @@
   <mat-card class="example-card" *ngFor="let pet of pets">
     <img
       mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-      *ngIf="ImagemPadrao"
-      alt="Photo of a Shiba Inu"
-    />
-    <img
-      mat-card-image
       class="PerfilImg"
       *ngIf="ImagemEditada && pet.imageName"
       [src]="pet.imageName"
       alt=""
+    />
+    <img
+      mat-card-image
+      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+      *ngIf="!pet.imageName"
+      alt="Photo of a Shiba Inu"
     />
     <mat-card-content>
       <p>Nome: {{ pet.nome }}</p>
@@ -42,3 +42,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+  

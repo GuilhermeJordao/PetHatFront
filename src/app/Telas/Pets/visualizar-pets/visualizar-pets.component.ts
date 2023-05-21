@@ -61,11 +61,16 @@ export class VisualizarPetsComponent {
     reader.addEventListener(
       'load',
       () => {
-        pet.imageName = reader.result; // Assign the result to pet.imageName
+        if (reader.result) {
+          pet.imageName = reader.result;
+          this.ImagemEditada = true;
+        } else {
+          this.ImagemPadrao = true;
+        }
       },
       false
     );
-
+  
     if (image) {
       reader.readAsDataURL(image);
     }
