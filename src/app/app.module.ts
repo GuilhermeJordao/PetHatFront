@@ -55,6 +55,7 @@ import { AgendarConsultaComponent } from './Telas/agendar-consulta/agendar-consu
     PerfilPetComponent,
     VisualizarPetsComponent,
     AgendarConsultaComponent,
+
   ],
   imports: [
     FormsModule,

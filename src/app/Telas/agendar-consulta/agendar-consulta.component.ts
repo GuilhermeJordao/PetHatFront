@@ -11,8 +11,13 @@ import { UploadImagemService } from '../service/upload-imagem.service';
   styleUrls: ['./agendar-consulta.component.css'],
 })
 export class AgendarConsultaComponent {
+  perfilImg: string = '';
+  petId: string = '';
+  Especialidade = false;
   ImagemPadrao = true;
   ImagemEditada = false;
+  selecionarVet: string = 'Selecionar'
+  selecionadoVet: string = 'Selecionado'
   imageName: any;
   vets: Veterinario[] | undefined;
   pets: Pet[] | undefined;
@@ -37,6 +42,22 @@ export class AgendarConsultaComponent {
       .subscribe((data) => {
         this.vets = data;
       });
+  }
+  updatePetImage() {
+    const petImage = localStorage.getItem("Pet" + this.petId);
+  
+    if (petImage) {
+      this.perfilImg = `/api/imagem/exibir/${petImage}`;
+      this.ImagemEditada = true;
+      this.ImagemPadrao = false;
+    } else {
+      this.perfilImg = '';
+      this.ImagemEditada = false;
+      this.ImagemPadrao = true;
+    }
+  }
+  EspecialidadeSelecionada(){
+    this.Especialidade = true;
   }
   // petSelectionChange(event: any) {
   //   const selectedValue = event.target.value;

@@ -141,6 +141,13 @@ header ul {
   margin-bottom: 5%;
   border-radius: 15px;
 }
+.formLogin-Selec {
+  width: 90%;
+  box-shadow: inset 0 0 3px #7e7e7e;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  border-radius: 15px;
+}
 
 .formLogin2 {
   display: flex;
@@ -187,9 +194,7 @@ header ul {
   touch-action: manipulation;
 }
 
-.SelectPET,
-.Especialidade
- {
+.SelectPET{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -201,14 +206,36 @@ header ul {
   outline-color: #4faaa5;
 }
 
-.SelectPETtxt,
-.Especialidadetxt {
+.Especialidade {
+  width: 90%;
+  margin-left: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline-color: #4faaa5;
+  margin-bottom: 2%;
+}
+
+.SelectPETtxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
-  margin-right: 85%;
+  margin-right: 64%;
   margin-top: 4%;
   font-size: 80%;
 }
+
+.Especialidadetxt{
+  font-family: "Inter", sans-serif;
+  color: #7d7d7d;
+  margin-top: 4%;
+  font-size: 80%;
+  margin-top: 0%;
+}
+
 .Nometuttxt,
 .CPFtuttxt,
 .Teltuttxt {
@@ -249,7 +276,8 @@ header ul {
 .PerfilImg {
   margin-top: 5%;
   margin-bottom: 3%;
-  width: 80%;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 5px solid #eae8e8;
 }
@@ -259,16 +287,18 @@ header ul {
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 18%;
+  margin-bottom: 10%;
 }
 
 .example-card {
+  width: 300px;
   margin-top: 3%;
   margin-left: 1%;
-  max-width: 250px;
+  margin-bottom: 5%;
   background-color: #edecec;
   border-radius: 4%;
-
 }
+
 .example-card button {
   margin-top: 3%;
   margin-bottom: 8%;
@@ -304,7 +334,7 @@ header ul {
 .BtnSubmit {
   border: 1px solid #03c0a4;
   margin-top: 1%;
-  margin-bottom: 8%;
+  margin-bottom: 3%;
   width: 30%;
   background-color: #e7353500;
   border-radius: 8px;
@@ -326,7 +356,7 @@ header ul {
 
 .BtnSubmit:hover {
   margin-top: 1%;
-  margin-bottom: 8%;
+  margin-bottom: 3%;
   background-color: #03c0a4;
   border-radius: 8px;
   border-style: none;
@@ -414,6 +444,7 @@ header ul {
 .titulodiv {
   font-family: "Inter", sans-serif;
   text-align: center;
+  margin-right: 5%;
   color: #383838;
   font-size: 200%;
 }

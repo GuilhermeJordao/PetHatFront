@@ -27,19 +27,26 @@
     <div class="titulolog">Agendar Consulta</div>
     <div class="formLogin">
       <div class="form">
-        <!-- <div>
-          <img class="PerfilImg" [src]="imageName" alt="PhotoPerfil" />
-          <div>Nome</div>
-        </div> -->
+        <div>
+          <img class="PerfilImg"  src="https://i.imgur.com/pe2N5IX.png" alt="Imagem do PET" *ngIf="ImagemPadrao || perfilImg === ''" >
+        </div>
+        <div>
+          <img class="PerfilImg" [src]="perfilImg" alt="Imagem do PET" *ngIf="ImagemEditada && perfilImg !== ''">
+        </div> 
         <div class="SelectPETtxt">Selecionar Pet</div>
         <div>
-          <select name="SelectPET" id="Esp-select" class="SelectPET">
+          <select name="SelectPET" id="Esp-select" class="SelectPET" [(ngModel)]="petId" (change)="updatePetImage()">
+            <option></option>
             <option *ngFor="let pet of pets" [value]="pet._id">
               {{ pet.nome }}
             </option>
           </select>
         </div>
-        <div class="Especialidadetxt">Selecionar Especialidade</div>
+      </div>
+    </div>
+    <div class="titulolog">Especialidade da Consulta</div>
+    <div class="formLogin">
+      <div class="Especialidadetxt">Selecionar Especialidade</div>
         <select
           name="Especialidade"
           id="Esp-select"
@@ -58,11 +65,13 @@
           <option value="Cardiologia">Cardiologia</option>
           <option value="Oncologia">Oncologia</option>
         </select>
+        <div>
+        <button class="BtnSubmit"(click)="EspecialidadeSelecionada()">Selecionar</button>
       </div>
     </div>
-    <div class="formLogin2">
+    <div class="titulolog" *ngIf="Especialidade">Veterinarios Disponiveis</div>
+    <div class="formLogin2"  *ngIf="Especialidade">
       <div class="form">
-        <div class="titulodiv">Veterinarios Disponiveis</div>
         <div class="Cartões">
           <mat-card class="example-card" *ngFor="let vet of vets">
             <!-- <img
@@ -77,14 +86,14 @@
               <p>Turno: {{ vet.turno }}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button>Escolher Veterinario(a)</button>
+              <button mat-button>Selecionar</button>
             </mat-card-actions>
           </mat-card>
         </div>
       </div>
     </div>
   </div>
-  <div class="formLogin">
+  <div class="formLogin" *ngIf="Especialidade">
     <div class="form">
       <div class="titulodiv2">Horarios Disponiveis</div>
       <button type="submit" class="BtnHour">10:00</button>
