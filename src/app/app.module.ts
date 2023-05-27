@@ -33,6 +33,12 @@ import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component
 import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
 import { MatCardModule } from '@angular/material/card';
 import { AgendarConsultaComponent } from './Telas/agendar-consulta/agendar-consulta.component';
+import { AgendadasConsulComponent } from './Telas/agendadas-consul/agendadas-consul.component';
+import { MinhasConsultasComponent } from './Telas/Telas-Veterinario/minhas-consultas/minhas-consultas.component';
+import { InicialVetComponent } from './Telas/Telas-Veterinario/inicial-vet/inicial-vet.component';
+import { NavVetComponent } from './Componentes/nav-vet/nav-vet.component';
+import { VisualizarConsultaVetComponent } from './Telas/Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
+import { VisualizarConsultalComponent } from './Telas/visualizar-consultal/visualizar-consultal.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -55,6 +61,12 @@ import { AgendarConsultaComponent } from './Telas/agendar-consulta/agendar-consu
     PerfilPetComponent,
     VisualizarPetsComponent,
     AgendarConsultaComponent,
+    AgendadasConsulComponent,
+    MinhasConsultasComponent,
+    InicialVetComponent,
+    NavVetComponent,
+    VisualizarConsultaVetComponent,
+    VisualizarConsultalComponent,
 
   ],
   imports: [
