@@ -3,6 +3,8 @@ export interface Veterinario {
   nome: string;
   email: string;
   senha: string;
+  especialidade: string;
+  turno: string;
   crmvce: string;
   telefone: string;
   dataPortariaHabilitacao: string;

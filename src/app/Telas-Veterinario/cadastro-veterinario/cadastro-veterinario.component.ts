@@ -22,6 +22,8 @@ export class CadastroVeterinarioComponent {
       nome: [null],
       email: [null],
       senha: [null],
+      especialidade: [null],
+      turno: [null],
       crmvce: [null],
       telefone: [null],
       dataPortariaHabilitacao: [null],

@@ -54,6 +54,20 @@
     <td mat-cell *matCellDef="let veterinario">{{ veterinario.senha }}</td>
   </ng-container>
 
+  <ng-container matColumnDef="especialidade">
+    <th mat-header-cell *matHeaderCellDef>Especialidade</th>
+    <td mat-cell *matCellDef="let veterinario">
+      {{ veterinario.especialidade }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="turno">
+    <th mat-header-cell *matHeaderCellDef>Turno</th>
+    <td mat-cell *matCellDef="let veterinario">
+      {{ veterinario.turno }}
+    </td>
+  </ng-container>
+
   <!-- Symbol Column -->
   <ng-container matColumnDef="crmvce">
     <th mat-header-cell *matHeaderCellDef>CRMVCE</th>

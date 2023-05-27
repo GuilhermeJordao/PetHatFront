@@ -16,6 +16,8 @@ export class TabelaCrudVeterinarioComponent {
   displayedColumns = [
     'nome',
     'email',
+    'especialidade',
+    'turno',
     'crmvce',
     'telefone',
     'dataPortariaHabilitacao',
