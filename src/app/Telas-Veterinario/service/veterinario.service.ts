@@ -30,6 +30,10 @@ export class VeterinarioService {
     );
   }
 
+  buscarId(email: string) {
+    return this.httpCliente.get<Veterinario>(`${this.API}/perfil/id/${email}`);
+  }
+
   buscaPorEspecialidade(especialidade: string) {
     return this.httpCliente.get<Veterinario[]>(
       `${this.API}?especialidade=${especialidade}`

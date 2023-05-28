@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Veterinario } from 'src/app/Telas-Adm/model/veterinario';
 import { VeterinarioService } from 'src/app/Telas-Veterinario/service/veterinario.service';
+import { Consulta } from '../model/consulta';
 import { Pet } from '../model/pet';
+import { ConsultaService } from '../service/consulta.service';
 import { PetService } from '../service/pet.service';
-import { UploadImagemService } from '../service/upload-imagem.service';
 
 @Component({
   selector: 'app-agendar-consulta',
@@ -16,18 +18,21 @@ export class AgendarConsultaComponent {
   Especialidade = false;
   ImagemPadrao = true;
   ImagemEditada = false;
-  selecionarVet: string = 'Selecionar'
-  selecionadoVet: string = 'Selecionado'
+  selecionarVet: string = 'Selecionar';
+  selecionadoVet: string = 'Selecionado';
   imageName: any;
   vets: Veterinario[] | undefined;
   pets: Pet[] | undefined;
   id: number[] = [];
   email: any = localStorage.getItem('email');
   especialidade: string = '';
+  emailVet: string = '';
+  horario: string = '';
 
   constructor(
-    private petService: PetService, // private imagemService: UploadImagemService
-    private vetService: VeterinarioService
+    private petService: PetService,
+    private vetService: VeterinarioService,
+    private consultaService: ConsultaService
   ) {
     this.petService.listar(this.email).subscribe((data) => {
       this.pets = data;
@@ -44,8 +49,7 @@ export class AgendarConsultaComponent {
       });
   }
   updatePetImage() {
-    const petImage = localStorage.getItem("Pet" + this.petId);
-  
+    const petImage = localStorage.getItem('Pet' + this.petId);
     if (petImage) {
       this.perfilImg = `/api/imagem/exibir/${petImage}`;
       this.ImagemEditada = true;
@@ -56,43 +60,61 @@ export class AgendarConsultaComponent {
       this.ImagemPadrao = true;
     }
   }
-  EspecialidadeSelecionada(){
+  EspecialidadeSelecionada() {
     this.Especialidade = true;
   }
-  // petSelectionChange(event: any) {
-  //   const selectedValue = event.target.value;
-  //   console.log(selectedValue);
 
-  //   this.visualizarPet(selectedValue);
-  // }
+  pegarVet(email: string) {
+    this.emailVet = email;
+  }
 
-  // visualizarPet(id: number) {
-  //   let foto = localStorage.getItem(`Pet${id}`);
-  //   this.imagemService.visualizar(foto).subscribe((blob) => {
-  //     console.log(blob);
-  //     this.createImageFromBlob(blob);
-  //     this.ImagemPadrao = false;
-  //     this.ImagemEditada = true;
-  //   });
-  // }
+  agendar() {
+    const obj: any = {
+      hora: this.horario,
+    };
+    this.consultaService
+      .save(obj, Number.parseInt(this.petId), this.emailVet)
+      .subscribe((data) => {
+        console.log(data);
+      });
 
-  // createImageFromBlob(image: Blob) {
-  //   let reader = new FileReader();
-  //   reader.addEventListener(
-  //     'load',
-  //     () => {
-  //       if (reader.result) {
-  //         this.imageName = reader.result;
-  //         this.ImagemEditada = true;
-  //       } else {
-  //         this.ImagemPadrao = true;
-  //       }
-  //     },
-  //     false
-  //   );
-
-  //   if (image) {
-  //     reader.readAsDataURL(image);
-  //   }
-  // }
+    window.location.reload();
+  }
 }
+
+// petSelectionChange(event: any) {
+//   const selectedValue = event.target.value;
+//   console.log(selectedValue);
+
+//   this.visualizarPet(selectedValue);
+// }
+
+// visualizarPet(id: number) {
+//   let foto = localStorage.getItem(`Pet${id}`);
+//   this.imagemService.visualizar(foto).subscribe((blob) => {
+//     console.log(blob);
+//     this.createImageFromBlob(blob);
+//     this.ImagemPadrao = false;
+//     this.ImagemEditada = true;
+//   });
+// }
+
+// createImageFromBlob(image: Blob) {
+//   let reader = new FileReader();
+//   reader.addEventListener(
+//     'load',
+//     () => {
+//       if (reader.result) {
+//         this.imageName = reader.result;
+//         this.ImagemEditada = true;
+//       } else {
+//         this.ImagemPadrao = true;
+//       }
+//     },
+//     false
+//   );
+
+//   if (image) {
+//     reader.readAsDataURL(image);
+//   }
+// }
