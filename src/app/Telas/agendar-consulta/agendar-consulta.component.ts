@@ -28,6 +28,10 @@ export class AgendarConsultaComponent {
   especialidade: string = '';
   emailVet: string = '';
   horario: string = '';
+  data: string = '';
+  manha: boolean = false;
+  tarde: boolean = false;
+  noite: boolean = false;
 
   constructor(
     private petService: PetService,
@@ -66,10 +70,31 @@ export class AgendarConsultaComponent {
 
   pegarVet(email: string) {
     this.emailVet = email;
+    this.vetService.buscarId(this.emailVet).subscribe((data) => {
+      let number: any = data;
+      this.vetService.visualizarPerfil(number).subscribe((dado) => {
+        if (dado.turno === 'MANHA') {
+          this.manha = true;
+          this.tarde = false;
+          this.noite = false;
+        } else if (dado.turno === 'TARDE') {
+          this.tarde = true;
+          this.noite = false;
+          this.manha = false;
+        } else if (dado.turno === 'NOITE') {
+          this.noite = true;
+          this.manha = false;
+          this.tarde = false;
+        }
+      });
+    });
   }
 
   agendar() {
+    console.log(this.data);
+
     const obj: any = {
+      dataConsulta: this.data,
       hora: this.horario,
     };
     this.consultaService
@@ -77,8 +102,6 @@ export class AgendarConsultaComponent {
       .subscribe((data) => {
         console.log(data);
       });
-
-    window.location.reload();
   }
 }
 

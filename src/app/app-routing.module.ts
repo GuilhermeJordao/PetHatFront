@@ -19,11 +19,7 @@ import { AgendadasConsulComponent } from './Telas/agendadas-consul/agendadas-con
 import { MinhasConsultasComponent } from './Telas/Telas-Veterinario/minhas-consultas/minhas-consultas.component';
 import { InicialVetComponent } from './Telas/Telas-Veterinario/inicial-vet/inicial-vet.component';
 import { VisualizarConsultaVetComponent } from './Telas/Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
-import { VisualizarConsultalComponent} from './Telas/visualizar-consultal/visualizar-consultal.component';
-
-
-
-
+import { VisualizarConsultalComponent } from './Telas/visualizar-consultal/visualizar-consultal.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
@@ -41,12 +37,11 @@ const routes: Routes = [
   { path: 'InicialUsu', component: InicialUsuComponent },
   { path: 'VisualisarPets', component: VisualizarPetsComponent },
   { path: 'AgendarConsulta', component: AgendarConsultaComponent },
-  { path: 'ConsultaAgendada', component: AgendadasConsulComponent  },
-  { path: 'VetConsultas', component: MinhasConsultasComponent  },
+  { path: 'ConsultaAgendada', component: AgendadasConsulComponent },
+  { path: 'VetConsultas', component: MinhasConsultasComponent },
   { path: 'InicialVet', component: InicialVetComponent },
-  { path: 'VisualConsulVet', component: VisualizarConsultaVetComponent },
-  { path: 'VisualConsul', component:  VisualizarConsultalComponent },
-
+  { path: 'VisualConsulVet/:id', component: VisualizarConsultaVetComponent },
+  { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
 ];
 
 @NgModule({

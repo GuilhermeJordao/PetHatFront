@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { first } from 'rxjs';
 import { Consulta } from '../model/consulta';
 
 @Injectable({
@@ -15,5 +16,23 @@ export class ConsultaService {
       `${this.API}/${id}/${email}`,
       consulta
     );
+  }
+
+  listarConsulta(email: string) {
+    return this.httpCliente
+      .get<Consulta[]>(this.API + `/agendada?email=${email}`)
+      .pipe(first());
+  }
+
+  buscarPorId(id: number) {
+    return this.httpCliente.get<Consulta>(`${this.API}/${id}`);
+  }
+
+  cancelar(id: number) {
+    return this.httpCliente.delete(`${this.API}/${id}`);
+  }
+
+  concluir(id: number) {
+    return this.httpCliente.put(`${this.API}/${id}`, undefined);
   }
 }
