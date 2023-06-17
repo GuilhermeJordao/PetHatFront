@@ -4,84 +4,94 @@
   href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
   rel="stylesheet"
 />
-<div>
-  <app-navbar></app-navbar>
-</div>
-<div class="Background">
-  <div class="PerfilForm">
-    <img
-      class="ImagemAgendar"
-      src="../../../assets/Images/Agendar.png"
-      alt="Italian Trulli"
-    />
-    <div class="TituloForm01">Agendar Consulta</div>
-    <div class="TituloForm02">
-      Aqui voce pode agendar consultas para os Pets já cadastrados na Aba
-      <br />Cadastrar Pets.
-    </div>
-    <button class="BtnForm" role="button"  [routerLink]="['/AgendarConsulta']">Agende sua Consulta</button>
-  </div>
+<body>
   <div>
-    <img
-      class="ImagemCirculo1"
-      src="https://i.imgur.com/soLXc68.jpg"
-      alt="Italian Trulli"
-    />
-    <img
-      class="ImagemCirculo2"
-      src="https://i.pinimg.com/originals/f0/90/7f/f0907fe5f915eef11dd210e869aea1c3.jpg"
-      alt="Italian Trulli"
-    />
-    <img
-      class="ImagemCirculo3"
-      src="https://s3.amazonaws.com/www.explorersweb.com/wp-content/uploads/2022/07/05170019/Screen-Shot-2022-07-05-at-11.47.30-AM.jpg"
-      alt="Italian Trulli"
-    />
+    <app-navbar></app-navbar>
   </div>
-</div>
+  <div class="Background">
+    <div class="PerfilForm">
+      <img
+        class="ImagemAgendar"
+        src="../../../assets/Images/Agendar.png"
+        alt="Italian Trulli"
+      />
+      <div class="TituloForm01">Agendar Consulta</div>
+      <div class="TituloForm02">
+        Aqui voce pode agendar consultas para os Pets já cadastrados na Aba
+        <br />Cadastrar Pets.
+      </div>
+      <button class="BtnForm" role="button" [routerLink]="['/AgendarConsulta']">
+        Agende sua Consulta
+      </button>
+    </div>
+    <div class="container-img">
+      <img
+        class="ImagemCirculo1"
+        src="https://i.imgur.com/soLXc68.jpg"
+        alt="Italian Trulli"
+      />
+      <img
+        class="ImagemCirculo2"
+        src="https://i.pinimg.com/originals/f0/90/7f/f0907fe5f915eef11dd210e869aea1c3.jpg"
+        alt="Italian Trulli"
+      />
+      <img
+        class="ImagemCirculo3"
+        src="https://s3.amazonaws.com/www.explorersweb.com/wp-content/uploads/2022/07/05170019/Screen-Shot-2022-07-05-at-11.47.30-AM.jpg"
+        alt="Italian Trulli"
+      />
+    </div>
+  </div>
 
-<div class="TituloPage">Ferramentas:</div>
-<div class="Ferramentas">
-  <div class="PerfilForm2">
-    <img
-      class="ImagemAgendar"
-      src="../../../assets/Images/MyPets.png"
-      alt="Italian Trulli"
-    />
-    <div class="TituloForm01">Meus Pets</div>
-    <div class="TituloForm02">
-      Aqui voce pode consultar seus Pets já cadastrados <br />
-      e trocar algumas informações deles.
+  <div class="TituloPage">Ferramentas:</div>
+  <div class="Ferramentas">
+    <div class="PerfilForm2">
+      <img
+        class="ImagemAgendar"
+        src="../../../assets/Images/MyPets.png"
+        alt="Italian Trulli"
+      />
+      <div class="TituloForm01">Meus Pets</div>
+      <div class="TituloForm02">
+        Aqui voce pode consultar seus Pets já cadastrados <br />
+        e trocar algumas informações deles.
+      </div>
+      <button class="BtnForm" [routerLink]="['/VisualisarPets']" role="button">
+        Ver Meus Pets
+      </button>
     </div>
-    <button class="BtnForm" [routerLink]="['/VisualisarPets']" role="button">
-      Ver Meus Pets
-    </button>
-  </div>
-  <div class="PerfilForm3">
-    <img
-      class="ImagemAgendar"
-      src="../../../assets/Images/CadastroPets.png"
-      alt="Italian Trulli"
-    />
-    <div class="TituloForm01">Cadastrar Pets</div>
-    <div class="TituloForm02">
-      Aqui voce cadastra os Pets para que possamos <br />agender a sua consulta.
+    <div class="PerfilForm3">
+      <img
+        class="ImagemAgendar"
+        src="../../../assets/Images/CadastroPets.png"
+        alt="Italian Trulli"
+      />
+      <div class="TituloForm01">Cadastrar Pets</div>
+      <div class="TituloForm02">
+        Aqui voce cadastra os Pets para que possamos <br />agender a sua
+        consulta.
+      </div>
+      <button class="BtnForm" [routerLink]="['/CadastroPet']" role="button">
+        Cadastrar Pets
+      </button>
     </div>
-    <button class="BtnForm" [routerLink]="['/CadastroPet']" role="button">
-      Cadastrar Pets
-    </button>
-</div>
-<div class="PerfilForm4">
-  <img
-    class="ImagemAgendar"
-    src="../../../assets/Images/Consultasagendadas.png"
-    alt="Italian Trulli"
-  />
-  <div class="TituloForm01">Consultas Agendadas</div>
-  <div class="TituloForm02">
-    Aqui voce pode visualizar as suas <br />consultas ja agendadas.
+    <div class="PerfilForm4">
+      <img
+        class="ImagemAgendar"
+        src="../../../assets/Images/Consultasagendadas.png"
+        alt="Italian Trulli"
+      />
+      <div class="TituloForm01">Consultas Agendadas</div>
+      <div class="TituloForm02">
+        Aqui voce pode visualizar as suas <br />consultas ja agendadas.
+      </div>
+      <button
+        class="BtnForm"
+        [routerLink]="['/ConsultaAgendada']"
+        role="button"
+      >
+        Ver Consultas Agendadas
+      </button>
+    </div>
   </div>
-  <button class="BtnForm" [routerLink]="['/ConsultaAgendada']" role="button">
-    Ver Consultas Agendadas
-  </button>
-</div>
+</body>
