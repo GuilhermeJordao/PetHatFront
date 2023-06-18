@@ -1,66 +1,285 @@
 .BodyPerfil {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+.PerfilPhotoDiv {
+  border-radius: 10px;
+  width: 30%;
+  margin-left: 8%;
+  box-shadow: inset 0 0 3px #7e7e7e;
+}
+
+.PerfilImg {
+  margin-top: 5%;
+  margin-bottom: 3%;
+  margin-left: 29%;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 5px solid #eae8e8;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.NomePerfil {
+  font-family: "Inter", sans-serif;
+  color: #383838;
+  text-align: center;
+  font-size: 180%;
+  margin-top: 2%;
+}
+
+.EmailPerfil {
+  font-family: "Inter", sans-serif;
+  color: #7d7d7d;
+  font-size: 100%;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+.PetsCampo {
+  margin-left: 4%;
+  font-family: "Inter", sans-serif;
+  color: #383838;
+  font-size: 100%;
+  margin-bottom: 3%;
+}
+
+.PerfilForm {
+  border-radius: 10px;
+  margin-left: 3%;
+  box-shadow: inset 0 0 3px #7e7e7e;
+  width: 53%;
+}
+
+.Nome,
+.Especie,
+.Sexo,
+.Raça,
+.Idade,
+.Nometut,
+.CPFtut,
+.Teltut {
+  width: 85%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline-color: #4faaa5;
+}
+
+.Nometxt,
+.Especietxt,
+.Sexotxt,
+.Raçatxt,
+.Idadetxt,
+.Nometuttxt,
+.CPFtuttxt,
+.Teltuttxt {
+  font-family: "Inter", sans-serif;
+  color: #7d7d7d;
+  margin-right: 78%;
+  margin-top: 4%;
+  font-size: 80%;
+}
+
+.FormSide {
+  margin-left: 12%;
+}
+
+.BtnForm {
+  margin-top: 1%;
+  margin-bottom: 8%;
+  width: 85%;
+  background-color: #4faaa5;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  height: 60%;
+  line-height: 180%;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.AlignButton {
+  margin-top: 10%;
+  margin-left: 28%;
+}
+
+.BtnSair {
+  border: 1px solid #e73535;
+  margin-top: 1%;
+  margin-bottom: 8%;
+  width: 60%;
+  background-color: #e7353500;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #e73535;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  line-height: 180%;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.BtnSair:hover {
+  margin-top: 1%;
+  margin-bottom: 8%;
+  width: 60%;
+  background-color: #e73535;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.labelchange {
+  margin-top: 9%;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #00beab;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  height: 35px;
+  width: 35px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.BtnEditar {
+  border: 1px solid #03c0a4;
+  margin-top: 1%;
+  margin-bottom: 8%;
+  margin-left: 25%;
+  width: 50%;
+  background-color: #e7353500;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #03c0a4;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  line-height: 180%;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.BtnEditar:hover {
+  margin-top: 1%;
+  margin-bottom: 8%;
+  width: 50%;
+  background-color: #03c0a4;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+/* Media queries para tornar o CSS responsivo */
+@media screen and (max-width: 768px) {
+  .BodyPerfil {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
     margin-bottom: 2%;
   }
-  
+
   .PerfilPhotoDiv {
-    border-radius: 10px;
-    width: 30%;
-    margin-left: 8%;
-    box-shadow: inset 0 0 3px #7e7e7e;
-  }
-  
-  .PerfilImg {
-    margin-top: 5%;
-    margin-bottom: 3%;
-    margin-left: 29%;
-    width: 190px;
-    height: 190px;
-  
-    border-radius: 50%;
-    border: 5px solid #eae8e8;
-    display: inline-block;
-    border-radius: 50%;
-  
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  
-  .NomePerfil {
-    font-family: "Inter", sans-serif;
-    color: #383838;
-    text-align: center;
-    font-size: 180%;
-    margin-top: 2%;
-  }
-  
-  .EmailPerfil {
-    font-family: "Inter", sans-serif;
-    color: #7d7d7d;
-    font-size: 100%;
-    text-align: center;
-    margin-top: 1%;
+    width: 100%;
+    margin-left: 0;
     margin-bottom: 5%;
   }
-  
+
+  .PerfilImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+  }
+
+  .NomePerfil {
+    font-size: 150%;
+    margin-top: 2%;
+  }
+
   .PetsCampo {
-    margin-left: 4%;
-    font-family: "Inter", sans-serif;
-    color: #383838;
-    font-size: 100%;
-    margin-bottom: 3%;
+    margin-left: 0;
+    margin-bottom: 5%;
   }
-  
+
   .PerfilForm {
-    border-radius: 10px;
-    margin-left: 3%;
-    box-shadow: inset 0 0 3px #7e7e7e;
-    width: 53%;
+    margin-left: 0;
+    width: 100%;
   }
-  
+
   .Nome,
   .Especie,
   .Sexo,
@@ -69,17 +288,10 @@
   .Nometut,
   .CPFtut,
   .Teltut {
-    width: 85%;
-    padding: 12px 20px;
+    width: 100%;
     margin: 8px 0;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline-color: #4faaa5;
   }
-  
+
   .Nometxt,
   .Especietxt,
   .Sexotxt,
@@ -88,163 +300,23 @@
   .Nometuttxt,
   .CPFtuttxt,
   .Teltuttxt {
-    font-family: "Inter", sans-serif;
-    color: #7d7d7d;
-    margin-right: 78%;
-    margin-top: 4%;
-    font-size: 80%;
+    margin-right: 0;
+    margin-top: 2%;
   }
-  
+
   .FormSide {
-    margin-left: 12%;
+    margin-left: 0;
   }
-  
-  .BtnForm {
-    margin-top: 1%;
-    margin-bottom: 8%;
-    width: 85%;
-    background-color: #4faaa5;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 80%;
-    font-weight: 500;
-    height: 60%;
-    line-height: 180%;
-    list-style: none;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
+
   .AlignButton {
-    margin-top: 10%;
-    margin-left: 28%;
+    margin-top: 5%;
+    margin-left: 0;
   }
-  
-  /*Botão para Usuario Deslogar do Perfil*/
-  .BtnSair {
-    border: 1px solid #e73535;
-    margin-top: 1%;
-    margin-bottom: 8%;
-    width: 60%;
-    background-color: #e7353500;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #e73535;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 80%;
-    font-weight: 500;
-    line-height: 180%;
-    list-style: none;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    vertical-align: baseline;
-  }
-  
-  .BtnSair:hover {
-    margin-top: 1%;
-    margin-bottom: 8%;
-    width: 60%;
-    background-color: #e73535;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 80%;
-    font-weight: 500;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    vertical-align: baseline;
-  }
-  
-  
-  .labelchange {
-    margin-top: 9%;
-    position: absolute;
-    text-align: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #00beab;
-    color: white;
-    border: none;
-    padding: 5px;
-    font-size: 16px;
-    height: 35px;
-    width: 35px;
-    box-shadow: 0 2px 4px darkslategray;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: 70%;
-  }
-  
-  #upload-photo {
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-  }
-  
+
+  .BtnSair,
   .BtnEditar {
-    border: 1px solid #03c0a4;
-    margin-top: 1%;
-    margin-bottom: 8%;
-    margin-left: 25%;
-    width: 50%;
-    background-color: #e7353500;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #03c0a4;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 80%;
-    font-weight: 500;
-    line-height: 180%;
-    list-style: none;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    vertical-align: baseline;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
-  
-  .BtnEditar:hover {
-    margin-top: 1%;
-    margin-bottom: 8%;
-    width: 50%;
-    background-color: #03c0a4;
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 80%;
-    font-weight: 500;
-    outline: none;
-    position: relative;
-    text-align: center;
-    vertical-align: baseline;
-  }
-  
+}
