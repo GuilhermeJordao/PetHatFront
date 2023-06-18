@@ -178,7 +178,6 @@
   vertical-align: baseline;
 }
 
-
 .labelchange {
   margin-top: 9%;
   position: absolute;
@@ -246,4 +245,91 @@
   position: relative;
   text-align: center;
   vertical-align: baseline;
+}
+
+/* Regras de mídia para telas menores */
+@media screen and (max-width: 768px) {
+  .BodyPerfil {
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .PerfilPhotoDiv {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .PerfilImg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+  }
+
+  .NomePerfil {
+    font-size: 150%;
+    margin-top: 10px;
+  }
+
+  .EmailPerfil {
+    font-size: 90%;
+    margin-bottom: 10px;
+  }
+
+  .PetsCampo {
+    margin-left: 0;
+    font-size: 90%;
+    margin-bottom: 10px;
+  }
+
+  .PerfilForm {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .Nome,
+  .Especie,
+  .Sexo,
+  .Raça,
+  .Idade,
+  .Nometut,
+  .CPFtut,
+  .Teltut {
+    width: 100%;
+  }
+
+  .Nometxt,
+  .Especietxt,
+  .Sexotxt,
+  .Raçatxt,
+  .Idadetxt,
+  .Nometuttxt,
+  .CPFtuttxt,
+  .Teltuttxt {
+    margin-right: 0;
+    margin-top: 10px;
+    font-size: 70%;
+  }
+
+  .FormSide {
+    margin-left: 0;
+  }
+
+  .BtnForm,
+  .BtnSair,
+  .BtnEditar {
+    width: 60%;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .BtnSair:hover {
+    width: 60%;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
