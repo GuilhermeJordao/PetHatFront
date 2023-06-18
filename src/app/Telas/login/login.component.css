@@ -7,6 +7,7 @@
   overflow-x: hidden;
   padding-top: 20px;
 }
+
 .left {
   overflow: hidden;
   left: 0;
@@ -22,8 +23,8 @@
 .vetlogin {
   transform: translate(-50%, -50%);
   margin-left: 45%;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
 }
 
 .pethatlogo {
@@ -67,6 +68,7 @@
   margin-top: 4%;
   font-size: 80%;
 }
+
 /* Botão */
 .button-30 {
   background-color: #4faaa5;
@@ -182,6 +184,67 @@
 
 .eyeicon1 {
   position: absolute;
-top: 190px;
-right: 110px;
+  top: 190px;
+  right: 110px;
+}
+
+/* Consultas de Mídia */
+@media screen and (max-width: 768px) {
+  .split {
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+    position: relative;
+  }
+
+  .right {
+    width: 100%;
+    position: relative;
+    background-color: white;
+  }
+
+  .titulolog,
+  .subtitulolog,
+  .InfoCadastro,
+  .TextButtonSide,
+  .fazerlogin,
+  .Email,
+  .Senha,
+  .Emailtxt,
+  .Senhatxt,
+  .EsqSenha,
+  .eyeicon1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .pethatlogo,
+  .titulolog,
+  .subtitulolog {
+    margin-top: 15%;
+    margin-bottom: 5%;
+  }
+
+  .fazerlogin {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titulolog {
+    font-size: 150%;
+  }
+
+  .subtitulolog {
+    font-size: 80%;
+  }
+
+  .Emailtxt,
+  .Senhatxt,
+  .EsqSenha {
+    margin-right: 0;
+  }
 }
