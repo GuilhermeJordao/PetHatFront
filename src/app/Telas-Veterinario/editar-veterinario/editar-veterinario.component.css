@@ -1,4 +1,4 @@
-/*Navbar*/
+/* Navbar */
 .Logo {
   height: 60%;
   margin-left: 12%;
@@ -40,6 +40,7 @@ header ul {
   margin-left: 10%;
   margin-top: 10%;
 }
+
 .vetlogin {
   transform: translate(-50%, -50%);
   margin-left: 25%;
@@ -88,7 +89,8 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
-/* Botão */
+
+/* Button */
 .button-30 {
   background-color: #4faaa5;
   border-radius: 8px;
@@ -164,6 +166,7 @@ header ul {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
 .Nome,
 .Email,
 .Senha,
@@ -171,7 +174,7 @@ header ul {
 .CRMVCE,
 .telefone,
 .Data {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -189,6 +192,7 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
 .Datatxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -204,6 +208,7 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
 .Senhatxt,
 .telefonetxt,
 .Nometxt {
@@ -213,6 +218,7 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
 .CRMVCEtxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -274,4 +280,76 @@ header ul {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .Logo {
+    height: 40%;
+    margin-left: 8%;
+  }
+
+  .Letreiro {
+    height: 20%;
+    margin-left: 1%;
+  }
+
+  header {
+    height: 80px;
+  }
+
+  .titulolog {
+    font-size: 150%;
+  }
+
+  .subtitulolog {
+    font-size: 80%;
+  }
+
+  .InfoCadastro {
+    margin-left: 35%;
+  }
+
+  .TextButtonSide {
+    margin-right: 2%;
+    margin-top: 4%;
+    font-size: 70%;
+  }
+
+  .formLogin {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .fazerlogin,
+  .cancelarLogin {
+    width: 250px;
+    font-size: 70%;
+  }
+
+  .Emailtxt {
+    margin-right: 45%;
+  }
+
+  .Datatxt {
+    margin-right: 45%;
+  }
+
+  .ConfSenhatxt {
+    margin-right: 47%;
+  }
+
+  .Senhatxt,
+  .telefonetxt,
+  .Nometxt {
+    margin-right: 70%;
+  }
+
+  .CRMVCEtxt {
+    margin-right: 70%;
+  }
+
+  .EsqSenha {
+    margin-left: 30%;
+  }
 }

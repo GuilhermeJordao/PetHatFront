@@ -6,17 +6,7 @@
 />
 
 <meta charset="utf-8" />
-<div>
-  <header>
-    <img
-      class="Letreiro"
-      src="../../../assets/Images/PetHatLetreiro.png"
-      alt="PetHatLetreiro"
-    />
-    <img class="Logo" src="../../../assets/Images/DogHat.png" alt="DogHat" />
-    <div class="TypeLogin">Administrador</div>
-  </header>
-</div>
+<app-navgeneric></app-navgeneric>
 
 <div class="Screen">
   <div class="centered">
@@ -59,7 +49,8 @@
             value="{{ vet.senha }}"
           /><br /><br />
           <label class="CRMVCEtxt" for="CRMVCE">CRMVCE:</label><br />
-          <input disabled
+          <input
+            disabled
             class="CRMVCE"
             type="text"
             id="fcrmvce"
@@ -80,7 +71,8 @@
           /><br />
           <label class="Datatxt" for="Data">Data Portaria Habilitação:</label
           ><br />
-          <input disabled
+          <input
+            disabled
             class="Data"
             type="text"
             id="fportaria"
@@ -100,7 +92,8 @@
             class="cancelarLogin"
             type="submit"
             [routerLink]="['/TabelaCrud']"
-            value="Realizar Cadastro">
+            value="Realizar Cadastro"
+          >
             Cancelar
           </button>
         </form>

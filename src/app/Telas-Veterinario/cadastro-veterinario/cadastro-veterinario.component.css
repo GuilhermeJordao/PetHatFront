@@ -1,45 +1,10 @@
-/*Navbar*/
-.Logo {
-  height: 60%;
-  margin-left: 12%;
-  position: relative;
-}
-
-.Letreiro {
-  height: 30%;
-  margin-left: 1%;
-}
-
-header {
-  background-image: linear-gradient(to bottom right, #4faaa5, #81eee8);
-  position: fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  display: flex;
-  align-items: center;
-}
-
-header * {
-  display: inline;
-  position: absolute;
-}
-
-header li {
-  font-family: "Inter", sans-serif;
-  margin: 20px;
-}
-
-header ul {
-  margin-top: 1%;
-}
-
+/* Screen */
 .Screen {
   margin-left: 10%;
   margin-top: 10%;
 }
+
+/* Vetlogin */
 .vetlogin {
   transform: translate(-50%, -50%);
   margin-left: 25%;
@@ -47,17 +12,7 @@ header ul {
   height: 80%;
 }
 
-.pethatlogo {
-  margin-top: 8%;
-  margin-bottom: 5%;
-  margin-left: 45%;
-  left: 50%;
-  width: 60%;
-  height: 60%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
+/* Titulolog */
 .titulolog {
   font-family: "Inter", sans-serif;
   color: #383838;
@@ -66,6 +21,7 @@ header ul {
   margin-top: 8%;
 }
 
+/* Subtitulolog */
 .subtitulolog {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -75,12 +31,14 @@ header ul {
   margin-top: 2%;
 }
 
+/* InfoCadastro */
 .InfoCadastro {
   display: flex;
   flex-direction: row;
   margin-left: 45%;
 }
 
+/* TextButtonSide */
 .TextButtonSide {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -88,6 +46,7 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
 /* Botão */
 .button-30 {
   background-color: #4faaa5;
@@ -120,6 +79,7 @@ header ul {
   background-color: #418581;
 }
 
+/* FormLogin */
 .formLogin {
   width: 48%;
   text-align: center;
@@ -131,12 +91,21 @@ header ul {
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .formLogin {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+/* Form */
 .form {
   display: inline-block;
   margin-top: 5%;
   margin-bottom: 1%;
 }
 
+/* Fazerlogin */
 .fazerlogin {
   margin-top: 5%;
   width: 400px;
@@ -164,6 +133,15 @@ header ul {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+@media (max-width: 768px) {
+  .fazerlogin {
+    width: 250px;
+    font-size: 70%;
+  }
+}
+
+/* Nome, Email, Senha, ConfSenha, CRMVCE, telefone, Data */
 .Nome,
 .Email,
 .Senha,
@@ -171,7 +149,7 @@ header ul {
 .CRMVCE,
 .telefone,
 .Data {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -182,6 +160,7 @@ header ul {
   outline-color: #4faaa5;
 }
 
+/* Emailtxt */
 .Emailtxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -189,6 +168,8 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
+/* Datatxt */
 .Datatxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -197,6 +178,7 @@ header ul {
   font-size: 80%;
 }
 
+/* ConfSenhatxt */
 .ConfSenhatxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -204,6 +186,8 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
+/* Senhatxt, telefonetxt, Nometxt */
 .Senhatxt,
 .telefonetxt,
 .Nometxt {
@@ -213,6 +197,8 @@ header ul {
   margin-top: 4%;
   font-size: 80%;
 }
+
+/* CRMVCEtxt */
 .CRMVCEtxt {
   font-family: "Inter", sans-serif;
   color: #7d7d7d;
@@ -221,6 +207,7 @@ header ul {
   font-size: 80%;
 }
 
+/* EsqSenha */
 .EsqSenha {
   display: inline-block;
   font-family: "Inter", sans-serif;
@@ -235,12 +222,14 @@ header ul {
   cursor: pointer;
 }
 
+/* Eyeicon1 */
 .eyeicon1 {
   position: absolute;
   top: 190px;
   right: 110px;
 }
 
+/* TypeLogin */
 .TypeLogin {
   color: white;
   font-weight: bold;
@@ -248,9 +237,10 @@ header ul {
   margin-left: 89%;
 }
 
+/* CancelarLogin */
 .cancelarLogin {
   margin-top: 5%;
-  width: 400px;
+  width: 250px;
   background-color: #eb2832;
   border-radius: 8px;
   border-style: none;
@@ -274,4 +264,11 @@ header ul {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .cancelarLogin {
+    width: 250px;
+    font-size: 70%;
+  }
 }
