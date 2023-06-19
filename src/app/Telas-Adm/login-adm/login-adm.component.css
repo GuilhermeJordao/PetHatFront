@@ -1,4 +1,4 @@
-/*Navbar*/
+/* Navbar */
 .Logo {
   height: 60%;
   margin-left: 12%;
@@ -89,7 +89,7 @@ form {
 
 .Email,
 .Senha {
-  width: 120%;
+  width: 100%;
   padding: 12px 20px;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -149,6 +149,74 @@ h3 {
   margin-left: 10%;
   float: right;
 }
+
 .alert {
   text-align: center;
+}
+
+/* Media Queries */
+
+/* Tablets and small desktop screens */
+@media screen and (max-width: 1024px) {
+  .Logo {
+    margin-left: 5%;
+  }
+
+  .TypeLogin {
+    margin-left: 75%;
+  }
+
+  .formLogin {
+    margin-left: 5%;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  .Logo {
+    margin-left: 2%;
+  }
+
+  header li {
+    margin: 10px;
+  }
+
+  .TypeLogin {
+    margin-left: 65%;
+    font-size: 120%;
+  }
+
+  .main {
+    margin-top: 10%;
+    margin-left: 2%;
+  }
+
+  .titulolog {
+    margin-left: 5%;
+    font-size: 180%;
+  }
+
+  .formLogin {
+    margin-left: 2%;
+    margin-bottom: 20%;
+  }
+
+  .eyeicon1 {
+    top: 180px;
+    right: 90px;
+  }
+
+  .fazerlogin {
+    width: 100%;
+  }
+
+  h3 {
+    margin-left: 2%;
+  }
+
+  .mensagem {
+    margin-right: 10%;
+    margin-left: 2%;
+    float: none;
+  }
 }

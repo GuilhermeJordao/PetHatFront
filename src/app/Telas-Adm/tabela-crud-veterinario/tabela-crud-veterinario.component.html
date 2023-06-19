@@ -9,121 +9,113 @@
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
 />
 
-<header>
-  <div class="logo">
-    <img
-      class="letreiro"
-      src="../../../assets/Images/PetHatLetreiro.png"
-      alt="PetHatLetreiro"
-    />
-    <img
-      class="cachorro"
-      src="../../../assets/Images/DogHat.png"
-      alt="DogHat"
-    />
-  </div>
-  <div class="TypeLogin">Administrador</div>
-</header>
+<app-navgeneric></app-navgeneric>
 <div class="caixa">
   <div class="botao">
     <button class="BtnSair" (click)="sairConta()" role="button">
       Sair da Sessão
     </button>
   </div>
-  <div class="titulo"><h1>Gerenciamento de Veterinários</h1></div>
+  <div class="titulo">
+    <h1>Gerenciamento de Veterinários</h1>
+  </div>
 </div>
-<table mat-table [dataSource]="veterinario" class="mat-elevation-z8">
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<div class="table-container">
+  <table mat-table [dataSource]="veterinario" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef>Nome</th>
-    <td mat-cell *matCellDef="let veterinario">{{ veterinario.nome }}</td>
-  </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let veterinario">{{ veterinario.nome }}</td>
+    </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef>Email</th>
-    <td mat-cell *matCellDef="let veterinario">{{ veterinario.email }}</td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let veterinario">{{ veterinario.email }}</td>
+    </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="senha">
-    <th mat-header-cell *matHeaderCellDef>Senha</th>
-    <td mat-cell *matCellDef="let veterinario">{{ veterinario.senha }}</td>
-  </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="senha">
+      <th mat-header-cell *matHeaderCellDef>Senha</th>
+      <td mat-cell *matCellDef="let veterinario">{{ veterinario.senha }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="especialidade">
-    <th mat-header-cell *matHeaderCellDef>Especialidade</th>
-    <td mat-cell *matCellDef="let veterinario">
-      {{ veterinario.especialidade }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="especialidade">
+      <th mat-header-cell *matHeaderCellDef>Especialidade</th>
+      <td mat-cell *matCellDef="let veterinario">
+        {{ veterinario.especialidade }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="turno">
-    <th mat-header-cell *matHeaderCellDef>Turno</th>
-    <td mat-cell *matCellDef="let veterinario">
-      {{ veterinario.turno }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="turno">
+      <th mat-header-cell *matHeaderCellDef>Turno</th>
+      <td mat-cell *matCellDef="let veterinario">
+        {{ veterinario.turno }}
+      </td>
+    </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="crmvce">
-    <th mat-header-cell *matHeaderCellDef>CRMVCE</th>
-    <td mat-cell *matCellDef="let veterinario">{{ veterinario.crmvce }}</td>
-  </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="crmvce">
+      <th mat-header-cell *matHeaderCellDef>CRMVCE</th>
+      <td mat-cell *matCellDef="let veterinario">{{ veterinario.crmvce }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="telefone">
-    <th mat-header-cell *matHeaderCellDef>Telefone</th>
-    <td mat-cell *matCellDef="let veterinario">{{ veterinario.telefone }}</td>
-  </ng-container>
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef>Telefone</th>
+      <td mat-cell *matCellDef="let veterinario">
+        {{ veterinario.telefone }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="dataPortariaHabilitacao">
-    <th mat-header-cell *matHeaderCellDef>Data Portaria Habilitacao</th>
-    <td mat-cell *matCellDef="let veterinario">
-      {{ veterinario.dataPortariaHabilitacao }}
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="dataPortariaHabilitacao">
+      <th mat-header-cell *matHeaderCellDef>Data Portaria Habilitacao</th>
+      <td mat-cell *matCellDef="let veterinario">
+        {{ veterinario.dataPortariaHabilitacao }}
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="actions">
-    <mat-header-cell *matHeaderCellDef>
-      <button
-        class="adicionar"
-        mat-mini-fab
-        color="accent"
-        aria-label="Example icon button with a plus one icon"
-        [routerLink]="['/cadastroVeterinario']"
-      >
-        <span class="material-symbols-outlined"> add </span>
-      </button>
-    </mat-header-cell>
-
-    <mat-cell *matCellDef="let veterinario">
-      <div class="div-editar">
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
         <button
-          class="editar"
+          class="adicionar"
           mat-mini-fab
-          color="primary"
+          color="accent"
           aria-label="Example icon button with a plus one icon"
-          (click)="editar(veterinario)"
+          [routerLink]="['/cadastroVeterinario']"
         >
-          <span class="material-symbols-outlined"> edit </span>
+          <span class="material-symbols-outlined"> add </span>
         </button>
-      </div>
+      </mat-header-cell>
 
-      <button
-        class="deletar"
-        mat-mini-fab
-        color="warn"
-        aria-label="Example icon button with a plus one icon"
-        (click)="deletar(veterinario)"
-      >
-        <span class="material-symbols-outlined"> delete </span>
-      </button>
-    </mat-cell>
-  </ng-container>
+      <mat-cell *matCellDef="let veterinario">
+        <div class="div-editar">
+          <button
+            class="editar"
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a plus one icon"
+            (click)="editar(veterinario)"
+          >
+            <span class="material-symbols-outlined"> edit </span>
+          </button>
+        </div>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+        <button
+          class="deletar"
+          mat-mini-fab
+          color="warn"
+          aria-label="Example icon button with a plus one icon"
+          (click)="deletar(veterinario)"
+        >
+          <span class="material-symbols-outlined"> delete </span>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

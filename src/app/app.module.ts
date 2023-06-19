@@ -39,6 +39,7 @@ import { InicialVetComponent } from './Telas/Telas-Veterinario/inicial-vet/inici
 import { NavVetComponent } from './Componentes/nav-vet/nav-vet.component';
 import { VisualizarConsultaVetComponent } from './Telas/Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
 import { VisualizarConsultalComponent } from './Telas/visualizar-consultal/visualizar-consultal.component';
+import { NavgenericComponent } from './Componentes/navgeneric/navgeneric.component';
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -67,6 +68,7 @@ import { VisualizarConsultalComponent } from './Telas/visualizar-consultal/visua
     NavVetComponent,
     VisualizarConsultaVetComponent,
     VisualizarConsultalComponent,
+    NavgenericComponent,
   ],
   imports: [
     FormsModule,
