@@ -1,0 +1,105 @@
+.Logo {
+  height: 60%;
+}
+
+.Letreiro {
+  height: 30%;
+  margin-left: 1%;
+}
+
+a:hover::content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.Navlicolor:hover .TxtNav {
+  color: #288d7b;
+}
+
+header * {
+  display: inline;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, #4faaa5, #81eee8);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 25px 0 black;
+  flex-wrap: wrap;
+}
+
+header li a {
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+}
+
+.TxtNav {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  header li {
+    font-family: "Inter", sans-serif;
+    margin-left: 30px;
+  }
+
+  .Logo {
+    height: 40%;
+  }
+
+  .Letreiro {
+    height: 20%;
+    margin-left: 1%;
+  }
+}
+
+@media (max-width: 600px) {
+  header li {
+    font-family: "Inter", sans-serif;
+    margin-left: 30px;
+  }
+
+  .Logo {
+    height: 40%;
+  }
+
+  .Letreiro {
+    height: 20%;
+    margin-left: 1%;
+  }
+}
+
+@media (max-width: 550px) {
+  header li {
+    font-family: "Inter", sans-serif;
+    margin-left: 30px;
+  }
+
+  .Logo {
+    height: 40%;
+  }
+
+  .Letreiro {
+    height: 20%;
+    margin-left: 1%;
+  }
+
+  @media (max-width: 375px) {
+    header li {
+      font-family: "Inter", sans-serif;
+      margin-left: 30px;
+    }
+
+    .Logo {
+      height: 40%;
+    }
+
+    .Letreiro {
+      height: 20%;
+      margin-left: 1%;
+    }
+  }
+}
