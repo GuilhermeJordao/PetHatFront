@@ -163,6 +163,12 @@
         </select>
       </div>
     </div>
+    <div class="alert alert-danger" *ngIf="erroMensagem">
+      Horario de agendamento indisponível
+    </div>
+    <div class="alert alert-success" *ngIf="sucessoMensagem">
+      Consulta agendada com sucesso
+    </div>
     <button type="submit" class="BtnHour" (click)="agendar()">
       Fazer Agendamento
     </button>

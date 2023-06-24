@@ -32,6 +32,8 @@ export class AgendarConsultaComponent {
   manha: boolean = false;
   tarde: boolean = false;
   noite: boolean = false;
+  erroMensagem = false;
+  sucessoMensagem = false;
 
   constructor(
     private petService: PetService,
@@ -99,9 +101,28 @@ export class AgendarConsultaComponent {
     };
     this.consultaService
       .save(obj, Number.parseInt(this.petId), this.emailVet)
-      .subscribe((data) => {
-        console.log(data);
+      .subscribe({
+        next: (dados) => {
+          this.correto();
+        },
+        error: (e) => {
+          this.errado();
+        },
       });
+  }
+
+  private correto() {
+    this.sucessoMensagem = true;
+    setTimeout(() => {
+      this.sucessoMensagem = false;
+    }, 2000);
+  }
+
+  private errado() {
+    this.erroMensagem = true;
+    setTimeout(() => {
+      this.erroMensagem = false;
+    }, 2000);
   }
 }
 
