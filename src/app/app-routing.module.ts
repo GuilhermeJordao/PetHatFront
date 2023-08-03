@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './Telas/login/login.component';
-import { CadastroUsuComponent } from './Telas/cadastro-usu/cadastro-usu.component';
-import { PerfilUsuComponent } from './Telas/perfil-usu/perfil-usu.component';
-import { TelaInicialComponent } from './Telas/tela-inicial/tela-inicial.component';
+import { LoginComponent } from './Telas/TelasPrincipais/login/login.component';
+import { CadastroUsuComponent } from './Telas/TelasPrincipais/cadastro-usu/cadastro-usu.component';
+import { PerfilUsuComponent } from './Telas/TelasPrincipais/perfil-usu/perfil-usu.component';
+import { TelaInicialComponent } from './Telas/TelasPrincipais/tela-inicial/tela-inicial.component';
 import { LoginVeterinarioComponent } from './Telas-Veterinario/login-veterinario/login-veterinario.component';
 import { CadastroVeterinarioComponent } from './Telas-Veterinario/cadastro-veterinario/cadastro-veterinario.component';
 import { LoginADMComponent } from './Telas-Adm/login-adm/login-adm.component';
@@ -11,15 +11,15 @@ import { TabelaCrudVeterinarioComponent } from './Telas-Adm/tabela-crud-veterina
 import { EditarVeterinarioComponent } from './Telas-Veterinario/editar-veterinario/editar-veterinario.component';
 import { PerfilVeterinarioComponent } from './Telas-Veterinario/perfil-veterinario/perfil-veterinario.component';
 import { PerfilPetComponent } from './Telas/Pets/perfil-pet/perfil-pet.component';
-import { InicialUsuComponent } from './Telas/inicial-usu/inicial-usu.component';
+import { InicialUsuComponent } from './Telas/TelasPrincipais/inicial-usu/inicial-usu.component';
 import { CadastroPetComponent } from './Telas/Pets/cadastro-pet/cadastro-pet.component';
 import { VisualizarPetsComponent } from './Telas/Pets/visualizar-pets/visualizar-pets.component';
-import { AgendarConsultaComponent } from './Telas/agendar-consulta/agendar-consulta.component';
-import { AgendadasConsulComponent } from './Telas/agendadas-consul/agendadas-consul.component';
-import { MinhasConsultasComponent } from './Telas/Telas-Veterinario/minhas-consultas/minhas-consultas.component';
-import { InicialVetComponent } from './Telas/Telas-Veterinario/inicial-vet/inicial-vet.component';
-import { VisualizarConsultaVetComponent } from './Telas/Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
-import { VisualizarConsultalComponent } from './Telas/visualizar-consultal/visualizar-consultal.component';
+import { AgendarConsultaComponent } from './Telas/TelasPrincipais/agendar-consulta/agendar-consulta.component';
+import { AgendadasConsulComponent } from './Telas/TelasPrincipais/agendadas-consul/agendadas-consul.component';
+import { MinhasConsultasComponent } from './Telas-Veterinario/minhas-consultas/minhas-consultas.component';
+import { InicialVetComponent } from './Telas-Veterinario/inicial-vet/inicial-vet.component';
+import { VisualizarConsultaVetComponent } from './Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
+import { VisualizarConsultalComponent } from './Telas/TelasPrincipais/visualizar-consultal/visualizar-consultal.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },

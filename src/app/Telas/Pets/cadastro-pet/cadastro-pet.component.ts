@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
-import { PetService } from '../../service/pet.service';
+import { PetService } from '../../TelasPrincipais/service/pet.service';
 
 @Component({
   selector: 'app-cadastro-pet',

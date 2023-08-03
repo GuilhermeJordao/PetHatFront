@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Consulta } from '../../model/consulta';
-import { ConsultaService } from '../../service/consulta.service';
+import { Consulta } from '../../Telas/TelasPrincipais/model/consulta';
+import { ConsultaService } from '../../Telas/TelasPrincipais/service/consulta.service';
 
 @Component({
   selector: 'app-minhas-consultas',

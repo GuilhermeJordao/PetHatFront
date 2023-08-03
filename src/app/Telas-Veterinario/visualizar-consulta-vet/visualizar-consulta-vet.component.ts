@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConsultaService } from '../../service/consulta.service';
+import { ConsultaService } from '../../Telas/TelasPrincipais/service/consulta.service';
 
 @Component({
   selector: 'app-visualizar-consulta-vet',

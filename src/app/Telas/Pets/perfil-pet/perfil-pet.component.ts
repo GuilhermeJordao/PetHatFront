@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClienteService } from '../../service/cliente.service';
-import { PetService } from '../../service/pet.service';
-import { UploadImagemService } from '../../service/upload-imagem.service';
+import { ClienteService } from '../../TelasPrincipais/service/cliente.service';
+import { PetService } from '../../TelasPrincipais/service/pet.service';
+import { UploadImagemService } from '../../TelasPrincipais/service/upload-imagem.service';
 
 @Component({
   selector: 'app-perfil-pet',

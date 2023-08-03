@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pet } from '../../model/pet';
-import { PetService } from '../../service/pet.service';
-import { UploadImagemService } from '../../service/upload-imagem.service';
+import { Pet } from '../../TelasPrincipais/model/pet';
+import { PetService } from '../../TelasPrincipais/service/pet.service';
+import { UploadImagemService } from '../../TelasPrincipais/service/upload-imagem.service';
 
 @Component({
   selector: 'app-visualizar-pets',

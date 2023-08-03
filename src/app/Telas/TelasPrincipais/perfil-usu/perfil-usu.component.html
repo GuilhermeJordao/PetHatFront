@@ -101,13 +101,64 @@
             [routerLink]="['/Perfil']"
             type="submit"
             value="Atualizar Informações"
-            (click)="onSubmit()"
+            (click)="open(modalconfirmarEditar)"
           />
         </form>
       </div>
     </div>
   </div>
-  <button class="BtnExcluir" (click)="deletarConta()" role="button">
+  <button class="BtnExcluir" (click)="open(modalconfirmarDelete)" role="button">
     Excluir Conta
   </button>
 </body>
+
+<!--Modal-->
+<ng-template #modalconfirmarDelete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Deletar Perfil</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Voce tem certeza que deseja deletar <!--<span class="text-primary">"John Doe"</span>--> seu perfil?</strong>
+    </p>
+    <p>
+      Todas as informações associadas a este perfil de usuário serão excluídas permanentemente.
+      <span class="text-danger">Esta operação não pode ser desfeita.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close(deletarConta())">Deletar</button>
+  </div>
+</ng-template>
+
+<ng-template #modalconfirmarEditar let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Editar Perfil</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Voce tem certeza que deseja editar <!--<span class="text-primary">"John Doe"</span>--> seu perfil?</strong>
+    </p>
+    <p>
+      Todas as informações alteradas no formulario serão associadas a este perfil de usuário.
+      <span class="text-warning">Esta operação não pode ser desfeita.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-warning" (click)="modal.close(onSubmit())">Editar</button>
+  </div>
+</ng-template>

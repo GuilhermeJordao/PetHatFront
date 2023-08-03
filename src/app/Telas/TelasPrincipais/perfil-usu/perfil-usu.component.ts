@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Type } from '@angular/core';
 import { ClienteService } from '../service/cliente.service';
 import { Cliente } from '../model/cliente';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UploadImagemService } from '../service/upload-imagem.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @Component({
   selector: 'app-perfil-usu',
@@ -20,6 +23,7 @@ export class PerfilUsuComponent implements OnInit {
     email: [null],
     senha: [null],
   };
+  closeResult: any;
   id: any = 0;
   cliente: Cliente | undefined;
   form: FormGroup;
@@ -35,7 +39,8 @@ export class PerfilUsuComponent implements OnInit {
     private clienteService: ClienteService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private imagemService: UploadImagemService
+    private imagemService: UploadImagemService,
+    private modalService: NgbModal
   ) {
     this.form = this.formBuilder.group({
       nome: [null],
@@ -101,6 +106,24 @@ export class PerfilUsuComponent implements OnInit {
     });
   }
 
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
   deletarConta() {
     console.log(this.id);
     this.router.navigate([`/`]);
@@ -151,3 +174,9 @@ export class PerfilUsuComponent implements OnInit {
     }
   }
 }
+
+function openModal() {
+  throw new Error('Function not implemented.');
+}
+
+
