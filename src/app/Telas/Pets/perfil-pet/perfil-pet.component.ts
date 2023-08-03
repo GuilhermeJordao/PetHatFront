@@ -8,7 +8,7 @@ import { UploadImagemService } from '../../service/upload-imagem.service';
 @Component({
   selector: 'app-perfil-pet',
   templateUrl: './perfil-pet.component.html',
-  styleUrls: ['./perfil-pet.component.css'],
+  styleUrls: ['./perfil-pet.component.scss'],
 })
 export class PerfilPetComponent implements OnInit {
   pet = {

@@ -7,7 +7,7 @@ import { VeterinarioService } from '../service/veterinario.service';
 @Component({
   selector: 'app-login-veterinario',
   templateUrl: './login-veterinario.component.html',
-  styleUrls: ['./login-veterinario.component.css'],
+  styleUrls: ['./login-veterinario.component.scss'],
 })
 export class LoginVeterinarioComponent {
   sucessoMensagem = false;

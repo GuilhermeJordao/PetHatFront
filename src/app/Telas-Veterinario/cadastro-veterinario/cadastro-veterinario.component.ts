@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-cadastro-veterinario',
   templateUrl: './cadastro-veterinario.component.html',
-  styleUrls: ['./cadastro-veterinario.component.css'],
+  styleUrls: ['./cadastro-veterinario.component.scss'],
 })
 export class CadastroVeterinarioComponent {
   form: FormGroup;

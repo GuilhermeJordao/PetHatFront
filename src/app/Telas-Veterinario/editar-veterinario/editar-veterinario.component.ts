@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-editar-veterinario',
   templateUrl: './editar-veterinario.component.html',
-  styleUrls: ['./editar-veterinario.component.css'],
+  styleUrls: ['./editar-veterinario.component.scss'],
 })
 export class EditarVeterinarioComponent implements OnInit {
   id: number = 0;

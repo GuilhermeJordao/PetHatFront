@@ -6,7 +6,7 @@ import { ConsultaService } from '../service/consulta.service';
 @Component({
   selector: 'app-agendadas-consul',
   templateUrl: './agendadas-consul.component.html',
-  styleUrls: ['./agendadas-consul.component.css'],
+  styleUrls: ['./agendadas-consul.component.scss'],
 })
 export class AgendadasConsulComponent {
   consultas: Consulta[] | undefined;

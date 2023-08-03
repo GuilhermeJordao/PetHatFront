@@ -7,7 +7,7 @@ import { Administrador } from '../model/administrador';
 @Component({
   selector: 'app-login-adm',
   templateUrl: './login-adm.component.html',
-  styleUrls: ['./login-adm.component.css'],
+  styleUrls: ['./login-adm.component.scss'],
 })
 export class LoginADMComponent {
   sucessoMensagem = false;

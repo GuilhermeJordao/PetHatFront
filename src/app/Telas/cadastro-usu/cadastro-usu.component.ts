@@ -6,7 +6,7 @@ import { ClienteService } from '../service/cliente.service';
 @Component({
   selector: 'app-cadastro-usu',
   templateUrl: './cadastro-usu.component.html',
-  styleUrls: ['./cadastro-usu.component.css'],
+  styleUrls: ['./cadastro-usu.component.scss'],
 })
 export class CadastroUsuComponent implements OnInit {
   //Formulário

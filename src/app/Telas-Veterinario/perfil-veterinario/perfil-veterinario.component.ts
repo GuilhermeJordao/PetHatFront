@@ -6,7 +6,7 @@ import { VeterinarioService } from '../service/veterinario.service';
 @Component({
   selector: 'app-perfil-veterinario',
   templateUrl: './perfil-veterinario.component.html',
-  styleUrls: ['./perfil-veterinario.component.css'],
+  styleUrls: ['./perfil-veterinario.component.scss'],
 })
 export class PerfilVeterinarioComponent {
   vet = {

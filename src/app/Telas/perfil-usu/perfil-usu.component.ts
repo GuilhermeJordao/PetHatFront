@@ -8,7 +8,7 @@ import { UploadImagemService } from '../service/upload-imagem.service';
 @Component({
   selector: 'app-perfil-usu',
   templateUrl: './perfil-usu.component.html',
-  styleUrls: ['./perfil-usu.component.css'],
+  styleUrls: ['./perfil-usu.component.scss'],
 })
 export class PerfilUsuComponent implements OnInit {
   ButtonEnviar = false;

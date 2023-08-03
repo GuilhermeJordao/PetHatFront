@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-tabela-crud-veterinario',
   templateUrl: './tabela-crud-veterinario.component.html',
-  styleUrls: ['./tabela-crud-veterinario.component.css'],
+  styleUrls: ['./tabela-crud-veterinario.component.scss'],
 })
 export class TabelaCrudVeterinarioComponent {
   veterinario: Observable<Veterinario[]>;

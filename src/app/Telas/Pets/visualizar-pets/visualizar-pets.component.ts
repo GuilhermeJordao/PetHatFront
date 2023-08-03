@@ -7,7 +7,7 @@ import { UploadImagemService } from '../../service/upload-imagem.service';
 @Component({
   selector: 'app-visualizar-pets',
   templateUrl: './visualizar-pets.component.html',
-  styleUrls: ['./visualizar-pets.component.css'],
+  styleUrls: ['./visualizar-pets.component.scss'],
 })
 export class VisualizarPetsComponent {
   ImagemPadrao = true;

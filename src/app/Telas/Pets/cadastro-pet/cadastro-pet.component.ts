@@ -6,7 +6,7 @@ import { PetService } from '../../service/pet.service';
 @Component({
   selector: 'app-cadastro-pet',
   templateUrl: './cadastro-pet.component.html',
-  styleUrls: ['./cadastro-pet.component.css'],
+  styleUrls: ['./cadastro-pet.component.scss'],
 })
 export class CadastroPetComponent {
   form: FormGroup;

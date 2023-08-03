@@ -5,7 +5,7 @@ import { ConsultaService } from '../service/consulta.service';
 @Component({
   selector: 'app-visualizar-consultal',
   templateUrl: './visualizar-consultal.component.html',
-  styleUrls: ['./visualizar-consultal.component.css'],
+  styleUrls: ['./visualizar-consultal.component.scss'],
 })
 export class VisualizarConsultalComponent implements OnInit {
   private id: any = 0;

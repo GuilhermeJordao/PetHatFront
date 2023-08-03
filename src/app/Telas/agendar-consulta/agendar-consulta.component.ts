@@ -10,7 +10,7 @@ import { PetService } from '../service/pet.service';
 @Component({
   selector: 'app-agendar-consulta',
   templateUrl: './agendar-consulta.component.html',
-  styleUrls: ['./agendar-consulta.component.css'],
+  styleUrls: ['./agendar-consulta.component.scss'],
 })
 export class AgendarConsultaComponent {
   perfilImg: string = '';
