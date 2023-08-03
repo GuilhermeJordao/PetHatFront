@@ -46,7 +46,7 @@
         <p>{{ perfil.email }}</p>
       </div>
       <div class="AlignButton">
-        <button class="BtnSair" (click)="sairConta()" role="button">
+        <button class="BtnSair" (click)="open(modalDeslogar)" role="button">
           Sair da Sessão
         </button>
       </div>
@@ -160,5 +160,26 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
     <button type="button" class="btn btn-warning" (click)="modal.close(onSubmit())">Editar</button>
+  </div>
+</ng-template>
+
+<ng-template #modalDeslogar let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Deslogar da Aplicação</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Voce tem certeza que deseja deslogar da aplicação<!--<span class="text-primary">"John Doe"</span>-->?</strong>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close(sairConta())">Sair</button>
   </div>
 </ng-template>
