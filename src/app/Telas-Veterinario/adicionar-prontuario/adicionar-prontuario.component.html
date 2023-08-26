@@ -10,77 +10,77 @@
 <app-nav-vet></app-nav-vet>
 <div class="Screen">
   <div class="centered">
-    <div class="titulolog">Aqui voce pode adicionar Detalhes ao Pronturario do Pet</div>
+    <div class="titulolog">Aqui você pode adicionar Detalhes ao Pronturario do Pet</div>
     <div class="subtitulolog">
       CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
       <form class="form">
-        <label class="Nometxt" for="Nome">Data:</label><br />
+        <label class="Datatxt" for="Data">Data:</label><br />
         <input
-          class="Nome"
-          type="text"
-          name="Nome"
+          class="Data"
+          type="date"
+          name="Data"
 
-          formControlName="nome"
+          formControlName="data"
         /><br />
-        <label class="Nometxt" for="Nome">Horario:</label><br />
+        <label class="Horariotxt" for="Horario">Horario:</label><br />
         <input
-          class="Nome"
-          type="text"
-          name="Nome"
+          class="Horario"
+          type="time"
+          name="Horario"
 
-          formControlName="nome"
+          formControlName="horario"
         /><br />
-        <label class="Nometxt" for="Nome">Imunização:</label><br />
+        <label class="Imunizacaotxt" for="Imunizacao">Imunização:</label><br />
         <input
-          class="Nome"
+          class="Imunizacao"
           type="text"
-          name="Nome"
+          name="Imunizacao"
 
-          formControlName="nome"
+          formControlName="imunizacao"
         /><br />
-        <label class="Nometxt" for="Nome">Sinais Clinicos:</label><br />
+        <label class="SinaisClinicostxt" for="SinaisClinicos">Sinais Clinicos:</label><br />
         <input
-          class="Nome"
+          class="SinaisClinicos"
           type="text"
-          name="Nome"
+          name="SinaisClinicos"
 
-          formControlName="nome"
+          formControlName="sinaisclinicos"
         /><br />
-        <label class="Nometxt" for="Nome">Exames:</label><br />
+        <label class="Examestxt" for="Exames">Exames:</label><br />
         <input
-          class="Nome"
+          class="Exames"
           type="text"
-          name="Nome"
+          name="Exames"
 
-          formControlName="nome"
+          formControlName="exames"
         /><br />
-        <label class="Especietxt" for="Especie:">Preescrição:</label><br />
-        <input
-          class="Especie"
+        <label class="Preescricaotxt" for="Especie:">Preescrição:</label><br />
+        <textarea
+          class="Preescricao"
           type="text"
-          name="Especie"
+          name="Preescricao"
 
-          formControlName="especie"
-        /><br />
-        <label class="Nometxt" for="Nome">Diagnóstico:</label><br />
-        <input
-          class="Nome"
+          formControlName="preescricao"
+        > </textarea><br />
+        <label class="Diagnosticotxt" for="Diagnostico">Diagnóstico:</label><br />
+        <textarea
+          class="Diagnostico"
           type="text"
-          name="Nome"
+          name="Diagnostico"
 
-          formControlName="nome"
-        /><br />
-        <label class="Nometxt" for="Nome">Observação:</label><br />
-        <input
-          class="Nome"
+          formControlName="diagnostico"
+        ></textarea><br />
+        <label class="Observacaotxt" for="observacao">Observação:</label><br />
+        <textarea
+          class="Observacao"
           type="text"
-          name="Nome"
+          name="Observacao"
 
-          formControlName="nome"
-        /><br />
+          formControlName="observacao"
+        ></textarea><br />
         <label class="Pettxt" for="Pet">Pet:</label><br />
         <select
           name="Pet"
@@ -92,30 +92,35 @@
           <option value="Masculino">Macho</option>
           <option value="Feminino">Femêa</option>
         </select>
-        <label class="Consultatxt" for="Consulta">Consulta:</label><br />
-        <select
-          name="Consulta"
-          id="Consulta-select"
-          class="Consulta"
-          formControlName="Consulta"
-        >
-          <option value=""></option>
-          <option value="Masculino">Macho</option>
-          <option value="Feminino">Femêa</option>
-        </select>
+
         <label class="Receitatxt" for="Receita">Receita:</label><br />
-        <input
-          class="Receita"
-          type="text"
-          name="Receita"
-          formControlName="Receita"
-        /><br />
+        <br />
         <input
           class="BtnForm"
           type="submit"
           value="Cadastrar Pet"
         />
       </form>
+      <ng-template #modalconfirmarDelete let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-title">Adicionar Assinatura</h4>
+          <button
+            type="button"
+            class="btn-close"
+            aria-describedby="modal-title"
+            (click)="modal.dismiss('Cross click')"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p>
+           <!-- <strong>Voce tem certeza que deseja deletar <span class="text-primary">"John Doe"</span> seu perfil?</strong> -->
+          </p>
+          <p>
+            <app-signature-pad></app-signature-pad>
+          </p>
+        </div>
+      </ng-template>
+      <button class="BtnSenha" (click)="open(modalconfirmarDelete)">Modal Teste</button>
     </div>
   </div>
 </div>

@@ -118,15 +118,19 @@
     touch-action: manipulation;
   }
   
-  .Nome,
-  .Especie,
+  .Diagnostico,
+  .Data,
+  .Horario,
+  .Imunizacao,
+  .SinaisClinicos,
+  .Exames,
+  .Preescricao,
+  .Observacao,
   .Pet,
-  .Receita,
-  .Idade,
   .Consulta,
-  .Nometut,
-  .CPFtut,
-  .Teltut {
+  .Receita
+
+   {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -138,15 +142,16 @@
     outline-color: #4faaa5;
   }
   
-  .Nometxt,
-  .Especietxt,
-  .Pettxt,
-  .Receitatxt,
-  .Consultatxt,
-  .Idadetxt,
-  .Nometuttxt,
-  .CPFtuttxt,
-  .Teltuttxt {
+  .Datatxt,
+  .Horariotxt,
+  .Imunizacaotxt,
+  .SinaisClinicostxt,
+  .Examestxt,
+  .Preescricaotxt,
+  .Diagnosticotxt,
+  .Observacaotxt,
+  .Pettxt 
+  {
     font-family: "Inter", sans-serif;
     color: #7d7d7d;
     margin-right: 85%;
@@ -251,5 +256,48 @@
       margin-left: 25%;
       margin-bottom: 5%;
     }
+  }
+
+  .BtnSenha {
+    border: 1px solid #4faaa5;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    width: 60%;
+    background-color: #e7353500;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #4faaa5;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 80%;
+    font-weight: 500;
+    line-height: 180%;
+    list-style: none;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+  }
+  
+  .BtnSenha:hover {
+    margin-top: 1%;
+    margin-bottom: 5%;
+    width: 60%;
+    background-color: #4faaa5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 80%;
+    font-weight: 500;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
   }
   
