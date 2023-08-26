@@ -50,7 +50,7 @@
           <p>Dono: {{ nome }}</p>
         </div>
         <div class="AlignButton">
-          <button class="BtnSair" role="button" (click)="deletarPet()">
+          <button class="BtnSair" role="button" (click)="open(modalconfirmarDelete)">
             Excluir Pet
           </button>
         </div>
@@ -107,3 +107,29 @@
         </div>
       </div>
     </div>
+
+    <!--Modal-->
+<ng-template #modalconfirmarDelete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Deletar Pet</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Voce tem certeza que deseja deletar <!--<span class="text-primary">"John Doe"</span>--> o perfil do seu pet?</strong>
+    </p>
+    <p>
+      Todas as informações associadas a este perfil de pet serão excluídas permanentemente.
+      <span class="text-danger">Esta operação não pode ser desfeita.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close(deletarPet())">Deletar</button>
+  </div>
+</ng-template>

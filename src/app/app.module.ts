@@ -43,6 +43,10 @@ import { NavgenericComponent } from './Componentes/Navs/navgeneric/navgeneric.co
 import { NavinicialComponent } from './Componentes/Navs/navinicial/navinicial.component';
 import { NavbarComponent } from './Componentes/Navs/navbar/navbar.component';
 import { NavVetComponent } from './Componentes/Navs/nav-vet/nav-vet.component';
+import { SignaturePadComponent } from './Componentes/shared/signature-pad/signature-pad.component';
+import { TesteFuncionalidadesComponent } from './Telas/teste-funcionalidades/teste-funcionalidades.component';
+import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
+
 
 //node_modules/ngx-toastr/toastr.css
 
@@ -73,6 +77,10 @@ import { NavVetComponent } from './Componentes/Navs/nav-vet/nav-vet.component';
     VisualizarConsultalComponent,
     NavgenericComponent,
     NavinicialComponent,
+    SignaturePadComponent,
+    TesteFuncionalidadesComponent,
+    SignaturePadComponent,
+    AdicionarProntuarioComponent,
   ],
   imports: [
     FormsModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { LoginComponent } from './Telas/TelasPrincipais/login/login.component';
 import { CadastroUsuComponent } from './Telas/TelasPrincipais/cadastro-usu/cadastro-usu.component';
 import { PerfilUsuComponent } from './Telas/TelasPrincipais/perfil-usu/perfil-usu.component';
@@ -20,6 +21,8 @@ import { MinhasConsultasComponent } from './Telas-Veterinario/minhas-consultas/m
 import { InicialVetComponent } from './Telas-Veterinario/inicial-vet/inicial-vet.component';
 import { VisualizarConsultaVetComponent } from './Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
 import { VisualizarConsultalComponent } from './Telas/TelasPrincipais/visualizar-consultal/visualizar-consultal.component';
+import { TesteFuncionalidadesComponent } from './Telas/teste-funcionalidades/teste-funcionalidades.component';
+import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
@@ -42,6 +45,8 @@ const routes: Routes = [
   { path: 'InicialVet', component: InicialVetComponent },
   { path: 'VisualConsulVet/:id', component: VisualizarConsultaVetComponent },
   { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
+  { path: 'Teste', component: TesteFuncionalidadesComponent },
+  { path: 'AdicionarProntuario', component: AdicionarProntuarioComponent },
 ];
 
 @NgModule({

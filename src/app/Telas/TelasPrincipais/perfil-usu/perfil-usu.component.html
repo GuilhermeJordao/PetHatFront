@@ -10,6 +10,7 @@
 />
 <body>
   <app-navbar></app-navbar>
+  <button class="BtnVoltar" routerLink="/InicialUsu" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
   <div class="BodyPerfil">
     <div class="PerfilPhotoDiv">
       <img
@@ -30,7 +31,6 @@
         (change)="onFileChanged($event)"
         accept="image/png, image/jpeg"
       />
-
       <button
         type="submit"
         class="BtnEditar"
@@ -83,19 +83,7 @@
             formControlName="email"
           /><br />
           <label class="Senhatxt" for="Senha">Senha:</label><br />
-          <input
-            class="Senha"
-            type="password"
-            name="Senha"
-            placeholder="Insira sua Senha"
-            formControlName="senha"
-          />
-          <input
-            class="Senha"
-            type="password"
-            name="Senha"
-            placeholder="Repita sua Senha"
-          /><br /><br />
+          <button class="BtnSenha" (click)="open(modalAlterarSenha)" >Alterar Senha</button>
           <input
             class="BtnForm"
             [routerLink]="['/Perfil']"
@@ -183,3 +171,41 @@
     <button type="button" class="btn btn-danger" (click)="modal.close(sairConta())">Sair</button>
   </div>
 </ng-template>
+
+<ng-template #modalAlterarSenha let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Alterar Senha</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Caso deseje alterar a senha basta somente escrever a nova senha nos dois campos a baixo <span class="text-primary">"Caso o contrário clique no botão Cancelar"</span></strong>
+    </p>
+    <form class="form" [formGroup]="form">
+    <label class="Senhatxt" for="Senha">Senha:</label><br />
+          <input
+            class="Senha"
+            type="password"
+            name="Senha"
+            placeholder="Insira sua Senha"
+            formControlName="senha"
+          />
+          <input
+            class="Senha"
+            type="password"
+            name="Senha"
+            placeholder="Repita sua Senha"
+          /><br /><br />
+        </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.close(onSubmit())">Alterar</button>
+  </div>
+</ng-template>
+<app-signature-pad></app-signature-pad>

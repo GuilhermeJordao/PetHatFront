@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from '../../TelasPrincipais/service/cliente.service';
 import { PetService } from '../../TelasPrincipais/service/pet.service';
 import { UploadImagemService } from '../../TelasPrincipais/service/upload-imagem.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-perfil-pet',
@@ -28,13 +29,15 @@ export class PerfilPetComponent implements OnInit {
   ImagemPadrao = true;
   ImagemEditada = false;
   imageName: any;
+  closeResult: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private petServico: PetService,
     private formBuilder: FormBuilder,
-    private imagemService: UploadImagemService
+    private imagemService: UploadImagemService,
+    private modalService: NgbModal
   ) {
     this.form = this.formBuilder.group({
       nome: [null],
@@ -61,6 +64,24 @@ export class PerfilPetComponent implements OnInit {
         };
       });
     });
+  }
+
+  open(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
   onSubmit() {
