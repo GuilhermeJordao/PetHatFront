@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-teste-funcionalidades',
-  templateUrl: './teste-funcionalidades.component.html',
-  styleUrls: ['./teste-funcionalidades.component.scss']
+  selector: 'app-ver-prontuario',
+  templateUrl: './ver-prontuario.component.html',
+  styleUrls: ['./ver-prontuario.component.scss']
 })
-export class TesteFuncionalidadesComponent {
+export class VerProntuarioComponent {
   closeResult: any;
   constructor(
     private modalService: NgbModal,
@@ -39,5 +39,4 @@ export class TesteFuncionalidadesComponent {
 function openModal() {
   throw new Error('Function not implemented.');
 }
-
 

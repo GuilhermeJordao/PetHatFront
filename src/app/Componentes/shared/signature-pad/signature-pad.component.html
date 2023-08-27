@@ -11,8 +11,3 @@
   <button class="btn btn-outline-secondary" (click)="clearPad()">Clear</button>
   <button class="btn btn-primary" (click)="savePad()">Submit the signature</button>
 </div>
-
-<div *ngIf="signatureNeeded === false">
-  <p>Signature in Base64Encoded Format</p>
-  <img src="{{ signatureImg }}" alt="" srcset="" />
-</div>

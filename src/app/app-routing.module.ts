@@ -23,6 +23,8 @@ import { VisualizarConsultaVetComponent } from './Telas-Veterinario/visualizar-c
 import { VisualizarConsultalComponent } from './Telas/TelasPrincipais/visualizar-consultal/visualizar-consultal.component';
 import { TesteFuncionalidadesComponent } from './Telas/teste-funcionalidades/teste-funcionalidades.component';
 import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
+import { VerProntuarioComponent } from './Telas/ver-prontuario/ver-prontuario.component';
+
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
   { path: 'Teste', component: TesteFuncionalidadesComponent },
   { path: 'AdicionarProntuario', component: AdicionarProntuarioComponent },
+  { path: 'VerProntuario', component: VerProntuarioComponent },
+
 ];
 
 @NgModule({

@@ -1,20 +1,109 @@
 <ng-template #modalconfirmarDelete let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-title">Adicionar Assinatura</h4>
-      <button
-        type="button"
-        class="btn-close"
-        aria-describedby="modal-title"
-        (click)="modal.dismiss('Cross click')"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <p>
-       <!-- <strong>Voce tem certeza que deseja deletar <span class="text-primary">"John Doe"</span> seu perfil?</strong> -->
-      </p>
-      <p>
-        <app-signature-pad></app-signature-pad>
-      </p>
-    </div>
-  </ng-template>
-  <button class="BtnSenha" (click)="open(modalconfirmarDelete)">Modal Teste</button>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">
+      Pronturario dia:<span class="text-primary">"10/10/2023"</span> as
+      <span class="text-primary">"13:00"</span>
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p>
+      <strong>Imunização:</strong>
+      <br />
+      <span class="text-primary">"Vacinas do DOG"</span>
+      <br />
+      <strong>Sinais Clinicos:</strong>
+      <br />
+      <span class="text-primary"
+        >"Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum"</span
+      >
+      <br />
+      <strong>Exames:</strong>
+      <br />
+      <span class="text-primary"
+        >"Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum"</span
+      >
+      <br />
+      <strong>Preescrição:</strong>
+      <br />
+      <span class="text-primary"
+        >"Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum"</span
+      >
+      <br />
+      <strong>Diagnóstico:</strong>
+      <br />
+      <span class="text-primary"
+        >"Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum"</span
+      >
+      <br/>
+      <strong>Observação::</strong>
+      <br />
+      <span class="text-primary"
+        >"Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum"</span
+      >
+      <br/>
+      <strong>Assinatura:</strong>
+      <br />
+      <img src="../../../assets/Images/MedicoSign.png" alt="Assintura">
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button type="button" class="btn btn-primary">
+      Ver Receita
+    </button>
+  </div>
+</ng-template>
+<button class="BtnSenha" (click)="openFullscreen(modalconfirmarDelete)">
+  Modal Teste
+</button>

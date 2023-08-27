@@ -37,6 +37,7 @@ import { MinhasConsultasComponent } from './Telas-Veterinario/minhas-consultas/m
 import { InicialVetComponent } from './Telas-Veterinario/inicial-vet/inicial-vet.component';
 import { VisualizarConsultaVetComponent } from './Telas-Veterinario/visualizar-consulta-vet/visualizar-consulta-vet.component';
 import { VisualizarConsultalComponent } from './Telas/TelasPrincipais/visualizar-consultal/visualizar-consultal.component';
+import { VerProntuarioComponent } from './Telas/ver-prontuario/ver-prontuario.component';
 
 //Componentes Criados.
 import { NavgenericComponent } from './Componentes/Navs/navgeneric/navgeneric.component';
@@ -81,6 +82,7 @@ import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-pron
     TesteFuncionalidadesComponent,
     SignaturePadComponent,
     AdicionarProntuarioComponent,
+    VerProntuarioComponent,
   ],
   imports: [
     FormsModule,

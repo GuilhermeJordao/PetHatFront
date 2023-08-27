@@ -1,0 +1,216 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+/>
+
+
+<app-navbar></app-navbar>
+    <div class="BodyPerfil">
+      <div class="PerfilPhotoDiv">
+        <img
+          class="PerfilImg"
+          src="https://i.imgur.com/pe2N5IX.png"
+          alt=""
+        />
+        <div class="NomePerfil">
+            Nome do Animal
+        </div>
+        <div class="EmailPerfil">
+        Tutor: Fulaninho
+        </div>
+        <div class="AlignButton">
+           
+        </div>
+      </div>
+      <div class="PerfilForm">
+        <div class="FormSide">
+          <div class="Textprontuario"><div><strong>Prontuarios Cadastrados</strong></div>
+          <div class="DirectionCards">
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="example-card" >
+            <mat-card-content>
+              <p>Data: 11/11/2011 </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openFullscreen(modalProntuario)">
+                Ver Consulta
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal-->
+    <ng-template #modalProntuario let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-title">
+            Pronturario dia:<span class="text-primary">"10/10/2023"</span> as
+            <span class="text-primary">"13:00"</span>
+          </h4>
+          <button
+            type="button"
+            class="btn-close"
+            aria-describedby="modal-title"
+            (click)="modal.dismiss('Cross click')"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>Imunização:</strong>
+            <br />
+            <span class="text-primary">"Vacinas do DOG"</span>
+            <br />
+            <strong>Sinais Clinicos:</strong>
+            <br />
+            <span class="text-primary"
+              >"Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum"</span
+            >
+            <br />
+            <strong>Exames:</strong>
+            <br />
+            <span class="text-primary"
+              >"Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum"</span
+            >
+            <br />
+            <strong>Preescrição:</strong>
+            <br />
+            <span class="text-primary"
+              >"Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum"</span
+            >
+            <br />
+            <strong>Diagnóstico:</strong>
+            <br />
+            <span class="text-primary"
+              >"Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum"</span
+            >
+            <br/>
+            <strong>Observação::</strong>
+            <br />
+            <span class="text-primary"
+              >"Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five
+              centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum"</span
+            >
+            <br/>
+            <strong>Assinatura:</strong>
+            <br />
+            <img src="../../../assets/Images/MedAssing.png" alt="Assintura">
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="modal.dismiss('cancel click')"
+          >
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-primary">
+            Ver Receita
+          </button>
+        </div>
+      </ng-template>
