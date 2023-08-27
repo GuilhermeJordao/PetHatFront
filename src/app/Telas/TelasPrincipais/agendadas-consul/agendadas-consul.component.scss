@@ -1,3 +1,54 @@
+.Logo {
+  height: 60%;
+  position: relative;
+  margin-left: 12%;
+}
+
+.Letreiro {
+  height: 30%;
+  margin-left: 1%;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, #4faaa5, #81eee8);
+  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+header * {
+  display: inline;
+  position: absolute;
+}
+
+header li {
+  font-family: "Inter", sans-serif;
+  margin: 20px;
+}
+
+header ul {
+  margin-top: 1%;
+}
+
+.Navlicolor:hover {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.Navlicolor:hover .TxtNav {
+  color: #288d7b;
+}
+
+.TxtNav {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .Screen {
   margin-left: 10%;
   margin-top: 10%;
@@ -9,12 +60,23 @@
   height: 80%;
 }
 
+.pethatlogo {
+  margin-top: 8%;
+  margin-bottom: 5%;
+  margin-left: 45%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .titulolog {
   font-family: "Inter", sans-serif;
   color: #383838;
-  margin-left: 10%;
+  margin-left: 11%;
   font-size: 200%;
-  margin-top: 8%;
+  margin-top: 3%;
 }
 
 .subtitulolog {
@@ -34,8 +96,9 @@
 }
 
 .example-card {
-  margin-top: 10%;
-  max-width: 300px;
+  margin-top: 2%;
+  max-width: 500px;
+  width: 20%;
   background-color: #edecec;
   border-radius: 4%;
   margin-left: 3%;
@@ -62,11 +125,49 @@
 .example-card p {
   font-family: "Inter", sans-serif;
   color: #3c3c3c;
-  margin-top: 4%;
+  margin-top: 5%;
   font-size: 100%;
 }
 
-.PerfilImg {
-  width: 300px;
-  height: 300px;
+.BtnVoltar {
+  border: 1px solid #4faaa5;
+  margin-top: 3%;
+  margin-left: 2%;
+  width: 5%;
+  background-color: #e7353500;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #4faaa5;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  line-height: 180%;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
 }
+
+.BtnVoltar:hover {
+  margin-top: 3%;
+  width: 5%;
+  background-color: #4faaa5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 80%;
+  font-weight: 500;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+}
+ 

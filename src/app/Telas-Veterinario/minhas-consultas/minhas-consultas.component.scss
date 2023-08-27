@@ -76,7 +76,7 @@
     color: #383838;
     margin-left: 11%;
     font-size: 200%;
-    margin-top: 8%;
+    margin-top: 3%;
   }
   
   .subtitulolog {
@@ -96,8 +96,9 @@
   }
   
   .example-card {
-    margin-top: 10%;
-    max-width: 300px;
+    margin-top: 2%;
+    max-width: 500px;
+    width: 20%;
     background-color: #edecec;
     border-radius: 4%;
     margin-left: 3%;
@@ -124,7 +125,49 @@
   .example-card p {
     font-family: "Inter", sans-serif;
     color: #3c3c3c;
-    margin-top: 4%;
+    margin-top: 5%;
     font-size: 100%;
   }
   
+  .BtnVoltar {
+    border: 1px solid #4faaa5;
+    margin-top: 3%;
+    margin-left: 2%;
+    width: 5%;
+    background-color: #e7353500;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #4faaa5;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 80%;
+    font-weight: 500;
+    line-height: 180%;
+    list-style: none;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+  }
+  
+  .BtnVoltar:hover {
+    margin-top: 3%;
+    width: 5%;
+    background-color: #4faaa5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 80%;
+    font-weight: 500;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+  }
+   

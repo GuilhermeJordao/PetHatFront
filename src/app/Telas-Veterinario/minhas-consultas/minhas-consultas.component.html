@@ -5,13 +5,14 @@
   rel="stylesheet"
 />
 <app-nav-vet></app-nav-vet>
+<button class="BtnVoltar" routerLink="/InicialVet" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
 <div class="titulolog">Consultas Pendentes:</div>
 <div class="formLogin2">
   <div class="form">
     <div class="Cartões">
-      <mat-card class="example-card" *ngFor="let consulta of consultas">
+      <mat-card class="example-card" *ngFor="let consulta of  consultasPendentes">
         <mat-card-content>
-          <p>Dono: {{ consulta.pet.cliente.nome }}</p>
+          <p>Tutor: {{ consulta.pet.cliente.nome }}</p>
           <p>Horario: {{ consulta.hora }}</p>
           <p>Turno: {{ consulta.veterinario.turno }}</p>
           <p>Pet: {{ consulta.pet.nome }}</p>
@@ -30,28 +31,18 @@
 <div class="formLogin2">
   <div class="form">
     <div class="Cartões">
-      <mat-card class="example-card">
+      <mat-card class="example-card" *ngFor="let consulta of consultasConcluidas">
         <mat-card-content>
-          <p>Dono: Catarina Paolino</p>
-          <p>Horario: 10:00</p>
-          <p>Turno: Manhã</p>
-          <p>Pet: Doguinho</p>
-          <p>Status: Concluido</p>
+          <p>Tutor: {{ consulta.pet.cliente.nome }}</p>
+          <p>Horario: {{ consulta.hora }}</p>
+          <p>Turno: {{ consulta.veterinario.turno }}</p>
+          <p>Pet: {{ consulta.pet.nome }}</p>
+          <p>Status: {{ consulta.statusConsulta }}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Ver Consulta</button>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card class="example-card">
-        <mat-card-content>
-          <p>Dono: Catarina Paolino</p>
-          <p>Horario: 10:00</p>
-          <p>Turno: Manhã</p>
-          <p>Pet: Doguinho</p>
-          <p>Status: Concluido</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ver Consulta</button>
+          <button mat-button (click)="detalhesConsulta(consulta)">
+            Ver Consulta
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>

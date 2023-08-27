@@ -9,6 +9,7 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
 />
 <app-nav-vet></app-nav-vet>
+<button class="BtnVoltar" routerLink="/VetConsultas" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
 <div class="BodyPerfil">
   <div class="PerfilPhotoDiv">
     <img class="PerfilImg" src="https://i.imgur.com/pe2N5IX.png" alt="" />
@@ -65,8 +66,9 @@
           type="text"
           name="Raça"
           value="{{ consulta.dataConsulta }}"
-        /><br />
-        <button class="BtnForm" (click)="concluir()">Concluir Consulta</button>
+        /><br/>
+        <button class="BtnForm" routerLink="/AdicionarProntuario">Adicionar Prontuario</button>
+        <button *ngIf="consultaStatus === 'PENDENTE'" class="BtnForm" (click)="concluir()">Concluir Consulta</button>
       </form>
     </div>
   </div>

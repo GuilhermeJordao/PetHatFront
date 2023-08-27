@@ -9,6 +9,7 @@ import { ConsultaService } from '../../Telas/TelasPrincipais/service/consulta.se
 })
 export class VisualizarConsultaVetComponent {
   private id: any = 0;
+  consultaStatus: any;
   consulta = {
     nomeCliente: [null],
     hora: [null],
@@ -18,6 +19,7 @@ export class VisualizarConsultaVetComponent {
     veterinarioNome: [null],
     veterinarioEspecialidade: [null],
   };
+
 
   constructor(
     private router: Router,
@@ -40,6 +42,7 @@ export class VisualizarConsultaVetComponent {
           veterinarioNome: (dados as any).veterinario.nome,
           veterinarioEspecialidade: (dados as any).veterinario.especialidade,
         };
+        this.consultaStatus = (dados as any).statusConsulta;
       });
     });
   }
@@ -47,7 +50,7 @@ export class VisualizarConsultaVetComponent {
   concluir() {
     this.consultaService.concluir(this.id).subscribe((data) => {
       console.log('cancelo');
-      this.router.navigate(['/ConsultaAgendada']);
+      this.router.navigate(['/VetConsultas']);
     });
   }
 }

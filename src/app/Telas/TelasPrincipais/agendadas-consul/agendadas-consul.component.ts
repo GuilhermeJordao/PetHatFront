@@ -10,6 +10,8 @@ import { ConsultaService } from '../service/consulta.service';
 })
 export class AgendadasConsulComponent {
   consultas: Consulta[] | undefined;
+  consultasPendentes: Consulta[] = []; 
+  consultasConcluidas: Consulta[] = []; 
   email: any = localStorage.getItem('email');
 
   constructor(
@@ -19,9 +21,20 @@ export class AgendadasConsulComponent {
     this.consultaService.listarConsulta(this.email).subscribe((data) => {
       this.consultas = data;
       console.log(this.consultas);
+      this.separateConsultas();
     });
   }
+  private separateConsultas() {
+    if (this.consultas) {
+      this.consultasPendentes = this.consultas.filter(
+        (consulta) => consulta.statusConsulta === 'PENDENTE'
+      );
 
+      this.consultasConcluidas = this.consultas.filter(
+        (consulta) => consulta.statusConsulta === 'CONCLUIDO'
+      );
+    }
+  }
   detalhesConsulta(consulta: Consulta) {
     console.log(consulta);
     this.router.navigate([`/VisualConsul/${consulta._id}`]); // Use backticks for template literals
