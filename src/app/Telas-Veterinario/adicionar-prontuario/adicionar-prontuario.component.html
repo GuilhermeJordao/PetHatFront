@@ -8,29 +8,33 @@
 <meta charset="utf-8" />
 
 <app-nav-vet></app-nav-vet>
-<button class="BtnVoltar" routerLink="/VetConsultas" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
+<button class="BtnVoltar" routerLink="/VetConsultas" role="button">
+  <i class="fa-solid fa-arrow-left fa-lg"></i>
+</button>
 <div class="Screen">
   <div class="centered">
-    <div class="titulolog">Aqui você pode adicionar Detalhes ao Pronturario do Pet</div>
+    <div class="titulolog">
+      Aqui você pode adicionar Detalhes ao Pronturario do Pet
+    </div>
     <div class="subtitulolog">
       CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-      <form class="form">
+      <form [formGroup]="form" class="form">
         <label class="Pettxt" for="Pet">Pet:</label><br />
         <input
           name="Pet"
           id="Pet-select"
           class="Pet"
-          formControlName="Pet"
-        /><br/>
+          value="{{ prontuario.petNome }}"
+          disabled
+        /><br />
         <label class="Datatxt" for="Data">Data:</label><br />
         <input
           class="Data"
           type="date"
           name="Data"
-
           formControlName="data"
         /><br />
         <label class="Horariotxt" for="Horario">Horario:</label><br />
@@ -38,7 +42,6 @@
           class="Horario"
           type="time"
           name="Horario"
-
           formControlName="horario"
         /><br />
         <label class="Imunizacaotxt" for="Imunizacao">Imunização:</label><br />
@@ -46,23 +49,22 @@
           class="Imunizacao"
           type="text"
           name="Imunizacao"
-
           formControlName="imunizacao"
         /><br />
-        <label class="SinaisClinicostxt" for="SinaisClinicos">Sinais Clinicos:</label><br />
+        <label class="SinaisClinicostxt" for="SinaisClinicos"
+          >Sinais Clinicos:</label
+        ><br />
         <input
           class="SinaisClinicos"
           type="text"
           name="SinaisClinicos"
-
-          formControlName="sinaisclinicos"
+          formControlName="sinaisClinicos"
         /><br />
         <label class="Examestxt" for="Exames">Exames:</label><br />
         <input
           class="Exames"
           type="text"
           name="Exames"
-
           formControlName="exames"
         /><br />
         <label class="Preescricaotxt" for="Especie:">Preescrição:</label><br />
@@ -70,35 +72,43 @@
           class="Preescricao"
           type="text"
           name="Preescricao"
-
-          formControlName="preescricao"
-        > </textarea><br />
-        <label class="Diagnosticotxt" for="Diagnostico">Diagnóstico:</label><br />
+          formControlName="prescricao"
+        >
+        </textarea
+        ><br />
+        <label class="Diagnosticotxt" for="Diagnostico">Diagnóstico:</label
+        ><br />
         <textarea
           class="Diagnostico"
           type="text"
           name="Diagnostico"
-
           formControlName="diagnostico"
-        ></textarea><br />
+        ></textarea
+        ><br />
         <label class="Observacaotxt" for="observacao">Observação:</label><br />
         <textarea
           class="Observacao"
           type="text"
           name="Observacao"
-
           formControlName="observacao"
-        ></textarea><br />
+        ></textarea
+        ><br />
         <label class="Receitatxt" for="Receita">Receita:</label><br />
-        <button class="BtnSenha" routerLink="/AddReceita" role="button">Adicionar Receita</button>
-        <label class="Receitatxt" for="Receita">Assinatura Eletronica:</label><br />
-        <button class="BtnSenha" (click)="open(modalAssinatura)">Adicionar Assinatura Eletronica</button>
+        <button class="BtnSenha">Adicionar Receita</button>
+        <label class="Receitatxt" for="Receita">Assinatura Eletronica:</label
+        ><br />
+        <button class="BtnSenha" (click)="open(modalAssinatura)">
+          Adicionar Assinatura Eletronica
+        </button>
         <br />
-        <input
+        <button
           class="BtnForm"
           type="submit"
           value="Adicionar Ao Prontuario"
-        />
+          (click)="onSubmit()"
+        >
+          Adicionar Prontuario
+        </button>
       </form>
     </div>
   </div>
@@ -116,11 +126,10 @@
   </div>
   <div class="modal-body">
     <p>
-     <!-- <strong>Voce tem certeza que deseja deletar <span class="text-primary">"John Doe"</span> seu perfil?</strong> -->
+      <!-- <strong>Voce tem certeza que deseja deletar <span class="text-primary">"John Doe"</span> seu perfil?</strong> -->
     </p>
     <p>
       <app-signature-pad></app-signature-pad>
     </p>
   </div>
 </ng-template>
-
