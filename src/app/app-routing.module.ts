@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
   { path: 'Teste', component: TesteFuncionalidadesComponent },
   { path: 'AdicionarProntuario/:id', component: AdicionarProntuarioComponent },
-  { path: 'VerProntuario', component: VerProntuarioComponent },
+  { path: 'VerProntuario/:id', component: VerProntuarioComponent },
   { path: 'AddReceita', component: AddReceitaComponent },
 ];
 

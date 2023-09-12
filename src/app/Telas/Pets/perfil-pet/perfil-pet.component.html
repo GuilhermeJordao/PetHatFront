@@ -9,106 +9,112 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
 />
 
-
 <app-navbar></app-navbar>
-    <div class="BodyPerfil">
-      <div class="PerfilPhotoDiv">
-        <img
-          class="PerfilImg"
-          src="https://i.imgur.com/pe2N5IX.png"
-          alt=""
-          *ngIf="ImagemPadrao"
-        />
-        <img class="PerfilImg" *ngIf="ImagemEditada" [src]="imageName" alt="" />
-        <label class="labelchange" for="upload-photo"
-          ><div class="labeldiv">
-            <i class="fa-solid fa-pen" style="color: #ffffff"></i></div
-        ></label>
-        <input
-          type="file"
-          id="upload-photo"
-          name="myFile"
-          (change)="onFileChanged($event)"
-          accept="image/png, image/jpeg"
-        />
+<div class="BodyPerfil">
+  <div class="PerfilPhotoDiv">
+    <img
+      class="PerfilImg"
+      src="https://i.imgur.com/pe2N5IX.png"
+      alt=""
+      *ngIf="ImagemPadrao"
+    />
+    <img class="PerfilImg" *ngIf="ImagemEditada" [src]="imageName" alt="" />
+    <label class="labelchange" for="upload-photo"
+      ><div class="labeldiv">
+        <i class="fa-solid fa-pen" style="color: #ffffff"></i></div
+    ></label>
+    <input
+      type="file"
+      id="upload-photo"
+      name="myFile"
+      (change)="onFileChanged($event)"
+      accept="image/png, image/jpeg"
+    />
 
-        <button
-          type="submit"
-          class="BtnEditar"
-          (click)="submitImagem()"
-          *ngIf="ButtonEnviar"
-        >
-          Enviar Imagem
-        </button>
-        <div class="NomePerfil">
-          <p>{{ pet.nome }}</p>
-        </div>
-        <div class="EmailPerfil">
-          <p>{{ pet.especie }}</p>
-        </div>
-        <div class="EmailPerfil">
-          <p>Dono: {{ nome }}</p>
-        </div>
-        <div class="AlignButton">
-          <button class="BtnSair" role="button" (click)="open(modalconfirmarDelete)">
-            Excluir Pet
-          </button>
-        </div>
-      </div>
-      <div class="PerfilForm">
-        <div class="FormSide">
-          <form class="form" [formGroup]="form">
-            <label class="Nometxt" for="Nome">Nome:</label><br />
-            <input
-              class="Nome"
-              type="text"
-              name="Nome"
-              value="{{ pet.nome }}"
-              formControlName="nome"
-            /><br />
-            <label class="Especietxt" for="Especie:">Especie:</label><br />
-            <input
-              class="Especie"
-              type="text"
-              name="Especie"
-              value="{{ pet.especie }}"
-              formControlName="especie"
-            /><br />
-            <label class="Sexotxt" for="Sexo">Sexo:</label><br />
-            <select name="sexo" id="sexo-select" class="Sexo">
-              <option value="{{ pet.sexo }}">{{ pet.sexo }}</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Feminino">Feminino</option>
-            </select>
-            <label class="Raçatxt" for="Raça">Raça:</label><br />
-            <input
-              class="Raça"
-              type="text"
-              name="Raça"
-              value="{{ pet.raca }}"
-              formControlName="raca"
-            /><br />
-            <label class="Idadetxt" for="Idade">Idade:</label><br />
-            <input
-              class="Idade"
-              type="text"
-              name="Idade"
-              value="{{ pet.idade }}"
-              formControlName="idade"
-            /><br />
-
-            <input
-              class="BtnForm"
-              type="submit"
-              (click)="onSubmit()"
-              value="Atualizar Informações"
-            />
-          </form>
-        </div>
-      </div>
+    <button
+      type="submit"
+      class="BtnEditar"
+      (click)="submitImagem()"
+      *ngIf="ButtonEnviar"
+    >
+      Enviar Imagem
+    </button>
+    <div class="NomePerfil">
+      <p>{{ pet.nome }}</p>
     </div>
+    <div class="EmailPerfil">
+      <p>{{ pet.especie }}</p>
+    </div>
+    <div class="EmailPerfil">
+      <p>Dono: {{ nome }}</p>
+    </div>
+    <div class="AlignButton">
+      <button
+        class="BtnSair"
+        role="button"
+        (click)="open(modalconfirmarDelete)"
+      >
+        Excluir Pet
+      </button>
+    </div>
+  </div>
+  <div class="PerfilForm">
+    <div class="FormSide">
+      <form class="form" [formGroup]="form">
+        <label class="Nometxt" for="Nome">Nome:</label><br />
+        <input
+          class="Nome"
+          type="text"
+          name="Nome"
+          value="{{ pet.nome }}"
+          formControlName="nome"
+        /><br />
+        <label class="Especietxt" for="Especie:">Especie:</label><br />
+        <input
+          class="Especie"
+          type="text"
+          name="Especie"
+          value="{{ pet.especie }}"
+          formControlName="especie"
+        /><br />
+        <label class="Sexotxt" for="Sexo">Sexo:</label><br />
+        <select name="sexo" id="sexo-select" class="Sexo">
+          <option value="{{ pet.sexo }}">{{ pet.sexo }}</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+        <label class="Raçatxt" for="Raça">Raça:</label><br />
+        <input
+          class="Raça"
+          type="text"
+          name="Raça"
+          value="{{ pet.raca }}"
+          formControlName="raca"
+        /><br />
+        <label class="Idadetxt" for="Idade">Idade:</label><br />
+        <input
+          class="Idade"
+          type="text"
+          name="Idade"
+          value="{{ pet.idade }}"
+          formControlName="idade"
+        /><br />
 
-    <!--Modal-->
+        <input
+          class="BtnForm"
+          type="submit"
+          (click)="onSubmit()"
+          value="Atualizar Informações"
+        />
+        <button class="BtnForm" (click)="visualizarProntuario()">
+          Visualizar Prontuarios
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--Modal-->
 <ng-template #modalconfirmarDelete let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-title">Deletar Pet</h4>
@@ -121,15 +127,32 @@
   </div>
   <div class="modal-body">
     <p>
-      <strong>Voce tem certeza que deseja deletar <!--<span class="text-primary">"John Doe"</span>--> o perfil do seu pet?</strong>
+      <strong
+        >Voce tem certeza que deseja deletar
+        <!--<span class="text-primary">"John Doe"</span>-->
+        o perfil do seu pet?</strong
+      >
     </p>
     <p>
-      Todas as informações associadas a este perfil de pet serão excluídas permanentemente.
+      Todas as informações associadas a este perfil de pet serão excluídas
+      permanentemente.
       <span class="text-danger">Esta operação não pode ser desfeita.</span>
     </p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-danger" (click)="modal.close(deletarPet())">Deletar</button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.close(deletarPet())"
+    >
+      Deletar
+    </button>
   </div>
 </ng-template>
