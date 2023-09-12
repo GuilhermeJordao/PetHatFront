@@ -47,6 +47,7 @@ import { NavVetComponent } from './Componentes/Navs/nav-vet/nav-vet.component';
 import { SignaturePadComponent } from './Componentes/shared/signature-pad/signature-pad.component';
 import { TesteFuncionalidadesComponent } from './Telas/teste-funcionalidades/teste-funcionalidades.component'; 
 import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
+import { AddReceitaComponent } from './Telas/add-receita/add-receita.component';
 
 
 //node_modules/ngx-toastr/toastr.css
@@ -83,6 +84,7 @@ import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-pron
     SignaturePadComponent,
     AdicionarProntuarioComponent,
     VerProntuarioComponent,
+    AddReceitaComponent,
   ],
   imports: [
     FormsModule,

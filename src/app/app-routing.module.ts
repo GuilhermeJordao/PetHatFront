@@ -24,6 +24,7 @@ import { VisualizarConsultalComponent } from './Telas/TelasPrincipais/visualizar
 import { TesteFuncionalidadesComponent } from './Telas/teste-funcionalidades/teste-funcionalidades.component';
 import { AdicionarProntuarioComponent } from './Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
 import { VerProntuarioComponent } from './Telas/ver-prontuario/ver-prontuario.component';
+import { AddReceitaComponent } from './Telas/add-receita/add-receita.component';
 
 const routes: Routes = [
   { path: '', component: TelaInicialComponent },
