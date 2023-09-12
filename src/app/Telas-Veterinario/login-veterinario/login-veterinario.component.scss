@@ -171,6 +171,23 @@
   margin-left: 85%;
 }
 
+.BtnVoltar {
+  border: 1px solid #4faaa5;
+  margin: 3% 0 0 2%;
+  width: 10vh;
+  background-color: #e7353500;
+  border-radius: 8px;
+  color: #4faaa5;
+  display: inline-block;
+  padding: 10px 16px;
+  position: relative;
+}
+
+.BtnVoltar:hover {
+  background-color: #4faaa5;
+  color: #ffffff;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   /* Adjust the styles for smaller screens */
