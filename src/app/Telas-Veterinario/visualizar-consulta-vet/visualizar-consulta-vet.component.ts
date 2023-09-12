@@ -9,6 +9,7 @@ import { ConsultaService } from '../../Telas/TelasPrincipais/service/consulta.se
 })
 export class VisualizarConsultaVetComponent {
   private id: any = 0;
+  private idPet: any = 0;
   consultaStatus: any;
   consulta = {
     nomeCliente: [null],
@@ -19,7 +20,6 @@ export class VisualizarConsultaVetComponent {
     veterinarioNome: [null],
     veterinarioEspecialidade: [null],
   };
-
 
   constructor(
     private router: Router,
@@ -32,7 +32,7 @@ export class VisualizarConsultaVetComponent {
       this.id = Number(params['id']);
       this.consultaService.buscarPorId(this.id).subscribe((dados) => {
         console.log(dados);
-
+        this.idPet = dados.pet._id;
         this.consulta = {
           nomeCliente: (dados as any).pet.cliente.nome,
           hora: (dados as any).hora,
@@ -52,5 +52,11 @@ export class VisualizarConsultaVetComponent {
       console.log('cancelo');
       this.router.navigate(['/VetConsultas']);
     });
+  }
+
+  adicionarProntuario() {
+    console.log(this.idPet);
+
+    this.router.navigate([`/AdicionarProntuario/${this.idPet}`]);
   }
 }
