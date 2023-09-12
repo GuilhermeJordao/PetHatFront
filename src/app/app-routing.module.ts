@@ -50,6 +50,7 @@ const routes: Routes = [
   { path: 'Teste', component: TesteFuncionalidadesComponent },
   { path: 'AdicionarProntuario/:id', component: AdicionarProntuarioComponent },
   { path: 'VerProntuario', component: VerProntuarioComponent },
+  { path: 'AddReceita', component: AddReceitaComponent },
 ];
 
 @NgModule({
