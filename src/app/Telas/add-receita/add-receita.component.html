@@ -8,68 +8,78 @@
 <meta charset="utf-8" />
 
 <app-nav-vet></app-nav-vet>
-<button class="BtnVoltar" routerLink="/AdicionarProntuario" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
+<button class="BtnVoltar" routerLink="/AdicionarProntuario" role="button">
+  <i class="fa-solid fa-arrow-left fa-lg"></i>
+</button>
 <div class="Screen">
   <div class="centered">
-    <div class="titulolog">Aqui você pode adicionar Receitas ao Prontuario do Pet</div>
+    <div class="titulolog">
+      Aqui você pode adicionar Receitas ao Prontuario do Pet
+    </div>
     <div class="subtitulolog">
       CUIDAR DO SEU PET COM O MAIOR CARINHO <br />
       É A NOSSA PRIORIDADE.
     </div>
     <div class="formLogin">
-      <form class="form">
-        <label class="Medicamentostxt" for="Medicamentos">Medicamentos:</label><br />
+      <form class="form" [formGroup]="form">
+        <label class="Medicamentostxt" for="Medicamentos">Medicamentos:</label
+        ><br />
         <textarea
           name="Medicamentos"
           id="Medicamentos-select"
           class="Medicamentos"
-          formControlName="Medicamentos"
-    ></textarea><br/>
+          formControlName="medicamentos"
+        ></textarea
+        ><br />
         <label class="Dosagemtxt" for="Dosagem">Dosagem:</label><br />
         <textarea
           class="Dosagem"
           type="text"
           name="Dosagem "
-          formControlName="Dosagem"
-        ></textarea><br />
-        <label class="Veterinariaresponsaveltxt" for="Veterinariaresponsavel">Veterinario(a) Responsavel:</label><br />
+          formControlName="dosagem"
+        ></textarea
+        ><br />
+        <label class="Veterinariaresponsaveltxt" for="Veterinariaresponsavel"
+          >Veterinario(a) Responsavel:</label
+        ><br />
         <input
           class="Veterinariaresponsavel"
           type="text"
           name="Veterinariaresponsavel"
-          formControlName="Veterinariaresponsavel"
         /><br />
         <label class="Datatxt" for="Data">Data de emissão:</label><br />
         <input
           class="Data"
           type="date"
           name="Data"
-          formControlName="data"
+          formControlName="dataEmissao"
         /><br />
-        <label class="Datadevalidadetxt" for="Datadevalidade">Data de validade:</label><br />
+        <label class="Datadevalidadetxt" for="Datadevalidade"
+          >Data de validade:</label
+        ><br />
         <input
           class="Datadevalidade"
           type="date"
           name="Datadevalidade"
-          formControlName="Datadevalidade"
+          formControlName="dataValidade"
         /><br />
-        <label class="ClinicaResponsaveltxt" for="ClinicaResponsavel">Clinica Responsavel:</label><br />
+        <label class="ClinicaResponsaveltxt" for="ClinicaResponsavel"
+          >Clinica Responsavel:</label
+        ><br />
         <input
           class="ClinicaResponsavel"
           type="text"
           name="ClinicaResponsavel"
-          formControlName="ClinicaResponsavel"
+          formControlName="clinicaResponsavel"
         /><br />
         <input
           class="BtnForm"
           type="submit"
+          (click)="onSubmit()"
           value="Adicionar Receita"
         />
-        <br/>
+        <br />
       </form>
     </div>
   </div>
 </div>
-//Modal
-
-

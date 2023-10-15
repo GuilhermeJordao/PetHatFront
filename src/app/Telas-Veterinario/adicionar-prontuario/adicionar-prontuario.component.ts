@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { PetService } from 'src/app/Telas/TelasPrincipais/service/pet.service';
 import { ProntuarioServiceService } from '../service/prontuario-service.service';
+import { ReceitaService } from '../service/receita.service';
 
 @Component({
   selector: 'app-adicionar-prontuario',
@@ -21,9 +22,11 @@ export class AdicionarProntuarioComponent {
   constructor(
     private modalService: NgbModal,
     private route: ActivatedRoute,
+    private router: Router,
     private formBuilder: FormBuilder,
     private petService: PetService,
-    private prontuarioService: ProntuarioServiceService
+    private prontuarioService: ProntuarioServiceService,
+    private receitaService: ReceitaService
   ) {
     this.closeResult = this.closeResult;
     this.form = this.formBuilder.group({
@@ -35,6 +38,7 @@ export class AdicionarProntuarioComponent {
       prescricao: [null],
       diagnostico: [null],
       observacao: [null],
+      receita: [null],
     });
   }
 
@@ -49,11 +53,18 @@ export class AdicionarProntuarioComponent {
   }
 
   onSubmit() {
-    this.prontuarioService
-      .save(this.form.value, this.idPet)
-      .subscribe((dados) => {
-        console.log(dados);
+    this.receitaService
+      .buscar(Number(localStorage.getItem('idReceita')))
+      .subscribe((receita) => {
+        this.form.value.receita = receita;
+
+        this.prontuarioService
+          .save(this.form.value, this.idPet)
+          .subscribe((dados) => {
+            console.log(dados);
+          });
       });
+    localStorage.removeItem('idReceita');
   }
 
   open(content: any) {
@@ -67,6 +78,10 @@ export class AdicionarProntuarioComponent {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         }
       );
+  }
+
+  addReceita() {
+    this.router.navigate([`AddReceita/${this.idPet}`]);
   }
 
   private getDismissReason(reason: any): string {

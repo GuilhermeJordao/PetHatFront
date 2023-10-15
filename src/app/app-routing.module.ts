@@ -48,9 +48,12 @@ const routes: Routes = [
   { path: 'VisualConsulVet/:id', component: VisualizarConsultaVetComponent },
   { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
   { path: 'Teste', component: TesteFuncionalidadesComponent },
-  { path: 'AdicionarProntuario/:id', component: AdicionarProntuarioComponent },
+  {
+    path: 'AdicionarProntuario/:id',
+    component: AdicionarProntuarioComponent,
+  },
   { path: 'VerProntuario/:id', component: VerProntuarioComponent },
-  { path: 'AddReceita', component: AddReceitaComponent },
+  { path: 'AddReceita/:id', component: AddReceitaComponent },
 ];
 
 @NgModule({

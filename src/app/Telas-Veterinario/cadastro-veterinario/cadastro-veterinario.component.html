@@ -48,15 +48,24 @@
           <option value="NOITE">Noite</option>
         </select>
 
-        <label class="Emailtxt" for="Especialidade">Especialidade:</label><br />
-        <input
+        <label class="Emailtxt" for="Turno">Especialidade:</label><br />
+        <select
+          name="sexo"
           class="Email"
-          type="text"
-          id="fespecialidade"
-          name="Especialidade"
-          placeholder="Digite a especialidade"
+          id="sexo-select"
           formControlName="especialidade"
-        /><br />
+        >
+          <option value=""></option>
+          <option value="Quiropraxia">Quiropraxia</option>
+          <option value="Clinico Geral">Clinico Geral</option>
+          <option value="Cirurgia">Cirurgia</option>
+          <option value="Acupuntura">Acupuntura</option>
+          <option value="Medicina Felina">Medicina Felina</option>
+          <option value="Animais Exóticos">Animais Exóticos</option>
+          <option value="Medicina Canina">Medicina Canina</option>
+          <option value="Cardiologia">Cardiologia</option>
+          <option value="Oncologia">Oncologia</option>
+        </select>
 
         <label class="Senhatxt" for="Senha">Senha:</label><br />
         <input

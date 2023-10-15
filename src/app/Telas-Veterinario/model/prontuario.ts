@@ -1,5 +1,5 @@
 import { Pet } from 'src/app/Telas/TelasPrincipais/model/pet';
-
+import { Receita } from './receita';
 export interface Prontuario {
   data: string;
   horario: string;
@@ -10,4 +10,5 @@ export interface Prontuario {
   diagnostico: string;
   observacao: string;
   pet: Pet;
+  receita: Receita;
 }

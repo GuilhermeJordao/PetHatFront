@@ -83,6 +83,27 @@
         <br />
         <img src="../../../assets/Images/MedAssing.png" alt="Assintura" />
       </p>
+      <p style="font-size: 2rem">Receita</p>
+      <strong>Descrição:</strong>
+      <br />
+      <span class="text-primary">{{ receitaSelected.medicamento }}</span>
+      <strong>Veterinária(o):</strong>
+      <br />
+      <span class="text-primary">{{
+        receitaSelected.veterinariaResponsavel
+      }}</span>
+      <strong>Paciente:</strong>
+      <br />
+      <span class="text-primary">{{ receitaSelected.paciente }}</span>
+      <strong>Data de emissão:</strong>
+      <br />
+      <span class="text-primary">{{ receitaSelected.dataEmissao }}</span>
+      <strong>Data de validade:</strong>
+      <br />
+      <span class="text-primary">{{ receitaSelected.dataValidade }}</span>
+      <strong>Clínica responsável:</strong>
+      <br />
+      <span class="text-primary">{{ receitaSelected.clinicaResponsavel }}</span>
     </div>
 
     <div class="modal-footer">
@@ -93,7 +114,6 @@
       >
         Cancelar
       </button>
-      <button type="button" class="btn btn-primary">Ver Receita</button>
     </div>
   </ng-template>
 </div>
