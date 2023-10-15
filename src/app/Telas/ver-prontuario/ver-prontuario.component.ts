@@ -14,7 +14,6 @@ export class VerProntuarioComponent {
   prontuarios: Prontuario[] | undefined;
   closeResult: any;
   prontuarioSelected: any;
-  receitaSelected: any;
   constructor(
     private modalService: NgbModal,
     private route: ActivatedRoute,
