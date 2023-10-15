@@ -84,26 +84,33 @@
         <img src="../../../assets/Images/MedAssing.png" alt="Assintura" />
       </p>
       <p style="font-size: 2rem">Receita</p>
-      <strong>Descrição:</strong>
-      <br />
-      <span class="text-primary">{{ receitaSelected.medicamento }}</span>
-      <strong>Veterinária(o):</strong>
+      <strong>Medicamentos:</strong>
       <br />
       <span class="text-primary">{{
-        receitaSelected.veterinariaResponsavel
+        prontuarioSelected.receita.medicamentos
       }}</span>
-      <strong>Paciente:</strong>
       <br />
-      <span class="text-primary">{{ receitaSelected.paciente }}</span>
+      <strong>Dosagem:</strong>
+      <br />
+      <span class="text-primary">{{ prontuarioSelected.receita.dosagem }}</span>
+      <br />
       <strong>Data de emissão:</strong>
       <br />
-      <span class="text-primary">{{ receitaSelected.dataEmissao }}</span>
+      <span class="text-primary">{{
+        prontuarioSelected.receita.dataEmissao
+      }}</span>
+      <br />
       <strong>Data de validade:</strong>
       <br />
-      <span class="text-primary">{{ receitaSelected.dataValidade }}</span>
+      <span class="text-primary">{{
+        prontuarioSelected.receita.dataValidade
+      }}</span>
+      <br />
       <strong>Clínica responsável:</strong>
       <br />
-      <span class="text-primary">{{ receitaSelected.clinicaResponsavel }}</span>
+      <span class="text-primary">{{
+        prontuarioSelected.receita.clinicaResponsavel
+      }}</span>
     </div>
 
     <div class="modal-footer">
