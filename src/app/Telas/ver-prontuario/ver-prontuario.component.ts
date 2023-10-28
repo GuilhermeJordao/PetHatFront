@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Prontuario } from 'src/app/Telas-Veterinario/model/prontuario';
+import { Assinatura } from 'src/app/Telas-Veterinario/service/assinatura.service';
 import { ProntuarioServiceService } from 'src/app/Telas-Veterinario/service/prontuario-service.service';
 
 @Component({
@@ -11,13 +12,15 @@ import { ProntuarioServiceService } from 'src/app/Telas-Veterinario/service/pron
 })
 export class VerProntuarioComponent {
   id: any = 0;
+  imageName: any;
   prontuarios: Prontuario[] | undefined;
   closeResult: any;
   prontuarioSelected: any;
   constructor(
     private modalService: NgbModal,
     private route: ActivatedRoute,
-    private prontuarioService: ProntuarioServiceService
+    private prontuarioService: ProntuarioServiceService,
+    private assinaturaService: Assinatura
   ) {
     this.closeResult = this.closeResult;
   }
@@ -57,7 +60,27 @@ export class VerProntuarioComponent {
 
   openFullscreen(content: any, prontuario: any) {
     this.prontuarioSelected = prontuario;
+    let idImage = localStorage.getItem(this.prontuarioSelected._id);
+    this.assinaturaService.visualizar(idImage).subscribe((ass) => {
+      this.createImageFromBlob(ass);
+    });
     this.modalService.open(content, { fullscreen: true });
+  }
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener(
+      'load',
+      () => {
+        this.imageName = reader.result;
+        console.log(this.imageName);
+      },
+      false
+    );
+
+    if (image) {
+      reader.readAsDataURL(image);
+    }
   }
 }
 

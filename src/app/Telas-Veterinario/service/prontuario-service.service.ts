@@ -12,7 +12,7 @@ export class ProntuarioServiceService {
 
   constructor(private httpCliente: HttpClient) {}
 
-  save(prontuario: Prontuario, idPet: any) {
+  save(prontuario: Prontuario, idPet: number) {
     return this.httpCliente.post<Prontuario>(
       `${this.API}/idPet/${idPet}`,
       prontuario

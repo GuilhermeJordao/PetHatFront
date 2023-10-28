@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import SignaturePad from 'signature_pad';
+import { AdicionarProntuarioComponent } from 'src/app/Telas-Veterinario/adicionar-prontuario/adicionar-prontuario.component';
 import { Assinatura } from 'src/app/Telas-Veterinario/service/assinatura.service';
 import { UploadImagemService } from 'src/app/Telas/TelasPrincipais/service/upload-imagem.service';
 
@@ -15,7 +16,7 @@ export class SignaturePadComponent implements OnInit {
   signatureImg!: string;
   imageName: any;
 
-  constructor(private assinaturaService: Assinatura) {}
+  constructor(private adicionarProntuario: AdicionarProntuarioComponent) {}
 
   ngOnInit(): void {}
   ngAfterViewInit() {
@@ -37,7 +38,6 @@ export class SignaturePadComponent implements OnInit {
   savePad() {
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
-
     const matchResult = base64Data.match(/data:([^;]+)/);
 
     if (matchResult) {
@@ -51,38 +51,22 @@ export class SignaturePadComponent implements OnInit {
 
       const blob = new Blob([byteArrays], { type: contentType });
 
-      const file = new File([blob], `image.png`, { type: contentType });
+      let file = new File([blob], `image.png`, { type: contentType });
 
-      this.assinaturaService.upload(file).subscribe((data) => {
-        console.log(data);
-        let id_foto = (data as any).id;
-        localStorage.setItem('assinatura', id_foto);
-      });
+      if (this.adicionarProntuario?.setImageFile) {
+        console.log('Passou aqui');
+
+        this.adicionarProntuario.setImageFile(file);
+      }
     } else {
       console.error(
         'Não foi possível extrair o tipo de mídia dos dados Base64.'
       );
     }
 
-    this.signatureNeeded = this.signaturePad.isEmpty();
-    if (!this.signatureNeeded) {
-      this.signatureNeeded = false;
-    }
-  }
-
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener(
-      'load',
-      () => {
-        this.imageName = reader.result;
-        console.log(this.imageName);
-      },
-      false
-    );
-
-    if (image) {
-      reader.readAsDataURL(image);
+    let signatureNeeded: boolean = this.signaturePad.isEmpty();
+    if (!signatureNeeded) {
+      signatureNeeded = false;
     }
   }
 }
