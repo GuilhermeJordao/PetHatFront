@@ -6,6 +6,9 @@ import { Consulta } from '../model/consulta';
 import { Pet } from '../model/pet';
 import { ConsultaService } from '../service/consulta.service';
 import { PetService } from '../service/pet.service';
+import { format, parse } from 'date-fns';
+
+
 
 @Component({
   selector: 'app-agendar-consulta',
@@ -38,7 +41,7 @@ export class AgendarConsultaComponent {
   constructor(
     private petService: PetService,
     private vetService: VeterinarioService,
-    private consultaService: ConsultaService
+    private consultaService: ConsultaService,
   ) {
     this.petService.listar(this.email).subscribe((data) => {
       this.pets = data;
@@ -93,24 +96,39 @@ export class AgendarConsultaComponent {
   }
 
   agendar() {
-    console.log(this.data);
-
-    const obj: any = {
-      dataConsulta: this.data,
-      hora: this.horario,
-    };
-    this.consultaService
-      .save(obj, Number.parseInt(this.petId), this.emailVet)
-      .subscribe({
-        next: (dados) => {
-          this.correto();
-        },
-        error: (e) => {
-          this.errado();
-        },
-      });
+    // Parse a data no formato esperado "DD/MM/YYYY"
+    const parsedDate = parse(this.data, 'dd/MM/yyyy', new Date());
+  
+    // Verifique se a data é válida
+    if (!isNaN(parsedDate.getTime())) {
+      // Formate a data como "YYYY-MM-DD"
+      const formattedDate = format(parsedDate, 'dd/MM/yyyy');
+  
+      console.log('Data formatada:', formattedDate);
+  
+      const obj: any = {
+        dataConsulta: formattedDate,  // Agora no formato 'YYYY-MM-DD'
+        hora: this.horario,
+      };
+  
+      this.consultaService
+        .save(obj, Number.parseInt(this.petId), this.emailVet)
+        .subscribe({
+          next: (dados) => {
+            console.log('Sucesso:', dados);
+            this.correto();
+          },
+          error: (e) => {
+            console.log('Erro:', e);
+            this.errado();
+          },
+        });
+    } else {
+      console.log('Formato da data incorreto');
+      this.errado();
+    }
   }
-
+  
   private correto() {
     this.sucessoMensagem = true;
     setTimeout(() => {
