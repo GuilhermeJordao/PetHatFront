@@ -33,16 +33,18 @@
         <label class="Datatxt" for="Data">Data:</label><br />
         <input
           class="Data"
-          type="date"
+          type="text"
           name="Data"
-          formControlName="data"
+          placeholder="{{ prontuario.data }}"
+          disabled
         /><br />
         <label class="Horariotxt" for="Horario">Horario:</label><br />
         <input
           class="Horario"
           type="time"
           name="Horario"
-          formControlName="horario"
+          value="{{ prontuario.horario }}"
+          disabled
         /><br />
         <label class="Imunizacaotxt" for="Imunizacao">Imunização:</label><br />
         <input
@@ -97,11 +99,17 @@
         <button class="BtnSenha" (click)="addReceita()">
           Adicionar Receita
         </button>
+        <div class="alert alert-success" *ngIf="sucessoReceita">
+          Receita adicionada com sucesso
+        </div>
         <label class="Receitatxt" for="Receita">Assinatura Eletronica:</label
         ><br />
         <button class="BtnSenha" (click)="open(modalAssinatura)">
           Adicionar Assinatura Eletronica
         </button>
+        <div class="alert alert-success" *ngIf="sucessoAssinatura">
+          Assinatura adicionada com sucesso
+        </div>
         <br />
         <button
           class="BtnForm"

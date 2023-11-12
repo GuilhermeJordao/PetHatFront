@@ -57,6 +57,6 @@ export class VisualizarConsultaVetComponent {
   adicionarProntuario() {
     console.log(this.idPet);
 
-    this.router.navigate([`/AdicionarProntuario/${this.idPet}`]);
+    this.router.navigate([`/AdicionarProntuario/${this.idPet}/${this.id}`]);
   }
 }

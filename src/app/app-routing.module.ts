@@ -49,11 +49,11 @@ const routes: Routes = [
   { path: 'VisualConsul/:id', component: VisualizarConsultalComponent },
   { path: 'Teste', component: TesteFuncionalidadesComponent },
   {
-    path: 'AdicionarProntuario/:id',
+    path: 'AdicionarProntuario/:id/:idConsulta',
     component: AdicionarProntuarioComponent,
   },
   { path: 'VerProntuario/:id', component: VerProntuarioComponent },
-  { path: 'AddReceita/:id', component: AddReceitaComponent },
+  { path: 'AddReceita/:id/:idConsulta', component: AddReceitaComponent },
 ];
 
 @NgModule({

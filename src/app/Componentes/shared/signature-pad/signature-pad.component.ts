@@ -15,6 +15,7 @@ export class SignaturePadComponent implements OnInit {
   @ViewChild('canvas') canvasEl!: ElementRef;
   signatureImg!: string;
   imageName: any;
+  sucesso = false;
 
   constructor(private adicionarProntuario: AdicionarProntuarioComponent) {}
 
@@ -55,7 +56,6 @@ export class SignaturePadComponent implements OnInit {
 
       if (this.adicionarProntuario?.setImageFile) {
         console.log('Passou aqui');
-
         this.adicionarProntuario.setImageFile(file);
       }
     } else {

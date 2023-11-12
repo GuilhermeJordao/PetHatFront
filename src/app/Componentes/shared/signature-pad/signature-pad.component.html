@@ -5,9 +5,15 @@
   width="470"
   height="200"
 ></canvas>
-<p class="error-message" *ngIf="signatureNeeded"><span class="text-danger">Para Realizar o Submit da Assinatira é necessario Assinar Algo.</span></p>
+<p class="error-message" *ngIf="signatureNeeded">
+  <span class="text-danger"
+    >Para Realizar o Submit da Assinatira é necessario Assinar Algo.</span
+  >
+</p>
 
 <div class="buttons flex justify-between">
   <button class="btn btn-outline-secondary" (click)="clearPad()">Clear</button>
-  <button class="btn btn-primary" (click)="savePad()">Submit the signature</button>
+  <button class="btn btn-primary" (click)="savePad()">
+    Submit the signature
+  </button>
 </div>

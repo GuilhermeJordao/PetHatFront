@@ -8,7 +8,7 @@
 <meta charset="utf-8" />
 
 <app-nav-vet></app-nav-vet>
-<button class="BtnVoltar" routerLink="/AdicionarProntuario" role="button">
+<button class="BtnVoltar" (click)="navegar()" role="button">
   <i class="fa-solid fa-arrow-left fa-lg"></i>
 </button>
 <div class="Screen">
@@ -46,6 +46,8 @@
           class="Veterinariaresponsavel"
           type="text"
           name="Veterinariaresponsavel"
+          value="{{ nomeVet }}"
+          disabled
         /><br />
         <label class="Datatxt" for="Data">Data de emissão:</label><br />
         <input
@@ -63,15 +65,7 @@
           name="Datadevalidade"
           formControlName="dataValidade"
         /><br />
-        <label class="ClinicaResponsaveltxt" for="ClinicaResponsavel"
-          >Clinica Responsavel:</label
-        ><br />
-        <input
-          class="ClinicaResponsavel"
-          type="text"
-          name="ClinicaResponsavel"
-          formControlName="clinicaResponsavel"
-        /><br />
+
         <input
           class="BtnForm"
           type="submit"

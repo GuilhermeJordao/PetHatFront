@@ -7,6 +7,7 @@ import { ProntuarioServiceService } from '../service/prontuario-service.service'
 import { ReceitaService } from '../service/receita.service';
 import { Assinatura } from '../service/assinatura.service';
 import SignaturePad from 'signature_pad';
+import { ConsultaService } from 'src/app/Telas/TelasPrincipais/service/consulta.service';
 
 @Component({
   selector: 'app-adicionar-prontuario',
@@ -18,9 +19,15 @@ export class AdicionarProntuarioComponent {
   signaturePad!: SignaturePad;
   form: FormGroup;
   idPet: any = 0;
+  idConsulta: any = 0;
   file!: File;
+  sucessoReceita = false;
+  sucessoAssinatura = false;
+  sucessoProntuario = false;
   prontuario = {
     petNome: [null],
+    data: [null],
+    horario: [null],
   };
 
   constructor(
@@ -31,7 +38,8 @@ export class AdicionarProntuarioComponent {
     private petService: PetService,
     private prontuarioService: ProntuarioServiceService,
     private receitaService: ReceitaService,
-    private assinaturaService: Assinatura
+    private assinaturaService: Assinatura,
+    private consultaService: ConsultaService
   ) {
     this.closeResult = this.closeResult;
     this.form = this.formBuilder.group({
@@ -44,19 +52,41 @@ export class AdicionarProntuarioComponent {
       diagnostico: [null],
       observacao: [null],
       receita: [null],
-      file: [null],
     });
   }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.idPet = params['id'];
+      this.idConsulta = params['idConsulta'];
       console.log(typeof this.idPet);
+      const prontuarioData = localStorage.getItem('prontuarioData');
+      const receitaData = localStorage.getItem('receitaData');
+      if (prontuarioData) {
+        const prontuario = JSON.parse(prontuarioData);
+        this.form.patchValue(prontuario);
+      }
 
+      if (receitaData) {
+        this.sucessoReceita = true;
+      }
       this.petService.buscarPorId(this.idPet).subscribe((dados) => {
         console.log(dados);
         this.prontuario.petNome = (dados as any).nome;
       });
+
+      this.consultaService
+        .buscarPorId(this.idConsulta)
+        .subscribe((consulta) => {
+          console.log(consulta);
+
+          this.prontuario.data = (consulta as any).dataConsulta;
+          this.prontuario.horario = (consulta as any).hora;
+          this.form.value.data = this.prontuario.data;
+          this.form.value.horario = this.prontuario.horario;
+
+          console.log(this.form.value);
+        });
     });
   }
 
@@ -76,8 +106,9 @@ export class AdicionarProntuarioComponent {
             });
         });
       });
-
     localStorage.removeItem('idReceita');
+    localStorage.removeItem('prontuarioData');
+    localStorage.removeItem('receitaData');
   }
 
   open(content: any) {
@@ -94,7 +125,8 @@ export class AdicionarProntuarioComponent {
   }
 
   addReceita() {
-    this.router.navigate([`AddReceita/${this.idPet}`]);
+    localStorage.setItem('prontuarioData', JSON.stringify(this.form.value));
+    this.router.navigate([`AddReceita/${this.idPet}/${this.idConsulta}`]);
   }
 
   private getDismissReason(reason: any): string {
@@ -114,6 +146,9 @@ export class AdicionarProntuarioComponent {
   setImageFile(file: File) {
     console.log(file);
     this.file = file;
+    if (this.file) {
+      this.sucessoAssinatura = true;
+    }
   }
 }
 
