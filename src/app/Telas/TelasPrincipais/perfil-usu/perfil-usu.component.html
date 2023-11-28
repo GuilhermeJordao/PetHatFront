@@ -10,7 +10,9 @@
 />
 <body>
   <app-navbar></app-navbar>
-  <button class="BtnVoltar" routerLink="/InicialUsu" role="button"><i class="fa-solid fa-arrow-left fa-lg"></i></button>
+  <button class="BtnVoltar" routerLink="/InicialUsu" role="button">
+    <i class="fa-solid fa-arrow-left fa-lg"></i>
+  </button>
   <div class="BodyPerfil">
     <div class="PerfilPhotoDiv">
       <img
@@ -83,7 +85,9 @@
             formControlName="email"
           /><br />
           <label class="Senhatxt" for="Senha">Senha:</label><br />
-          <button class="BtnSenha" (click)="open(modalAlterarSenha)" >Alterar Senha</button>
+          <button class="BtnSenha" (click)="open(modalAlterarSenha)">
+            Alterar Senha
+          </button>
           <input
             class="BtnForm"
             [routerLink]="['/Perfil']"
@@ -113,16 +117,33 @@
   </div>
   <div class="modal-body">
     <p>
-      <strong>Voce tem certeza que deseja deletar <!--<span class="text-primary">"John Doe"</span>--> seu perfil?</strong>
+      <strong
+        >Voce tem certeza que deseja deletar
+        <!--<span class="text-primary">"John Doe"</span>-->
+        seu perfil?</strong
+      >
     </p>
     <p>
-      Todas as informações associadas a este perfil de usuário serão excluídas permanentemente.
+      Todas as informações associadas a este perfil de usuário serão excluídas
+      permanentemente.
       <span class="text-danger">Esta operação não pode ser desfeita.</span>
     </p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-danger" (click)="modal.close(deletarConta())">Deletar</button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.close(deletarConta())"
+    >
+      Deletar
+    </button>
   </div>
 </ng-template>
 
@@ -138,16 +159,33 @@
   </div>
   <div class="modal-body">
     <p>
-      <strong>Voce tem certeza que deseja editar <!--<span class="text-primary">"John Doe"</span>--> seu perfil?</strong>
+      <strong
+        >Voce tem certeza que deseja editar
+        <!--<span class="text-primary">"John Doe"</span>-->
+        seu perfil?</strong
+      >
     </p>
     <p>
-      Todas as informações alteradas no formulario serão associadas a este perfil de usuário.
+      Todas as informações alteradas no formulario serão associadas a este
+      perfil de usuário.
       <span class="text-warning">Esta operação não pode ser desfeita.</span>
     </p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-warning" (click)="modal.close(onSubmit())">Editar</button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn btn-warning"
+      (click)="modal.close(onSubmit())"
+    >
+      Editar
+    </button>
   </div>
 </ng-template>
 
@@ -163,12 +201,26 @@
   </div>
   <div class="modal-body">
     <p>
-      <strong>Voce tem certeza que deseja deslogar da aplicação<!--<span class="text-primary">"John Doe"</span>-->?</strong>
+      <strong
+        >Voce tem certeza que deseja deslogar da aplicação<!--<span class="text-primary">"John Doe"</span>-->?</strong
+      >
     </p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-danger" (click)="modal.close(sairConta())">Sair</button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="modal.close(sairConta())"
+    >
+      Sair
+    </button>
   </div>
 </ng-template>
 
@@ -184,28 +236,45 @@
   </div>
   <div class="modal-body">
     <p>
-      <strong>Caso deseje alterar a senha basta somente escrever a nova senha nos dois campos a baixo <span class="text-primary">"Caso o contrário clique no botão Cancelar"</span></strong>
+      <strong
+        >Caso deseje alterar a senha basta somente escrever a nova senha nos
+        dois campos a baixo
+        <span class="text-primary"
+          >"Caso o contrário clique no botão Cancelar"</span
+        ></strong
+      >
     </p>
     <form class="form" [formGroup]="form">
-    <label class="Senhatxt" for="Senha">Senha:</label><br />
-          <input
-            class="Senha"
-            type="password"
-            name="Senha"
-            placeholder="Insira sua Senha"
-            formControlName="senha"
-          />
-          <input
-            class="Senha"
-            type="password"
-            name="Senha"
-            placeholder="Repita sua Senha"
-          /><br /><br />
-        </form>
+      <label class="Senhatxt" for="Senha">Senha:</label><br />
+      <input
+        class="Senha"
+        type="password"
+        name="Senha"
+        placeholder="Insira sua Senha"
+        formControlName="senha"
+      />
+      <input
+        class="Senha"
+        type="password"
+        name="Senha"
+        placeholder="Repita sua Senha"
+      /><br /><br />
+    </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
-    <button type="button" class="btn btn-secondary" (click)="modal.close(onSubmit())">Alterar</button>
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancelar
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.close(onSubmit())"
+    >
+      Alterar
+    </button>
   </div>
 </ng-template>
-<app-signature-pad></app-signature-pad>
